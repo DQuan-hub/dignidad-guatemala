@@ -9,7 +9,7 @@ export function Footer() {
     "/brand/logo-dignidad.jpg";
 
   return (
-    <footer className="w-full bg-[#111C16] text-[#F5F2EB] pt-16 pb-12 mt-20 border-t border-[#141413]/20">
+    <footer className="w-full bg-[#111C16] text-white pt-16 pb-12 mt-20 border-t border-white/10">
       <div className="mx-auto max-w-[1180px] px-6 lg:px-8">
         
         {/* Fila Superior: Manifiesto Kelvora masivo */}

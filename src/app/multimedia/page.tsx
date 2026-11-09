@@ -97,7 +97,7 @@ export default function MultimediaPage() {
                   href="https://www.tiktok.com/@dignidad100"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center justify-between px-4 py-3 rounded-2xl bg-[#111C16] text-[#F5F2EB] font-mono text-xs font-bold uppercase hover:bg-[#C83E2B] transition"
+                  className="flex items-center justify-between px-4 py-3 rounded-2xl bg-[#111C16] text-white font-mono text-xs font-bold uppercase hover:bg-[#C83E2B] transition"
                 >
                   <span>TikTok Oficial</span>
                   <ExternalLink className="w-3.5 h-3.5 text-[#D9822B]" />
@@ -107,7 +107,7 @@ export default function MultimediaPage() {
                   href="https://www.instagram.com/dignidad.guate?vrfl=ZDNlZDc0MzIxNw=="
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center justify-between px-4 py-3 rounded-2xl bg-[#EBE5D8] border border-[#141413]/10 text-[#141413] font-mono text-xs font-bold uppercase hover:border-[#C83E2B] transition"
+                  className="flex items-center justify-between px-4 py-3 rounded-2xl bg-white border border-[#111C16]/10 text-[#111C16] font-mono text-xs font-bold uppercase hover:border-[#C83E2B] transition shadow-2xs"
                 >
                   <span>Instagram</span>
                   <ExternalLink className="w-3.5 h-3.5 text-[#C83E2B]" />
@@ -117,7 +117,7 @@ export default function MultimediaPage() {
                   href="https://www.facebook.com/profile.php?id=61590226876540"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center justify-between px-4 py-3 rounded-2xl bg-[#EBE5D8] border border-[#141413]/10 text-[#141413] font-mono text-xs font-bold uppercase hover:border-[#C83E2B] transition"
+                  className="flex items-center justify-between px-4 py-3 rounded-2xl bg-white border border-[#111C16]/10 text-[#111C16] font-mono text-xs font-bold uppercase hover:border-[#C83E2B] transition shadow-2xs"
                 >
                   <span>Facebook</span>
                   <ExternalLink className="w-3.5 h-3.5 text-[#C83E2B]" />
@@ -126,7 +126,7 @@ export default function MultimediaPage() {
 
               {/* Selector Rápido de Video en el reproductor */}
               <div className="pt-4 space-y-2.5">
-                <p className="font-mono text-xs font-bold uppercase tracking-wider text-[#57534E]">
+                <p className="font-mono text-xs font-bold uppercase tracking-wider text-[#526058]">
                   Selecciona un video para reproducir:
                 </p>
                 <div className="flex flex-wrap gap-2">
@@ -140,7 +140,7 @@ export default function MultimediaPage() {
                         className={`px-3.5 py-2 rounded-xl font-mono text-xs font-bold border transition cursor-pointer ${
                           active
                             ? "bg-[#C83E2B] text-white border-[#C83E2B] shadow-xs"
-                            : "bg-[#EBE5D8] text-[#141413] border-[#141413]/10 hover:border-[#C83E2B]"
+                            : "bg-white text-[#111C16] border-[#111C16]/10 hover:border-[#C83E2B]"
                         }`}
                       >
                         <Play className="w-3 h-3 inline mr-1.5" />
@@ -198,9 +198,9 @@ export default function MultimediaPage() {
       <section className="w-full">
         <div className="mx-auto w-full max-w-[1180px] px-6 lg:px-8 space-y-10">
           
-          <div className="rounded-3xl border border-[#141413]/12 bg-[#EBE5D8] p-5 sm:p-7 flex flex-col lg:flex-row items-stretch lg:items-center justify-between gap-4 shadow-xs">
+          <div className="rounded-3xl border border-[#111C16]/10 bg-[#F3F6F4] p-5 sm:p-7 flex flex-col lg:flex-row items-stretch lg:items-center justify-between gap-4 shadow-xs">
             
-            {/* Píldoras de Filtro Kelvora */}
+            {/* Píldoras de Filtro */}
             <div className="flex flex-wrap items-center gap-2">
               {FILTER_TABS.map((tab) => {
                 const active = activeTab === tab.id;
@@ -213,7 +213,7 @@ export default function MultimediaPage() {
                     className={`inline-flex items-center gap-2 px-4 py-2.5 rounded-full font-mono text-xs font-bold transition cursor-pointer ${
                       active
                         ? "bg-[#C83E2B] text-white shadow-xs"
-                        : "bg-white text-[#141413] hover:bg-[#141413]/5 border border-[#141413]/10"
+                        : "bg-white text-[#111C16] hover:bg-neutral-100 border border-[#111C16]/10"
                     }`}
                   >
                     <IconComponent className="w-3.5 h-3.5" />
@@ -226,13 +226,13 @@ export default function MultimediaPage() {
             {/* Búsqueda */}
             {activeTab !== "documentos" && (
               <div className="relative min-w-[260px]">
-                <Search className="w-4 h-4 text-[#57534E] absolute left-3.5 top-1/2 -translate-y-1/2 pointer-events-none" />
+                <Search className="w-4 h-4 text-[#526058] absolute left-3.5 top-1/2 -translate-y-1/2 pointer-events-none" />
                 <input
                   type="search"
                   value={query}
                   onChange={(e) => setQuery(e.target.value)}
                   placeholder="Buscar por municipio o tema..."
-                  className="w-full pl-10 pr-4 py-2.5 rounded-full bg-white border border-[#141413]/15 text-sm text-[#141413] placeholder-[#57534E] focus:outline-none focus:border-[#C83E2B]"
+                  className="w-full pl-10 pr-4 py-2.5 rounded-full bg-white border border-[#111C16]/15 text-sm text-[#111C16] placeholder-[#526058] focus:outline-none focus:border-[#C83E2B]"
                 />
               </div>
             )}
@@ -244,28 +244,28 @@ export default function MultimediaPage() {
               {DOCUMENTOS_OFICIALES.map((doc) => (
                 <article
                   key={doc.titulo}
-                  className="rounded-3xl border border-[#141413]/12 bg-[#EBE5D8] p-7 flex flex-col justify-between space-y-4 shadow-2xs"
+                  className="rounded-3xl border border-[#111C16]/10 bg-white p-7 flex flex-col justify-between space-y-4 shadow-xs"
                 >
                   <div className="space-y-2">
                     <span className="font-mono text-xs font-bold text-[#C83E2B]">
                       {doc.categoria} · {doc.fecha}
                     </span>
-                    <h3 className="font-display text-xl font-bold text-[#141413]">
+                    <h3 className="font-display text-xl font-bold text-[#111C16]">
                       {doc.titulo}
                     </h3>
-                    <p className="text-xs sm:text-sm text-[#57534E]">
+                    <p className="text-xs sm:text-sm text-[#526058]">
                       {doc.descripcion}
                     </p>
                   </div>
 
-                  <div className="pt-4 border-t border-[#141413]/10 flex items-center justify-between">
-                    <span className="font-mono text-xs text-[#57534E]">
+                  <div className="pt-4 border-t border-[#111C16]/10 flex items-center justify-between">
+                    <span className="font-mono text-xs text-[#526058]">
                       {doc.peso}
                     </span>
                     <a
                       href={doc.urlDescarga}
                       download
-                      className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#111C16] hover:bg-[#C83E2B] text-[#F5F2EB] font-mono text-xs font-bold uppercase transition"
+                      className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#111C16] hover:bg-[#C83E2B] text-white font-mono text-xs font-bold uppercase transition shadow-xs"
                     >
                       <Download className="w-3.5 h-3.5 text-[#D9822B]" />
                       <span>Descargar PDF</span>
@@ -279,7 +279,7 @@ export default function MultimediaPage() {
               {filteredPosts.map((post) => (
                 <article
                   key={post.id}
-                  className="rounded-3xl border border-[#141413]/12 bg-[#EBE5D8] overflow-hidden flex flex-col justify-between group hover:border-[#C83E2B]/50 transition-all duration-300 shadow-2xs"
+                  className="rounded-3xl border border-[#111C16]/10 bg-white overflow-hidden flex flex-col justify-between group hover:border-[#C83E2B]/50 transition-all duration-300 shadow-xs"
                 >
                   <div
                     className="relative aspect-[16/10] bg-[#111C16] overflow-hidden cursor-pointer"

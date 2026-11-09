@@ -65,11 +65,11 @@ export default function NosotrosPage() {
                 <strong>Dignidad Guatemala (#28 TSE)</strong> representa el encuentro entre las luchas históricas agrarias del Comité Campesino del Altiplano (CCDA), la resistencia de las autoridades indígenas ancestrales y la juventud urbana que exige un país sin corrupción.
               </p>
 
-              <div className="p-5 rounded-2xl bg-[#EBE5D8] border border-[#141413]/10 space-y-2">
-                <span className="font-mono text-[11px] uppercase tracking-wider text-[#141413] font-bold block">
+              <div className="p-5 rounded-2xl bg-[#F3F6F4] border border-[#111C16]/10 space-y-2">
+                <span className="font-mono text-[11px] uppercase tracking-wider text-[#111C16] font-bold block">
                   REGISTRO ANTE EL TSE
                 </span>
-                <p className="text-xs text-[#57534E]">
+                <p className="text-xs text-[#526058]">
                   Inscripción definitiva como Partido Político Número 28 de Guatemala con asambleas departamentales constituidas en los 22 departamentos.
                 </p>
               </div>
@@ -77,14 +77,14 @@ export default function NosotrosPage() {
               <div className="flex flex-wrap gap-3 pt-2">
                 <a
                   href="#liderazgos"
-                  className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#111C16] text-[#F5F2EB] font-mono text-xs font-bold uppercase tracking-wider hover:bg-[#C83E2B] transition"
+                  className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#111C16] text-white font-mono text-xs font-bold uppercase tracking-wider hover:bg-[#C83E2B] transition"
                 >
                   <span>Conocer Dirigencia</span>
                   <ArrowUpRight className="w-4 h-4 text-[#D9822B]" />
                 </a>
                 <a
                   href="#documentos"
-                  className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white border border-[#141413]/15 text-[#141413] font-mono text-xs font-bold uppercase tracking-wider hover:border-[#C83E2B] transition"
+                  className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white border border-[#111C16]/15 text-[#111C16] font-mono text-xs font-bold uppercase tracking-wider hover:border-[#C83E2B] transition"
                 >
                   <FileText className="w-3.5 h-3.5 text-[#C83E2B]" />
                   <span>Estatutos TSE</span>
@@ -116,7 +116,7 @@ export default function NosotrosPage() {
                   Frente a ese despojo sistemático, las bases del <strong>Comité Campesino del Altiplano (CCDA)</strong>, junto a comunidades q'eqchi'es, poqomchies, k'iches, kaqchikeles, mames, xinkas y garífunas, decidieron dar un paso histórico: no delegar más su representación y construir un partido político propio con asambleas soberanas.
                 </p>
 
-                <blockquote className="p-6 rounded-2xl bg-[#EBE5D8] border-l-4 border-[#C83E2B] font-serif text-xl sm:text-2xl italic text-[#141413] leading-snug">
+                <blockquote className="p-6 rounded-2xl bg-[#F3F6F4] border-l-4 border-[#C83E2B] font-serif text-xl sm:text-2xl italic text-[#111C16] leading-snug">
                   “No nos organizamos para negociar privilegios; nos organizamos para devolver la soberanía y la tierra a quienes la trabajan todos los días.”
                 </blockquote>
 
@@ -147,27 +147,27 @@ export default function NosotrosPage() {
             </h2>
           </div>
 
-          <div className="relative border-l-2 border-[#141413]/15 ml-4 sm:ml-8 pl-6 sm:pl-10 space-y-12">
+          <div className="relative border-l-2 border-[#111C16]/15 ml-4 sm:ml-8 pl-6 sm:pl-10 space-y-12">
             {LINEA_TIEMPO_DIGNIDAD.map((hito, idx) => (
               <div key={hito.codigo || hito.anio} className="relative group">
                 {/* Punto indicador */}
-                <span className="absolute -left-[31px] sm:-left-[47px] top-1.5 w-4 h-4 rounded-full bg-[#111C16] border-2 border-[#F5F2EB] group-hover:bg-[#C83E2B] transition-colors" />
+                <span className="absolute -left-[31px] sm:-left-[47px] top-1.5 w-4 h-4 rounded-full bg-[#111C16] border-2 border-white group-hover:bg-[#C83E2B] transition-colors" />
 
-                <div className="space-y-3 max-w-2xl rounded-2xl bg-[#EBE5D8]/60 p-6 border border-[#141413]/10">
+                <div className="space-y-3 max-w-2xl rounded-2xl bg-[#F3F6F4] p-6 border border-[#111C16]/10 shadow-2xs">
                   <div className="flex items-center gap-3">
-                    <span className="font-mono text-xs font-bold px-2.5 py-1 rounded bg-[#111C16] text-[#F5F2EB]">
+                    <span className="font-mono text-xs font-bold px-2.5 py-1 rounded bg-[#111C16] text-white">
                       {hito.anio}
                     </span>
-                    <span className="font-mono text-xs text-[#57534E] uppercase">
+                    <span className="font-mono text-xs text-[#526058] uppercase">
                       Hito 0{idx + 1}
                     </span>
                   </div>
 
-                  <h3 className="font-display text-xl sm:text-2xl font-bold text-[#141413]">
+                  <h3 className="font-display text-xl sm:text-2xl font-bold text-[#111C16]">
                     {hito.titulo}
                   </h3>
 
-                  <p className="text-sm text-[#57534E] leading-relaxed">
+                  <p className="text-sm text-[#526058] leading-relaxed">
                     {hito.descripcion}
                   </p>
                 </div>
@@ -201,11 +201,11 @@ export default function NosotrosPage() {
             {lideres.map((lider) => (
               <article
                 key={lider.nombre}
-                className="rounded-3xl border border-[#141413]/12 bg-[#EBE5D8] overflow-hidden flex flex-col justify-between p-7 shadow-2xs hover:border-[#C83E2B]/50 transition duration-300"
+                className="rounded-3xl border border-[#111C16]/10 bg-white overflow-hidden flex flex-col justify-between p-7 shadow-xs hover:border-[#C83E2B]/50 transition duration-300"
               >
                 <div className="space-y-6">
                   {/* Foto de Retrato */}
-                  <div className="aspect-[4/3] rounded-2xl overflow-hidden bg-[#111C16] relative border border-[#141413]/10">
+                  <div className="aspect-[4/3] rounded-2xl overflow-hidden bg-[#111C16] relative border border-[#111C16]/10">
                     <img
                       src={lider.fotografia}
                       alt={lider.nombre}
@@ -214,23 +214,23 @@ export default function NosotrosPage() {
                   </div>
 
                   <div>
-                    <h3 className="font-display text-2xl font-bold text-[#141413]">
+                    <h3 className="font-display text-2xl font-bold text-[#111C16]">
                       {lider.nombre}
                     </h3>
                     <p className="font-mono text-xs uppercase tracking-wider text-[#C83E2B] font-bold mt-1">
                       {lider.cargo}
                     </p>
-                    <p className="font-mono text-[11px] text-[#57534E]">
+                    <p className="font-mono text-[11px] text-[#526058]">
                       📍 {lider.origen}
                     </p>
                   </div>
 
-                  <blockquote className="text-xs sm:text-sm text-[#141413]/85 italic leading-relaxed pt-2 border-t border-[#141413]/10">
+                  <blockquote className="text-xs sm:text-sm text-[#111C16]/85 italic leading-relaxed pt-2 border-t border-[#111C16]/10">
                     “{lider.cita}”
                   </blockquote>
                 </div>
 
-                <div className="pt-6 mt-6 border-t border-[#141413]/10 text-xs text-[#57534E] leading-relaxed">
+                <div className="pt-6 mt-6 border-t border-[#111C16]/10 text-xs text-[#526058] leading-relaxed">
                   {lider.bio}
                 </div>
               </article>
@@ -243,7 +243,7 @@ export default function NosotrosPage() {
       {/* 4. TRANSPARENCIA, PRINCIPIOS Y DESCARGA DE ESTATUTOS */}
       <section id="documentos" className="w-full">
         <div className="mx-auto w-full max-w-[1180px] px-6 lg:px-8">
-          <div className="rounded-3xl bg-[#111C16] text-[#F5F2EB] p-8 sm:p-14 space-y-10">
+          <div className="rounded-3xl bg-[#111C16] text-white p-8 sm:p-14 space-y-10 shadow-xl">
             
             <div className="max-w-2xl space-y-3">
               <span className="font-mono text-xs uppercase tracking-widest text-[#D9822B] font-bold">

@@ -55,7 +55,7 @@ export function SocialMediaGrid({
                   className={`px-4 py-2 rounded-full font-mono text-xs font-bold transition cursor-pointer ${
                     active
                       ? "bg-[#C83E2B] text-white shadow-xs"
-                      : "bg-[#EBE5D8] text-[#141413] hover:bg-[#141413]/10"
+                      : "bg-white text-[#111C16] border border-[#111C16]/10 hover:bg-neutral-100"
                   }`}
                 >
                   {tab.label}
@@ -66,14 +66,14 @@ export function SocialMediaGrid({
         </div>
       )}
 
-      {/* Grid Bento Kelvora de Medios */}
+      {/* Grid Bento de Medios */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {filteredPosts.map((post) => {
           const isVideo = post.type === "video";
           return (
             <article
               key={post.id}
-              className="group rounded-3xl bg-[#EBE5D8]/80 border border-[#141413]/10 overflow-hidden flex flex-col justify-between hover:border-[#C83E2B]/50 transition-all duration-300 shadow-2xs hover:shadow-md"
+              className="group rounded-3xl bg-white border border-[#111C16]/10 overflow-hidden flex flex-col justify-between hover:border-[#C83E2B]/50 transition-all duration-300 shadow-xs hover:shadow-md"
             >
               {/* Media Container */}
               <div
@@ -122,16 +122,16 @@ export function SocialMediaGrid({
               {/* Contenido / Caption */}
               <div className="p-5 flex-1 flex flex-col justify-between space-y-4">
                 <div className="space-y-2">
-                  <h4 className="font-display font-bold text-base sm:text-lg text-[#141413] leading-snug group-hover:text-[#C83E2B] transition-colors">
+                  <h4 className="font-display font-bold text-base sm:text-lg text-[#111C16] leading-snug group-hover:text-[#C83E2B] transition-colors">
                     {post.title || post.location}
                   </h4>
-                  <p className="text-xs sm:text-sm text-[#57534E] line-clamp-3 leading-relaxed">
+                  <p className="text-xs sm:text-sm text-[#526058] line-clamp-3 leading-relaxed">
                     {post.caption}
                   </p>
                 </div>
 
                 {/* Footer de Tarjeta: Métricas y Enlace */}
-                <div className="pt-3 border-t border-[#141413]/8 flex items-center justify-between text-xs text-[#57534E]">
+                <div className="pt-3 border-t border-[#111C16]/8 flex items-center justify-between text-xs text-[#526058]">
                   <div className="flex items-center gap-3">
                     {post.likes && (
                       <span className="flex items-center gap-1 font-mono text-[11px]">
@@ -141,7 +141,7 @@ export function SocialMediaGrid({
                     )}
                     {post.comments && (
                       <span className="flex items-center gap-1 font-mono text-[11px]">
-                        <MessageCircle className="w-3.5 h-3.5 text-[#57534E]" />
+                        <MessageCircle className="w-3.5 h-3.5 text-[#526058]" />
                         {post.comments}
                       </span>
                     )}

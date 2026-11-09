@@ -31,9 +31,9 @@ export function Navbar() {
         <Link
           href="/"
           aria-label="Dignidad Guatemala — Ir al inicio"
-          className="inline-flex items-center gap-3 rounded-full bg-[#F5F2EB]/90 backdrop-blur-md px-3.5 py-2 shadow-xs border border-[#141413]/12 hover:border-[#C83E2B]/40 transition group"
+          className="inline-flex items-center gap-3 rounded-full bg-white/90 backdrop-blur-md px-3.5 py-2 shadow-xs border border-[#111C16]/10 hover:border-[#C83E2B]/40 transition group"
         >
-          <span className="h-8 w-8 rounded-full overflow-hidden bg-[#111C16] border border-[#141413]/15 shrink-0 flex items-center justify-center">
+          <span className="h-8 w-8 rounded-full overflow-hidden bg-[#111C16] border border-[#111C16]/15 shrink-0 flex items-center justify-center">
             <img
               src={logoSrc}
               alt="Logo Oficial Dignidad Guatemala"
@@ -43,19 +43,19 @@ export function Navbar() {
             />
           </span>
           <div className="flex flex-col leading-none">
-            <span className="font-display text-sm font-bold tracking-tight text-[#141413]">
+            <span className="font-display text-sm font-bold tracking-tight text-[#111C16]">
               Dignidad
             </span>
-            <span className="font-mono text-[9px] uppercase tracking-wider text-[#57534E]">
+            <span className="font-mono text-[9px] uppercase tracking-wider text-[#526058]">
               Guatemala #28
             </span>
           </div>
         </Link>
 
-        {/* Barra Central Flotante Minimalista estilo Kelvora */}
+        {/* Barra Central Flotante Minimalista */}
         <nav
           aria-label="Navegación principal"
-          className="hidden md:flex items-center gap-1.5 rounded-full bg-[#F5F2EB]/90 backdrop-blur-md p-1.5 shadow-xs border border-[#141413]/12"
+          className="hidden md:flex items-center gap-1.5 rounded-full bg-white/90 backdrop-blur-md p-1.5 shadow-xs border border-[#111C16]/10"
         >
           <ul className="flex items-center gap-1">
             {NAV_LINKS.map((link) => {
@@ -73,8 +73,8 @@ export function Navbar() {
                     className={cn(
                       "relative inline-flex items-center gap-2 rounded-full px-4 py-2 text-xs lg:text-sm font-semibold transition-all duration-300",
                       isActive
-                        ? "bg-[#111C16] text-[#F5F2EB] shadow-xs"
-                        : "text-[#57534E] hover:text-[#141413] hover:bg-[#141413]/5"
+                        ? "bg-[#111C16] text-white shadow-xs"
+                        : "text-[#526058] hover:text-[#111C16] hover:bg-[#111C16]/5"
                     )}
                   >
                     {isActive && (
@@ -88,16 +88,16 @@ export function Navbar() {
           </ul>
         </nav>
 
-        {/* Botón Píldora Kelvora "Afíliate ↗" con micro-interacción */}
+        {/* Botón Píldora "Afíliate ↗" con micro-interacción */}
         <div className="flex items-center gap-2">
           <Link
             href="/afiliate"
-            className="group relative inline-flex items-center gap-2 rounded-full bg-[#C83E2B] hover:bg-[#A93322] text-[#F5F2EB] px-5 py-2.5 text-xs sm:text-sm font-bold shadow-xs transition-all duration-300 overflow-hidden"
+            className="group relative inline-flex items-center gap-2 rounded-full bg-[#C83E2B] hover:bg-[#A93322] text-white px-5 py-2.5 text-xs sm:text-sm font-bold shadow-xs transition-all duration-300 overflow-hidden"
           >
             <span className="relative z-10 transition-transform duration-300 group-hover:-translate-y-0.5">
               Afíliate
             </span>
-            <ArrowUpRight className="w-4 h-4 text-[#D9822B] relative z-10 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+            <ArrowUpRight className="w-4 h-4 text-[#FFD600] relative z-10 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
           </Link>
 
           {/* Botón móvil hamburguesa */}
@@ -106,7 +106,7 @@ export function Navbar() {
             onClick={() => setMobileOpen((v) => !v)}
             aria-expanded={mobileOpen}
             aria-label={mobileOpen ? "Cerrar menú" : "Abrir menú"}
-            className="md:hidden inline-flex h-10 w-10 items-center justify-center rounded-full bg-[#F5F2EB] border border-[#141413]/12 text-[#141413] cursor-pointer"
+            className="md:hidden inline-flex h-10 w-10 items-center justify-center rounded-full bg-white border border-[#111C16]/10 text-[#111C16] cursor-pointer"
           >
             {mobileOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
           </button>
@@ -115,7 +115,7 @@ export function Navbar() {
 
       {/* Menú desplegable móvil */}
       {mobileOpen && (
-        <div className="md:hidden mt-2 mx-auto max-w-[1180px] rounded-2xl bg-[#F5F2EB] border border-[#141413]/12 p-4 shadow-xl space-y-2">
+        <div className="md:hidden mt-2 mx-auto max-w-[1180px] rounded-2xl bg-white border border-[#111C16]/10 p-4 shadow-xl space-y-2">
           <ul className="space-y-1">
             {NAV_LINKS.map((link) => {
               const isActive =
@@ -131,8 +131,8 @@ export function Navbar() {
                     className={cn(
                       "flex items-center justify-between px-4 py-2.5 rounded-xl font-display font-semibold text-sm transition-colors",
                       isActive
-                        ? "bg-[#111C16] text-[#F5F2EB]"
-                        : "text-[#57534E] hover:bg-[#141413]/5 hover:text-[#141413]"
+                        ? "bg-[#111C16] text-white"
+                        : "text-[#526058] hover:bg-[#111C16]/5 hover:text-[#111C16]"
                     )}
                   >
                     <span>{link.label}</span>
@@ -143,14 +143,14 @@ export function Navbar() {
             })}
           </ul>
 
-          <div className="pt-2 border-t border-[#141413]/10">
+          <div className="pt-2 border-t border-[#111C16]/10">
             <Link
               href="/afiliate"
               onClick={() => setMobileOpen(false)}
-              className="w-full flex items-center justify-center gap-2 py-3 rounded-xl bg-[#C83E2B] text-[#F5F2EB] text-sm font-bold shadow-xs"
+              className="w-full flex items-center justify-center gap-2 py-3 rounded-xl bg-[#C83E2B] text-white text-sm font-bold shadow-xs"
             >
               <span>Afíliate en tu departamento</span>
-              <ArrowUpRight className="w-4 h-4 text-[#D9822B]" />
+              <ArrowUpRight className="w-4 h-4 text-[#FFD600]" />
             </Link>
           </div>
         </div>

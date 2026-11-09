@@ -19,14 +19,14 @@ export default function EjesIndexPage() {
                 <span>[PROYECTO DE PAÍS · 2027-2031]</span>
               </div>
               
-              <h1 className="font-display text-4xl sm:text-5xl lg:text-[3.5rem] font-bold tracking-tight text-[#141413] leading-[1.04]">
+              <h1 className="font-display text-4xl sm:text-5xl lg:text-[3.5rem] font-bold tracking-tight text-[#111C16] leading-[1.04]">
                 Seis ejes nacidos del{" "}
                 <span className="font-serif italic font-normal text-[#C83E2B]">
                   mandato de las comunidades.
                 </span>
               </h1>
 
-              <p className="text-base sm:text-lg text-[#57534E] leading-relaxed">
+              <p className="text-base sm:text-lg text-[#526058] leading-relaxed">
                 Cada uno de nuestros seis ejes cuenta con su propia página dedicada con diagnóstico territorial, iniciativas de ley concretas, fotografías documentales de nuestras bases y videos explicativos.
               </p>
             </div>
@@ -34,7 +34,7 @@ export default function EjesIndexPage() {
             <a
               href="/docs/plan-gobierno-dignidad-2027.pdf"
               download
-              className="inline-flex items-center gap-2.5 px-6 py-4 rounded-full bg-[#111C16] hover:bg-[#C83E2B] text-[#F5F2EB] font-mono text-xs font-bold uppercase tracking-wider transition shrink-0 self-start lg:self-auto shadow-sm"
+              className="inline-flex items-center gap-2.5 px-6 py-4 rounded-full bg-[#111C16] hover:bg-[#C83E2B] text-white font-mono text-xs font-bold uppercase tracking-wider transition shrink-0 self-start lg:self-auto shadow-sm"
             >
               <Download className="w-4 h-4 text-[#D9822B]" />
               <span>Descargar Plan Completo (PDF)</span>
@@ -47,7 +47,7 @@ export default function EjesIndexPage() {
       <section className="w-full">
         <div className="mx-auto w-full max-w-[1180px] px-6 lg:px-8 space-y-8">
           <div className="flex items-center justify-between">
-            <span className="font-mono text-xs uppercase tracking-widest text-[#57534E]">
+            <span className="font-mono text-xs uppercase tracking-widest text-[#526058]">
               ÍNDICE PROGRAMÁTICO · SELECCIONA UN EJE
             </span>
             <span className="font-mono text-xs text-[#C83E2B] font-bold">
@@ -66,7 +66,7 @@ export default function EjesIndexPage() {
             <span className="font-mono text-xs uppercase tracking-widest text-[#C83E2B] font-bold">
               [VISTA DETALLADA]
             </span>
-            <h2 className="font-display text-3xl sm:text-4xl font-bold tracking-tight text-[#141413]">
+            <h2 className="font-display text-3xl sm:text-4xl font-bold tracking-tight text-[#111C16]">
               Compromisos legislativos y comunitarios
             </h2>
           </div>
@@ -75,39 +75,39 @@ export default function EjesIndexPage() {
             {EJES_PROGRAMATICOS.map((eje) => (
               <article
                 key={eje.slug}
-                className="rounded-3xl border border-[#141413]/12 bg-[#EBE5D8] p-7 flex flex-col justify-between space-y-6 hover:border-[#C83E2B]/50 transition duration-300 shadow-2xs"
+                className="rounded-3xl border border-[#111C16]/10 bg-white p-7 flex flex-col justify-between space-y-6 hover:border-[#C83E2B]/50 transition duration-300 shadow-xs"
               >
                 <div className="space-y-4">
                   <div className="flex items-center justify-between">
-                    <span className="font-mono text-xs font-bold px-2.5 py-1 rounded bg-[#111C16] text-[#F5F2EB]">
+                    <span className="font-mono text-xs font-bold px-2.5 py-1 rounded bg-[#111C16] text-white">
                       Eje {eje.numero}
                     </span>
-                    <span className="font-mono text-[11px] text-[#57534E]">
+                    <span className="font-mono text-[11px] text-[#526058]">
                       {eje.propuestasLegislativas.length} iniciativas
                     </span>
                   </div>
 
-                  <h3 className="font-display text-xl font-bold text-[#141413] leading-snug">
+                  <h3 className="font-display text-xl font-bold text-[#111C16] leading-snug">
                     {eje.titulo}
                   </h3>
 
-                  <p className="text-xs sm:text-sm text-[#57534E] line-clamp-3 leading-relaxed">
+                  <p className="text-xs sm:text-sm text-[#526058] line-clamp-3 leading-relaxed">
                     {eje.subtitulo}
                   </p>
 
-                  <div className="space-y-2 pt-2 border-t border-[#141413]/10">
+                  <div className="space-y-2 pt-2 border-t border-[#111C16]/10">
                     {eje.propuestasLegislativas.slice(0, 2).map((prop) => (
-                      <div key={prop.codigo} className="text-xs text-[#141413]/80">
+                      <div key={prop.codigo} className="text-xs text-[#111C16]/80">
                         <strong className="text-[#C83E2B] font-mono">[{prop.codigo}]</strong> {prop.titulo}
                       </div>
                     ))}
                   </div>
                 </div>
 
-                <div className="pt-4 border-t border-[#141413]/10">
+                <div className="pt-4 border-t border-[#111C16]/10">
                   <Link
                     href={`/ejes/${eje.slug}`}
-                    className="inline-flex items-center justify-between w-full font-mono text-xs font-bold uppercase tracking-wider text-[#141413] hover:text-[#C83E2B] transition"
+                    className="inline-flex items-center justify-between w-full font-mono text-xs font-bold uppercase tracking-wider text-[#111C16] hover:text-[#C83E2B] transition"
                   >
                     <span>Explorar Eje Completo</span>
                     <ArrowUpRight className="w-4 h-4" />
@@ -122,7 +122,7 @@ export default function EjesIndexPage() {
       {/* 4. CONTRASTE ESTRUCTURAL: VIEJA POLÍTICA VS. DIGNIDAD GUATEMALA */}
       <section className="w-full">
         <div className="mx-auto w-full max-w-[1180px] px-6 lg:px-8">
-          <div className="rounded-3xl bg-[#111C16] text-[#F5F2EB] p-8 sm:p-12 space-y-8">
+          <div className="rounded-3xl bg-[#111C16] text-white p-8 sm:p-12 space-y-8 shadow-xl">
             <div className="max-w-2xl space-y-3">
               <span className="font-mono text-xs uppercase tracking-widest text-[#D9822B] font-bold">
                 [CONTRASTE DE MODELO]

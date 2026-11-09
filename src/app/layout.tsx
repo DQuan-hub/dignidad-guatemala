@@ -50,7 +50,7 @@ export default function RootLayout({
       lang="es-GT"
       className={`${plusJakarta.variable} ${playfairDisplay.variable} ${spaceMono.variable}`}
     >
-      <body className="min-h-screen flex flex-col bg-[#F5F2EB] text-[#141413] antialiased selection:bg-[#C83E2B] selection:text-white relative">
+      <body className="min-h-screen flex flex-col bg-white text-[#111C16] antialiased selection:bg-[#C83E2B] selection:text-white relative">
         {/* Grano analógico documental estilo Kelvora */}
         <div
           className="fixed inset-0 pointer-events-none z-50 opacity-[0.035] bg-[radial-gradient(#141413_1px,transparent_1px)] [background-size:16px_16px]"

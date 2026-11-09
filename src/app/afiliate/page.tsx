@@ -199,7 +199,7 @@ export default function AfiliatePage() {
   }, [values]);
 
   return (
-    <div className="bg-[#F5F2EB] flex flex-col gap-16 sm:gap-24 pb-16 pt-6 sm:pt-10">
+    <div className="bg-white flex flex-col gap-16 sm:gap-24 pb-16 pt-6 sm:pt-10">
       {/* 1. CABECERA CENTRO DE AFILIACIÓN Y GUÍA TSE EN 3 PASOS */}
       <section className="w-full">
         <div className="mx-auto w-full max-w-[1180px] px-6 lg:px-8 space-y-10">
@@ -207,55 +207,55 @@ export default function AfiliatePage() {
             <div className="inline-flex items-center gap-2 font-mono text-xs uppercase tracking-widest text-[#C83E2B] font-bold">
               <span>[01 / AFILIACIÓN TSE · PARTIDO #28]</span>
             </div>
-            <h1 className="font-display text-4xl sm:text-5xl lg:text-[3.5rem] font-bold tracking-tight text-[#141413] leading-[1.04]">
+            <h1 className="font-display text-4xl sm:text-5xl lg:text-[3.5rem] font-bold tracking-tight text-[#111C16] leading-[1.04]">
               Afíliate a{" "}
               <span className="font-serif italic font-normal text-[#C83E2B]">
                 dignidad
               </span>{" "}
               en tu departamento y municipio.
             </h1>
-            <p className="text-base sm:text-lg text-[#57534E] leading-relaxed">
+            <p className="text-base sm:text-lg text-[#526058] leading-relaxed">
               Afiliarte a Dignidad Guatemala es ejercer tu derecho constitucional a construir un instrumento político de los pueblos, sin caciques ni financistas corporativos rumbo a 2027.
             </p>
           </div>
 
           {/* GUÍA PASO A PASO PARA AFILIARSE ANTE EL TSE */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div className="rounded-3xl bg-[#EBE5D8] border border-[#141413]/12 p-7 flex flex-col justify-between shadow-2xs">
+            <div className="rounded-3xl bg-[#F3F6F4] border border-[#111C16]/10 p-7 flex flex-col justify-between shadow-xs">
               <div>
                 <span className="inline-block px-3 py-1 rounded-full text-xs font-mono font-bold bg-[#C83E2B] text-white mb-4">
                   Paso 1 · RENAP
                 </span>
-                <h2 className="text-xl font-bold font-display text-[#141413] mb-2">
+                <h2 className="text-xl font-bold font-display text-[#111C16] mb-2">
                   DPI vigente emitido por el RENAP
                 </h2>
-                <p className="text-sm text-[#57534E] leading-relaxed">
+                <p className="text-sm text-[#526058] leading-relaxed">
                   Tu Documento Personal de Identificación (CUI de 13 dígitos numéricos) debe encontrarse vigente y en buen estado para el cotejo oficial del TSE.
                 </p>
               </div>
-              <p className="mt-4 pt-3 border-t border-[#141413]/10 text-xs font-mono text-[#C83E2B] font-bold">
+              <p className="mt-4 pt-3 border-t border-[#111C16]/10 text-xs font-mono text-[#C83E2B] font-bold">
                 Requisito indispensable según la LEPP
               </p>
             </div>
 
-            <div className="rounded-3xl bg-[#EBE5D8] border border-[#141413]/12 p-7 flex flex-col justify-between shadow-2xs">
+            <div className="rounded-3xl bg-[#F3F6F4] border border-[#111C16]/10 p-7 flex flex-col justify-between shadow-xs">
               <div>
                 <span className="inline-block px-3 py-1 rounded-full text-xs font-mono font-bold bg-[#C83E2B] text-white mb-4">
                   Paso 2 · Empadronamiento
                 </span>
-                <h2 className="text-xl font-bold font-display text-[#141413] mb-2">
+                <h2 className="text-xl font-bold font-display text-[#111C16] mb-2">
                   Estar empadronado ante el TSE
                 </h2>
-                <p className="text-sm text-[#57534E] leading-relaxed">
+                <p className="text-sm text-[#526058] leading-relaxed">
                   Verifica que tu DPI esté empadronado y con residencia electoral actualizada en tu municipio para poder votar en las asambleas partidarias.
                 </p>
               </div>
-              <div className="mt-4 pt-3 border-t border-[#141413]/10">
+              <div className="mt-4 pt-3 border-t border-[#111C16]/10">
                 <a
                   href="https://dondevotas.tse.org.gt/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1.5 text-xs font-mono font-bold text-[#141413] hover:text-[#C83E2B] transition"
+                  className="inline-flex items-center gap-1.5 text-xs font-mono font-bold text-[#111C16] hover:text-[#C83E2B] transition"
                 >
                   <span>Consultar Empadronamiento en el TSE</span>
                   <ExternalLink className="w-3.5 h-3.5 text-[#C83E2B]" />
@@ -263,7 +263,7 @@ export default function AfiliatePage() {
               </div>
             </div>
 
-            <div className="rounded-3xl bg-[#111C16] text-[#F5F2EB] border border-white/10 p-7 flex flex-col justify-between shadow-sm">
+            <div className="rounded-3xl bg-[#111C16] text-white border border-white/10 p-7 flex flex-col justify-between shadow-md">
               <div>
                 <span className="inline-block px-3 py-1 rounded-full text-xs font-mono font-bold bg-[#C83E2B] text-white mb-4">
                   Paso 3 · Tu Sede
@@ -308,12 +308,12 @@ export default function AfiliatePage() {
           {/* Barra de Búsqueda Semántica */}
           <search
             aria-label="Buscador de sedes departamentales y municipales de Dignidad"
-            className="rounded-3xl bg-[#EBE5D8] border border-[#141413]/12 p-6 shadow-xs grid grid-cols-1 md:grid-cols-12 gap-5 items-end"
+            className="rounded-3xl bg-[#F3F6F4] border border-[#111C16]/10 p-6 shadow-xs grid grid-cols-1 md:grid-cols-12 gap-5 items-end"
           >
             <div className="md:col-span-6 space-y-2">
               <label
                 htmlFor="filtro-departamento"
-                className="block font-mono text-xs font-bold uppercase tracking-wider text-[#141413]"
+                className="block font-mono text-xs font-bold uppercase tracking-wider text-[#111C16]"
               >
                 Filtrar por Departamento (22 Departamentos)
               </label>
@@ -446,11 +446,11 @@ export default function AfiliatePage() {
             {/* Lista de Sedes Departamentales (5 columnas) */}
             <div className="lg:col-span-5 space-y-4 max-h-[820px] overflow-y-auto pr-1">
               {filteredSedes.length === 0 ? (
-                <div className="rounded-3xl bg-[#F3EDE4]/65 border border-[#181313]/8 p-8 text-center space-y-3">
-                  <p className="text-base font-bold text-[#231012]">
+                <div className="rounded-3xl bg-[#F3F6F4] border border-[#111C16]/10 p-8 text-center space-y-3">
+                  <p className="text-base font-bold text-[#111C16]">
                     No se encontraron coincidencias para tu búsqueda.
                   </p>
-                  <p className="text-sm text-[#231012]/75">
+                  <p className="text-sm text-[#526058]">
                     Llena el formulario de abajo con la opción{" "}
                     <strong>“Quiero abrir un comité en mi comunidad”</strong> o escríbenos por WhatsApp para coordinar con nuestra brigada departamental.
                   </p>
@@ -464,28 +464,28 @@ export default function AfiliatePage() {
                       onClick={() => setSelectedSede(sede)}
                       className={`rounded-3xl p-6 border transition cursor-pointer ${
                         active
-                          ? "bg-[#F3EDE4]/65 border-[#C81E1E] ring-2 ring-[#C81E1E]/25 shadow-md"
-                          : "bg-white border-[#181313]/8 hover:bg-[#F3EDE4]/65 hover:border-[#7F1116]/40"
+                          ? "bg-white border-[#C83E2B] ring-2 ring-[#C83E2B]/25 shadow-md"
+                          : "bg-white border-[#111C16]/10 hover:bg-[#F3F6F4] hover:border-[#C83E2B]/40"
                       }`}
                     >
                       <div className="flex items-center justify-between gap-2 mb-2">
-                        <span className="px-2.5 py-1 rounded-lg text-xs font-mono-code font-bold bg-[#7F1116] text-[#FFD600]">
+                        <span className="px-2.5 py-1 rounded-lg text-xs font-mono font-bold bg-[#111C16] text-[#FFD600]">
                           {sede.departamento} · {sede.municipio}
                         </span>
-                        <span className="text-xs font-mono-code font-semibold text-[#231012]/70">
+                        <span className="text-xs font-mono font-semibold text-[#526058]">
                           {sede.telefono}
                         </span>
                       </div>
 
-                      <h3 className="text-lg font-extrabold font-display text-[#231012] mb-1.5">
+                      <h3 className="text-lg font-bold font-display text-[#111C16] mb-1.5">
                         {sede.nombre}
                       </h3>
 
-                      <p className="text-xs text-[#231012]/75 mb-3">
+                      <p className="text-xs text-[#526058] mb-3">
                         {sede.direccion}
                       </p>
 
-                      <div className="text-xs text-[#231012]/85 space-y-1 mb-4">
+                      <div className="text-xs text-[#111C16]/85 space-y-1 mb-4">
                         <p>
                           <strong>Responsable:</strong> {sede.coordinador} ({sede.cargoCoordinador})
                         </p>
@@ -494,14 +494,14 @@ export default function AfiliatePage() {
                         </p>
                       </div>
 
-                      <div className="pt-3 border-t border-[#7F1116]/10 flex flex-wrap items-center justify-between gap-2">
+                      <div className="pt-3 border-t border-[#111C16]/10 flex flex-wrap items-center justify-between gap-2">
                         <div className="flex items-center gap-3">
                           <a
                             href={sede.googleMapsUrl}
                             target="_blank"
                             rel="noopener noreferrer"
                             onClick={(e) => e.stopPropagation()}
-                            className="text-xs font-mono-code font-bold text-[#C81E1E] hover:underline inline-flex items-center gap-1"
+                            className="text-xs font-mono font-bold text-[#C83E2B] hover:underline inline-flex items-center gap-1"
                           >
                             <MapPin className="w-3.5 h-3.5" aria-hidden="true" />
                             Maps
@@ -511,7 +511,7 @@ export default function AfiliatePage() {
                             target="_blank"
                             rel="noopener noreferrer"
                             onClick={(e) => e.stopPropagation()}
-                            className="text-xs font-mono-code font-bold text-[#231012]/80 hover:underline inline-flex items-center gap-1"
+                            className="text-xs font-mono font-bold text-[#111C16]/80 hover:underline inline-flex items-center gap-1"
                           >
                             <Navigation className="w-3.5 h-3.5" aria-hidden="true" />
                             Waze
@@ -523,7 +523,7 @@ export default function AfiliatePage() {
                           target="_blank"
                           rel="noopener noreferrer"
                           onClick={(e) => e.stopPropagation()}
-                          className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl bg-[#C81E1E] hover:bg-[#991B1B] text-white font-mono-code font-bold text-xs transition"
+                          className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl bg-[#C83E2B] hover:bg-[#A93322] text-white font-mono font-bold text-xs transition"
                         >
                           <Phone className="w-3.5 h-3.5" aria-hidden="true" />
                           <span>WhatsApp</span>
@@ -541,20 +541,20 @@ export default function AfiliatePage() {
       {/* 3. FORMULARIO DE PRE-AFILIACIÓN Y VOLUNTARIADO DIGITAL */}
       <section
         id="formulario-afiliacion"
-        className="py-20 lg:py-28 bg-[#F3EDE4]/65"
+        className="py-20 lg:py-28 bg-[#F3F6F4]"
       >
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-2xl mx-auto space-y-4 mb-12">
             <SectionBadge code="03 / FORMULARIO TSE">
               Pre-Afiliación, Fiscales y Comités Comunitarios
             </SectionBadge>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold font-display tracking-tight text-[#231012]">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold font-display tracking-tight text-[#111C16]">
               Formulario de Registro Territorial{" "}
-              <span className="font-editorial-italic font-normal text-[#C81E1E]">
+              <span className="font-serif italic font-normal text-[#C83E2B]">
                 rumbo a 2027
               </span>
             </h2>
-            <p className="text-[#231012]/75 text-base">
+            <p className="text-[#526058] text-base">
               Completa tus datos para coordinar tu firma en la hoja oficial de afiliación del TSE, inscribirte como fiscal electoral o abrir un comité de Dignidad en tu comunidad.
             </p>
           </div>
@@ -563,20 +563,20 @@ export default function AfiliatePage() {
             <div
               role="status"
               aria-live="polite"
-              className="rounded-3xl bg-[#7F1116] text-[#FAF6F0] p-8 sm:p-12 border border-[#7F1116] shadow-xl space-y-6 text-center"
+              className="rounded-3xl bg-[#111C16] text-white p-8 sm:p-12 border border-white/10 shadow-xl space-y-6 text-center"
             >
-              <div className="h-16 w-16 rounded-full bg-[#FFD600] text-[#231012] flex items-center justify-center mx-auto">
+              <div className="h-16 w-16 rounded-full bg-[#FFD600] text-[#111C16] flex items-center justify-center mx-auto">
                 <CheckCircle2 className="w-9 h-9" aria-hidden="true" />
               </div>
 
               <div className="space-y-2">
-                <span className="px-3.5 py-1 rounded-full text-xs font-mono-code font-bold bg-white/10 text-[#FFD600]">
+                <span className="px-3.5 py-1 rounded-full text-xs font-mono font-bold bg-white/10 text-[#FFD600]">
                   [FOLIO DE REGISTRO: {submittedFolio}]
                 </span>
-                <h3 className="text-2xl sm:text-3xl font-extrabold font-display text-[#FAF6F0]">
+                <h3 className="text-2xl sm:text-3xl font-extrabold font-display text-white">
                   ¡Gracias por sumarte, {values.nombreCompleto}!
                 </h3>
-                <p className="text-[#FAF6F0]/85 text-base max-w-xl mx-auto">
+                <p className="text-white/85 text-base max-w-xl mx-auto">
                   Hemos registrado tu solicitud bajo la modalidad{" "}
                   <strong className="text-[#FFD600]">“{values.modalidad}”</strong> para el municipio de{" "}
                   <strong className="text-white">
@@ -591,7 +591,7 @@ export default function AfiliatePage() {
                   href={whatsappDirectUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 bg-[#FFD600] hover:bg-[#FACC15] text-[#231012] font-extrabold text-sm px-6 py-4 rounded-2xl transition"
+                  className="inline-flex items-center gap-2 bg-[#FFD600] hover:bg-[#FACC15] text-[#111C16] font-extrabold text-sm px-6 py-4 rounded-2xl transition"
                 >
                   <MessageSquare className="w-4 h-4" aria-hidden="true" />
                   <span>Confirmar de inmediato por WhatsApp</span>
@@ -611,11 +611,11 @@ export default function AfiliatePage() {
               method="POST"
               noValidate
               onSubmit={handleSubmit}
-              className="rounded-3xl bg-[#FAF8F5] border border-[#181313]/8 p-6 sm:p-10 shadow-sm space-y-8"
+              className="rounded-3xl bg-white border border-[#111C16]/10 p-6 sm:p-10 shadow-sm space-y-8"
             >
-              {/* Fieldset 1: Modalidad de Participación (Radio buttons < 6 opciones según modern-web-guidance) */}
+              {/* Fieldset 1: Modalidad de Participación */}
               <fieldset className="space-y-3">
-                <legend className="text-xs font-mono-code font-bold uppercase tracking-wider text-[#231012] mb-2">
+                <legend className="text-xs font-mono font-bold uppercase tracking-wider text-[#111C16] mb-2">
                   1. Selecciona tu modalidad de participación *
                 </legend>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-3.5">
@@ -632,8 +632,8 @@ export default function AfiliatePage() {
                         key={opcion}
                         className={`flex items-start gap-3 p-4 rounded-2xl border cursor-pointer transition min-h-[56px] ${
                           checked
-                            ? "bg-[#7F1116] text-[#FAF6F0] border-[#7F1116] shadow-sm"
-                            : "bg-white text-[#231012] border-[#181313]/10 hover:border-[#C81E1E]"
+                            ? "bg-[#111C16] text-white border-[#111C16] shadow-sm"
+                            : "bg-white text-[#111C16] border-[#111C16]/10 hover:border-[#C83E2B]"
                         }`}
                       >
                         <input
@@ -642,7 +642,7 @@ export default function AfiliatePage() {
                           value={opcion}
                           checked={checked}
                           onChange={() => handleInputChange("modalidad", opcion)}
-                          className="mt-1 h-4 w-4 accent-[#C81E1E] shrink-0"
+                          className="mt-1 h-4 w-4 accent-[#C83E2B] shrink-0"
                         />
                         <span className="text-sm font-bold leading-snug">
                           {opcion}
@@ -655,7 +655,7 @@ export default function AfiliatePage() {
 
               {/* Fieldset 2: Datos Personales y DPI */}
               <fieldset className="space-y-5">
-                <legend className="text-xs font-mono-code font-bold uppercase tracking-wider text-[#231012] mb-1">
+                <legend className="text-xs font-mono font-bold uppercase tracking-wider text-[#111C16] mb-1">
                   2. Datos de Identificación Ciudadana (RENAP / TSE)
                 </legend>
 
@@ -664,7 +664,7 @@ export default function AfiliatePage() {
                   <div>
                     <label
                       htmlFor="nombreCompleto"
-                      className="block text-sm font-bold text-[#231012] mb-1.5"
+                      className="block text-sm font-bold text-[#111C16] mb-1.5"
                     >
                       Nombre y apellidos completos *
                     </label>
@@ -684,16 +684,16 @@ export default function AfiliatePage() {
                         errors.nombreCompleto ? "err-nombre" : "hint-nombre"
                       }
                       placeholder="Ej. María Ixchel Tuyuc Morales"
-                      className="w-full min-h-[48px] px-4 py-3 rounded-2xl bg-white border border-[#181313]/10 text-base text-[#231012]"
+                      className="w-full min-h-[48px] px-4 py-3 rounded-2xl bg-[#F3F6F4] border border-[#111C16]/10 text-base text-[#111C16]"
                     />
-                    <span id="hint-nombre" className="block text-xs text-[#231012]/65 mt-1">
+                    <span id="hint-nombre" className="block text-xs text-[#526058] mt-1">
                       Tal como aparece en tu Documento Personal de Identificación.
                     </span>
                     {errors.nombreCompleto && (
                       <p
                         id="err-nombre"
                         role="alert"
-                        className="mt-1.5 flex items-center gap-1.5 text-xs font-bold text-[#C81E1E]"
+                        className="mt-1.5 flex items-center gap-1.5 text-xs font-bold text-[#C83E2B]"
                       >
                         <AlertCircle className="w-4 h-4 shrink-0" aria-hidden="true" />
                         <span>{errors.nombreCompleto}</span>
@@ -701,11 +701,11 @@ export default function AfiliatePage() {
                     )}
                   </div>
 
-                  {/* DPI 13 dígitos (inputmode="numeric" y pattern="\d{13}", nunca type="number") */}
+                  {/* DPI 13 dígitos */}
                   <div>
                     <label
                       htmlFor="dpi"
-                      className="block text-sm font-bold text-[#231012] mb-1.5"
+                      className="block text-sm font-bold text-[#111C16] mb-1.5"
                     >
                       Número de DPI / CUI (13 dígitos) *
                     </label>
@@ -731,16 +731,16 @@ export default function AfiliatePage() {
                       aria-invalid={Boolean(errors.dpi)}
                       aria-describedby={errors.dpi ? "err-dpi" : "hint-dpi"}
                       placeholder="Ej. 2456789010101"
-                      className="w-full min-h-[48px] px-4 py-3 rounded-2xl bg-white border border-[#181313]/10 text-base font-mono-code text-[#231012]"
+                      className="w-full min-h-[48px] px-4 py-3 rounded-2xl bg-[#F3F6F4] border border-[#111C16]/10 text-base font-mono text-[#111C16]"
                     />
-                    <span id="hint-dpi" className="block text-xs font-mono-code text-[#231012]/65 mt-1">
+                    <span id="hint-dpi" className="block text-xs font-mono text-[#526058] mt-1">
                       13 números sin espacios ni guiones ({values.dpi.length}/13).
                     </span>
                     {errors.dpi && (
                       <p
                         id="err-dpi"
                         role="alert"
-                        className="mt-1.5 flex items-center gap-1.5 text-xs font-bold text-[#C81E1E]"
+                        className="mt-1.5 flex items-center gap-1.5 text-xs font-bold text-[#C83E2B]"
                       >
                         <AlertCircle className="w-4 h-4 shrink-0" aria-hidden="true" />
                         <span>{errors.dpi}</span>
@@ -752,7 +752,7 @@ export default function AfiliatePage() {
 
               {/* Fieldset 3: Ubicación Territorial y Contacto */}
               <fieldset className="space-y-5">
-                <legend className="text-xs font-mono-code font-bold uppercase tracking-wider text-[#231012] mb-1">
+                <legend className="text-xs font-mono font-bold uppercase tracking-wider text-[#111C16] mb-1">
                   3. Ubicación Territorial y Contacto Directo
                 </legend>
 
@@ -760,7 +760,7 @@ export default function AfiliatePage() {
                   <div>
                     <label
                       htmlFor="departamento"
-                      className="block text-sm font-bold text-[#231012] mb-1.5"
+                      className="block text-sm font-bold text-[#111C16] mb-1.5"
                     >
                       Departamento *
                     </label>
@@ -773,7 +773,7 @@ export default function AfiliatePage() {
                         handleInputChange("departamento", e.target.value)
                       }
                       onBlur={() => handleBlur("departamento")}
-                      className="w-full min-h-[48px] px-4 py-3 rounded-2xl bg-white border border-[#181313]/10 text-base text-[#231012]"
+                      className="w-full min-h-[48px] px-4 py-3 rounded-2xl bg-[#F3F6F4] border border-[#111C16]/10 text-base text-[#111C16]"
                     >
                       {DEPARTAMENTOS_GUATEMALA.filter((d) => d !== "Todos").map(
                         (dept) => (
@@ -788,7 +788,7 @@ export default function AfiliatePage() {
                   <div>
                     <label
                       htmlFor="municipio"
-                      className="block text-sm font-bold text-[#231012] mb-1.5"
+                      className="block text-sm font-bold text-[#111C16] mb-1.5"
                     >
                       Municipio y Aldea / Zona *
                     </label>
@@ -806,13 +806,13 @@ export default function AfiliatePage() {
                       aria-invalid={Boolean(errors.municipio)}
                       aria-describedby={errors.municipio ? "err-muni" : undefined}
                       placeholder="Ej. San Lucas Tolimán, Cantón Centro"
-                      className="w-full min-h-[48px] px-4 py-3 rounded-2xl bg-white border border-[#181313]/10 text-base text-[#231012]"
+                      className="w-full min-h-[48px] px-4 py-3 rounded-2xl bg-[#F3F6F4] border border-[#111C16]/10 text-base text-[#111C16]"
                     />
                     {errors.municipio && (
                       <p
                         id="err-muni"
                         role="alert"
-                        className="mt-1.5 flex items-center gap-1.5 text-xs font-bold text-[#C81E1E]"
+                        className="mt-1.5 flex items-center gap-1.5 text-xs font-bold text-[#C83E2B]"
                       >
                         <AlertCircle className="w-4 h-4 shrink-0" aria-hidden="true" />
                         <span>{errors.municipio}</span>
@@ -823,7 +823,7 @@ export default function AfiliatePage() {
                   <div>
                     <label
                       htmlFor="telefono"
-                      className="block text-sm font-bold text-[#231012] mb-1.5"
+                      className="block text-sm font-bold text-[#111C16] mb-1.5"
                     >
                       Teléfono Celular / WhatsApp *
                     </label>
@@ -842,16 +842,16 @@ export default function AfiliatePage() {
                       aria-invalid={Boolean(errors.telefono)}
                       aria-describedby={errors.telefono ? "err-tel" : "hint-tel"}
                       placeholder="Ej. 5528 2027"
-                      className="w-full min-h-[48px] px-4 py-3 rounded-2xl bg-white border border-[#181313]/10 text-base text-[#231012]"
+                      className="w-full min-h-[48px] px-4 py-3 rounded-2xl bg-[#F3F6F4] border border-[#111C16]/10 text-base text-[#111C16]"
                     />
-                    <span id="hint-tel" className="block text-xs text-[#231012]/65 mt-1">
+                    <span id="hint-tel" className="block text-xs text-[#526058] mt-1">
                       Número directo donde el coordinador municipal pueda escribirte.
                     </span>
                     {errors.telefono && (
                       <p
                         id="err-tel"
                         role="alert"
-                        className="mt-1.5 flex items-center gap-1.5 text-xs font-bold text-[#C81E1E]"
+                        className="mt-1.5 flex items-center gap-1.5 text-xs font-bold text-[#C83E2B]"
                       >
                         <AlertCircle className="w-4 h-4 shrink-0" aria-hidden="true" />
                         <span>{errors.telefono}</span>
@@ -862,7 +862,7 @@ export default function AfiliatePage() {
                   <div>
                     <label
                       htmlFor="correo"
-                      className="block text-sm font-bold text-[#231012] mb-1.5"
+                      className="block text-sm font-bold text-[#111C16] mb-1.5"
                     >
                       Correo electrónico (opcional)
                     </label>
@@ -883,13 +883,13 @@ export default function AfiliatePage() {
                       aria-invalid={Boolean(errors.correo)}
                       aria-describedby={errors.correo ? "err-correo" : undefined}
                       placeholder="ejemplo@correo.gt"
-                      className="w-full min-h-[48px] px-4 py-3 rounded-2xl bg-white border border-[#181313]/10 text-base text-[#231012]"
+                      className="w-full min-h-[48px] px-4 py-3 rounded-2xl bg-[#F3F6F4] border border-[#111C16]/10 text-base text-[#111C16]"
                     />
                     {errors.correo && (
                       <p
                         id="err-correo"
                         role="alert"
-                        className="mt-1.5 flex items-center gap-1.5 text-xs font-bold text-[#C81E1E]"
+                        className="mt-1.5 flex items-center gap-1.5 text-xs font-bold text-[#C83E2B]"
                       >
                         <AlertCircle className="w-4 h-4 shrink-0" aria-hidden="true" />
                         <span>{errors.correo}</span>
@@ -901,7 +901,7 @@ export default function AfiliatePage() {
                 <div>
                   <label
                     htmlFor="comentarios"
-                    className="block text-sm font-bold text-[#231012] mb-1.5"
+                    className="block text-sm font-bold text-[#111C16] mb-1.5"
                   >
                     Mensaje adicional o sector comunitario (opcional)
                   </label>
@@ -914,18 +914,18 @@ export default function AfiliatePage() {
                       handleInputChange("comentarios", e.target.value)
                     }
                     placeholder="Indica si participas en alguna organización campesina, estudiantil, de mujeres, cooperativa o comité barrial..."
-                    className="w-full px-4 py-3 rounded-2xl bg-white border border-[#181313]/10 text-base text-[#231012]"
+                    className="w-full px-4 py-3 rounded-2xl bg-[#F3F6F4] border border-[#111C16]/10 text-base text-[#111C16]"
                   />
                 </div>
               </fieldset>
 
               {/* Aviso de Privacidad y Protección de Datos */}
-              <div className="rounded-2xl bg-[#F3EDE4]/65 border border-[#181313]/8 p-4 flex items-start gap-3">
+              <div className="rounded-2xl bg-[#F3F6F4] border border-[#111C16]/10 p-4 flex items-start gap-3">
                 <ShieldCheck
-                  className="w-5 h-5 text-[#C81E1E] shrink-0 mt-0.5"
+                  className="w-5 h-5 text-[#C83E2B] shrink-0 mt-0.5"
                   aria-hidden="true"
                 />
-                <p className="text-xs text-[#231012]/80 leading-relaxed">
+                <p className="text-xs text-[#526058] leading-relaxed">
                   <strong>Aviso de Privacidad Electoral:</strong> Tus datos se utilizan exclusivamente para coordinar tu afiliación voluntaria o participación territorial conforme a la Ley Electoral y de Partidos Políticos (LEPP) ante el Tribunal Supremo Electoral.
                 </p>
               </div>
@@ -933,9 +933,9 @@ export default function AfiliatePage() {
               <button
                 type="submit"
                 disabled={submitting}
-                className="w-full min-h-[54px] inline-flex items-center justify-center gap-2.5 px-8 py-4 rounded-full bg-[#C81E1E] hover:bg-[#991B1B] disabled:opacity-60 text-white font-extrabold text-base transition shadow-md cursor-pointer"
+                className="w-full min-h-[54px] inline-flex items-center justify-center gap-2.5 px-8 py-4 rounded-xl bg-[#C83E2B] hover:bg-[#A93322] disabled:opacity-60 text-white font-mono font-bold text-sm uppercase tracking-wider transition shadow-md cursor-pointer"
               >
-                <Send className="w-4 h-4" aria-hidden="true" />
+                <Send className="w-4 h-4 text-[#D9822B]" aria-hidden="true" />
                 <span>
                   {submitting
                     ? "Procesando registro territorial..."

@@ -47,12 +47,12 @@ export default function HomePage() {
           
           {/* Encabezado Editorial Superior de Gran Formato */}
           <div className="space-y-6 max-w-4xl">
-            <div className="inline-flex items-center gap-2.5 rounded-full border border-[#141413]/12 bg-[#EBE5D8]/80 px-4 py-1.5 font-mono text-xs font-semibold text-[#141413] tracking-wide">
+            <div className="inline-flex items-center gap-2.5 rounded-full border border-[#111C16]/10 bg-[#F3F6F4] px-4 py-1.5 font-mono text-xs font-semibold text-[#111C16] tracking-wide">
               <span className="w-2 h-2 rounded-full bg-[#C83E2B]" />
               <span>PARTIDO POLÍTICO #28 · TSE GUATEMALA</span>
             </div>
 
-            <h1 className="font-display text-4xl sm:text-6xl lg:text-[4.4rem] font-bold tracking-tight text-[#141413] leading-[1.03]">
+            <h1 className="font-display text-4xl sm:text-6xl lg:text-[4.4rem] font-bold tracking-tight text-[#111C16] leading-[1.03]">
               Construyendo un país con{" "}
               <span className="font-serif italic font-normal text-[#C83E2B]">
                 dignidad
@@ -60,16 +60,16 @@ export default function HomePage() {
               desde nuestros territorios.
             </h1>
 
-            <p className="font-sans text-lg sm:text-xl text-[#57534E] max-w-2xl leading-relaxed">
+            <p className="font-sans text-lg sm:text-xl text-[#526058] max-w-2xl leading-relaxed">
               Una fuerza política comunitaria y plurinacional. Caminamos junto a los cuatro pueblos rumbo a las elecciones generales de 2027 para defender el agua, la tierra y la justicia en Guatemala.
             </p>
           </div>
 
-          {/* Grilla Asimétrica Kelvora (12 columnas: 8 multimedia + 4 manifiesto y TikTok) */}
+          {/* Grilla Asimétrica (12 columnas: 8 multimedia + 4 manifiesto y TikTok) */}
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch">
             
             {/* Columna Principal (8 cols): Fotografía documental de Asamblea */}
-            <div className="lg:col-span-8 rounded-3xl overflow-hidden border border-[#141413]/12 bg-[#111C16] relative min-h-[380px] sm:min-h-[480px] flex flex-col justify-end p-6 sm:p-8 shadow-sm group">
+            <div className="lg:col-span-8 rounded-3xl overflow-hidden border border-[#111C16]/10 bg-[#111C16] relative min-h-[380px] sm:min-h-[480px] flex flex-col justify-end p-6 sm:p-8 shadow-sm group">
               <img
                 src="/media/social/photos/asamblea-liderazgos-agua.jpg"
                 alt="Asamblea plurinacional de Dignidad Guatemala"
@@ -93,7 +93,7 @@ export default function HomePage() {
                 <button
                   type="button"
                   onClick={() => setActiveModalPost(featuredVideo)}
-                  className="inline-flex items-center gap-2 rounded-full bg-white/95 hover:bg-white text-[#141413] px-5 py-3 text-xs sm:text-sm font-bold shadow-lg transition-transform hover:scale-105 shrink-0 cursor-pointer"
+                  className="inline-flex items-center gap-2 rounded-full bg-white/95 hover:bg-white text-[#111C16] px-5 py-3 text-xs sm:text-sm font-bold shadow-lg transition-transform hover:scale-105 shrink-0 cursor-pointer"
                 >
                   <Play className="w-4 h-4 fill-[#C83E2B] text-[#C83E2B]" />
                   <span>Ver video</span>
@@ -102,21 +102,21 @@ export default function HomePage() {
             </div>
 
             {/* Columna Lateral (4 cols): Manifiesto + Reproductor vertical rápido de TikTok */}
-            <div className="lg:col-span-4 flex flex-col justify-between gap-6 rounded-3xl border border-[#141413]/12 bg-[#EBE5D8] p-6 sm:p-7 shadow-2xs">
+            <div className="lg:col-span-4 flex flex-col justify-between gap-6 rounded-3xl border border-[#111C16]/10 bg-[#F3F6F4] p-6 sm:p-7 shadow-xs">
               <div className="space-y-3">
                 <span className="font-mono text-xs uppercase tracking-widest text-[#C83E2B] font-bold">
                   [MANIFIESTO RUMBO A 2027]
                 </span>
-                <h3 className="font-display text-2xl font-bold tracking-tight text-[#141413]">
+                <h3 className="font-display text-2xl font-bold tracking-tight text-[#111C16]">
                   No nacimos en despachos corporativos.
                 </h3>
-                <p className="text-xs sm:text-sm text-[#57534E] leading-relaxed">
+                <p className="text-xs sm:text-sm text-[#526058] leading-relaxed">
                   Nacimos en las asambleas comunitarias, en las parcelas campesinas de Suchitepéquez, en los comités de agua de Sololá y en las calles que exigen transparencia absoluta.
                 </p>
               </div>
 
               {/* Tarjeta de Acceso Rápido al último video vertical de TikTok */}
-              <div className="rounded-2xl border border-[#141413]/10 bg-[#F5F2EB] p-4 flex items-center justify-between gap-3">
+              <div className="rounded-2xl border border-[#111C16]/10 bg-white p-4 flex items-center justify-between gap-3 shadow-2xs">
                 <div className="flex items-center gap-3 min-w-0">
                   <div className="w-12 h-14 rounded-lg overflow-hidden bg-black shrink-0 relative">
                     <img
@@ -132,7 +132,7 @@ export default function HomePage() {
                     <span className="font-mono text-[10px] uppercase font-bold text-[#C83E2B] block truncate">
                       TIKTOK @DIGNIDAD100
                     </span>
-                    <p className="text-xs font-bold text-[#141413] truncate">
+                    <p className="text-xs font-bold text-[#111C16] truncate">
                       {recentTikTok.title || "Último pronunciamiento"}
                     </p>
                   </div>
@@ -141,7 +141,7 @@ export default function HomePage() {
                 <button
                   type="button"
                   onClick={() => setActiveModalPost(recentTikTok)}
-                  className="w-9 h-9 rounded-full bg-[#111C16] text-white flex items-center justify-center shrink-0 hover:bg-[#C83E2B] transition"
+                  className="w-9 h-9 rounded-full bg-[#111C16] text-white flex items-center justify-center shrink-0 hover:bg-[#C83E2B] transition cursor-pointer"
                   aria-label="Reproducir TikTok"
                 >
                   <Play className="w-3.5 h-3.5 fill-current ml-0.5" />
@@ -150,7 +150,7 @@ export default function HomePage() {
 
               <Link
                 href="/nosotros"
-                className="inline-flex items-center justify-between w-full font-mono text-xs font-bold uppercase tracking-wider text-[#141413] hover:text-[#C83E2B] transition pt-2 border-t border-[#141413]/10"
+                className="inline-flex items-center justify-between w-full font-mono text-xs font-bold uppercase tracking-wider text-[#111C16] hover:text-[#C83E2B] transition pt-2 border-t border-[#111C16]/10"
               >
                 <span>Conoce nuestra historia</span>
                 <ArrowUpRight className="w-4 h-4" />
@@ -165,49 +165,49 @@ export default function HomePage() {
         <div className="mx-auto w-full max-w-[1180px] px-6 lg:px-8">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
             
-            <div className="rounded-3xl border border-[#141413]/12 bg-[#EBE5D8] p-6 sm:p-7 flex flex-col justify-between">
-              <span className="font-mono text-xs uppercase tracking-widest text-[#57534E]">
+            <div className="rounded-3xl border border-[#111C16]/10 bg-white p-6 sm:p-7 flex flex-col justify-between shadow-xs">
+              <span className="font-mono text-xs uppercase tracking-widest text-[#526058]">
                 REGISTRO TSE
               </span>
               <div className="mt-4">
-                <span className="font-display text-4xl sm:text-5xl font-extrabold text-[#141413] tracking-tight block">
+                <span className="font-display text-4xl sm:text-5xl font-extrabold text-[#111C16] tracking-tight block">
                   #28
                 </span>
-                <p className="text-xs sm:text-sm text-[#57534E] mt-1 font-medium">
+                <p className="text-xs sm:text-sm text-[#526058] mt-1 font-medium">
                   Partido político inscrito legalmente ante el TSE.
                 </p>
               </div>
             </div>
 
-            <div className="rounded-3xl border border-[#141413]/12 bg-[#EBE5D8] p-6 sm:p-7 flex flex-col justify-between">
-              <span className="font-mono text-xs uppercase tracking-widest text-[#57534E]">
+            <div className="rounded-3xl border border-[#111C16]/10 bg-white p-6 sm:p-7 flex flex-col justify-between shadow-xs">
+              <span className="font-mono text-xs uppercase tracking-widest text-[#526058]">
                 TERRITORIO VIVO
               </span>
               <div className="mt-4">
-                <span className="font-display text-4xl sm:text-5xl font-extrabold text-[#141413] tracking-tight block">
+                <span className="font-display text-4xl sm:text-5xl font-extrabold text-[#111C16] tracking-tight block">
                   22
                 </span>
-                <p className="text-xs sm:text-sm text-[#57534E] mt-1 font-medium">
+                <p className="text-xs sm:text-sm text-[#526058] mt-1 font-medium">
                   Departamentos con sedes y asambleas activas.
                 </p>
               </div>
             </div>
 
-            <div className="rounded-3xl border border-[#141413]/12 bg-[#EBE5D8] p-6 sm:p-7 flex flex-col justify-between">
-              <span className="font-mono text-xs uppercase tracking-widest text-[#57534E]">
+            <div className="rounded-3xl border border-[#111C16]/10 bg-white p-6 sm:p-7 flex flex-col justify-between shadow-xs">
+              <span className="font-mono text-xs uppercase tracking-widest text-[#526058]">
                 PLURINACIONALIDAD
               </span>
               <div className="mt-4">
-                <span className="font-display text-4xl sm:text-5xl font-extrabold text-[#141413] tracking-tight block">
+                <span className="font-display text-4xl sm:text-5xl font-extrabold text-[#111C16] tracking-tight block">
                   4
                 </span>
-                <p className="text-xs sm:text-sm text-[#57534E] mt-1 font-medium">
+                <p className="text-xs sm:text-sm text-[#526058] mt-1 font-medium">
                   Pueblos en unidad: Maya, Xinka, Garífuna y Mestizo.
                 </p>
               </div>
             </div>
 
-            <div className="rounded-3xl border border-[#141413]/12 bg-[#111C16] text-[#F5F2EB] p-6 sm:p-7 flex flex-col justify-between">
+            <div className="rounded-3xl border border-white/10 bg-[#111C16] text-white p-6 sm:p-7 flex flex-col justify-between shadow-md">
               <span className="font-mono text-xs uppercase tracking-widest text-[#D9822B]">
                 HORIZONTE POPULAR
               </span>
@@ -220,7 +220,6 @@ export default function HomePage() {
                 </p>
               </div>
             </div>
-
           </div>
         </div>
       </section>
@@ -300,21 +299,21 @@ export default function HomePage() {
       {/* 5. BLOQUE DE AFILIACIÓN RÁPIDA Y CONSULTA POR DEPARTAMENTO */}
       <section className="w-full">
         <div className="mx-auto w-full max-w-[1180px] px-6 lg:px-8">
-          <div className="rounded-3xl border border-[#141413]/12 bg-[#EBE5D8] p-8 sm:p-12 grid grid-cols-1 lg:grid-cols-12 gap-10 items-center shadow-xs">
+          <div className="rounded-3xl border border-[#111C16]/10 bg-[#F3F6F4] p-8 sm:p-12 grid grid-cols-1 lg:grid-cols-12 gap-10 items-center shadow-xs">
             
             <div className="lg:col-span-7 space-y-6">
               <span className="font-mono text-xs uppercase tracking-widest text-[#C83E2B] font-bold">
                 [CENTRO DE AFILIACIÓN · TSE #28]
               </span>
               
-              <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-[#141413]">
+              <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-[#111C16]">
                 Afíliate a Dignidad en tu{" "}
                 <span className="font-serif italic font-normal text-[#C83E2B]">
                   municipio.
                 </span>
               </h2>
 
-              <p className="text-sm sm:text-base text-[#57534E] leading-relaxed max-w-xl">
+              <p className="text-sm sm:text-base text-[#526058] leading-relaxed max-w-xl">
                 El trámite es personal, libre y gratuito. Solo necesitas ser mayor de 18 años, contar con tu DPI vigente emitido por el RENAP y estar empadronado ante el Tribunal Supremo Electoral.
               </p>
 
@@ -322,7 +321,7 @@ export default function HomePage() {
               <div className="space-y-3 pt-2">
                 <label
                   htmlFor="home-depto-quick-select"
-                  className="font-mono text-xs font-bold text-[#141413] uppercase block"
+                  className="font-mono text-xs font-bold text-[#111C16] uppercase block"
                 >
                   Consulta rápida de sede departamental:
                 </label>
@@ -331,7 +330,7 @@ export default function HomePage() {
                     id="home-depto-quick-select"
                     value={selectedQuickDepto}
                     onChange={(e) => setSelectedQuickDepto(e.target.value)}
-                    className="flex-1 h-12 px-4 rounded-xl bg-white border border-[#141413]/15 font-sans text-sm font-semibold text-[#141413]"
+                    className="flex-1 h-12 px-4 rounded-xl bg-white border border-[#111C16]/15 font-sans text-sm font-semibold text-[#111C16]"
                   >
                     {DEPARTAMENTOS_GUATEMALA.filter((d) => d !== "Todos").map((dept) => (
                       <option key={dept} value={dept}>
@@ -349,8 +348,8 @@ export default function HomePage() {
                   </Link>
                 </div>
 
-                <div className="p-4 rounded-2xl bg-white/70 border border-[#141413]/10 text-xs text-[#57534E] space-y-1">
-                  <p className="font-bold text-[#141413]">
+                <div className="p-4 rounded-2xl bg-white border border-[#111C16]/10 text-xs text-[#526058] space-y-1 shadow-2xs">
+                  <p className="font-bold text-[#111C16]">
                     {quickSede.nombre} — {quickSede.municipio}, {quickSede.departamento}
                   </p>
                   <p>{quickSede.direccion}</p>
@@ -361,7 +360,7 @@ export default function HomePage() {
               </div>
             </div>
 
-            <div className="lg:col-span-5 flex flex-col justify-between gap-6 bg-[#111C16] text-[#F5F2EB] p-8 rounded-2xl">
+            <div className="lg:col-span-5 flex flex-col justify-between gap-6 bg-[#111C16] text-white p-8 rounded-2xl shadow-md">
               <div className="space-y-3">
                 <span className="font-mono text-xs uppercase tracking-widest text-[#D9822B]">
                   PASOS TSE
@@ -393,7 +392,7 @@ export default function HomePage() {
 
               <Link
                 href="/afiliate"
-                className="inline-flex items-center justify-center gap-2 w-full py-3.5 rounded-xl bg-white text-[#111C16] hover:bg-[#F5F2EB] font-mono text-xs font-bold uppercase tracking-wider transition"
+                className="inline-flex items-center justify-center gap-2 w-full py-3.5 rounded-xl bg-white text-[#111C16] hover:bg-neutral-100 font-mono text-xs font-bold uppercase tracking-wider transition"
               >
                 <span>Ir al Centro de Afiliación Completo</span>
                 <ArrowUpRight className="w-4 h-4 text-[#C83E2B]" />

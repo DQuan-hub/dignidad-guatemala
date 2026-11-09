@@ -19,24 +19,24 @@ export function KelvoraAxisRow({ eje, index }: KelvoraAxisRowProps) {
       href={`/ejes/${eje.slug}`}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
-      className="group relative block w-full border-t border-[#141413]/12 py-7 sm:py-9 px-4 sm:px-6 transition-colors duration-300 hover:bg-[#EBE5D8]/50"
+      className="group relative block w-full border-t border-[#111C16]/10 py-7 sm:py-9 px-4 sm:px-6 transition-colors duration-300 hover:bg-[#F3F6F4]"
     >
       <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-5 sm:gap-8">
         
         {/* Lado Izquierdo: [01] + Titular Editorial */}
         <div className="flex items-start sm:items-center gap-5 sm:gap-8">
-          <span className="font-mono text-xs sm:text-sm uppercase tracking-widest text-[#57534E] font-medium shrink-0 pt-1 sm:pt-0">
+          <span className="font-mono text-xs sm:text-sm uppercase tracking-widest text-[#526058] font-medium shrink-0 pt-1 sm:pt-0">
             [{eje.numero}]
           </span>
 
           <div className="space-y-1">
-            <h3 className="font-display text-xl sm:text-2xl lg:text-3xl font-bold tracking-tight text-[#141413] group-hover:text-[#C83E2B] transition-colors duration-300">
+            <h3 className="font-display text-xl sm:text-2xl lg:text-3xl font-bold tracking-tight text-[#111C16] group-hover:text-[#C83E2B] transition-colors duration-300">
               {eje.titulo}{" "}
               <span className="font-serif italic font-normal text-[#C83E2B]">
                 — {eje.palabraClaveCursiva}
               </span>
             </h3>
-            <p className="text-xs sm:text-sm text-[#57534E] font-medium line-clamp-1 lg:hidden">
+            <p className="text-xs sm:text-sm text-[#526058] font-medium line-clamp-1 lg:hidden">
               {eje.subtitulo}
             </p>
           </div>
@@ -44,7 +44,7 @@ export function KelvoraAxisRow({ eje, index }: KelvoraAxisRowProps) {
 
         {/* Centro: Resumen breve en Desktop */}
         <div className="hidden lg:block max-w-sm xl:max-w-md">
-          <p className="text-xs sm:text-sm text-[#57534E] leading-relaxed line-clamp-2">
+          <p className="text-xs sm:text-sm text-[#526058] leading-relaxed line-clamp-2">
             {eje.subtitulo}
           </p>
         </div>
