@@ -284,7 +284,7 @@ export default function AfiliatePage() {
           <div className="max-w-3xl space-y-3 pb-4 border-b border-[#111C16]">
             <span className="m-rule" aria-hidden="true" />
             <p className="m-text-5 text-[#C83E2B]">
-              02 · 22 Departamentos · Mapa Territorial OpenStreetMap
+              02 · Sedes Departamentales y Centro de Contacto Directo
             </p>
             <h2 className="m-text-3">
               Encuentra tu sede de{" "}
@@ -294,7 +294,7 @@ export default function AfiliatePage() {
               >
                 Dignidad #28
               </mark>{" "}
-              en todo el país.
+              y contáctanos en tu departamento.
             </h2>
             <p className="m-text text-[#526058]">
               Filtra por cualquiera de los 22 departamentos o haz clic en un marcador del mapa para consultar la dirección, horario de atención, coordinador responsable y enlaces directos a Google Maps, Waze y WhatsApp.
@@ -406,33 +406,33 @@ export default function AfiliatePage() {
                     </div>
                   </div>
 
-                  <div className="flex flex-wrap gap-3 pt-2">
+                  <div className="flex flex-wrap items-center gap-2.5 sm:gap-3 pt-2">
                     <a
                       href={selectedSede.googleMapsUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 bg-white/10 hover:bg-white/20 text-white border border-white/15 font-mono text-xs font-bold uppercase px-4 py-2.5 rounded-xl transition"
+                      className="inline-flex items-center justify-center gap-2.5 bg-white/[0.08] hover:bg-white/15 text-white border border-white/15 font-mono text-[11px] sm:text-xs font-bold uppercase tracking-wider px-4 sm:px-5 py-3 rounded-xl transition w-full sm:w-auto"
                     >
                       <MapPin className="w-4 h-4 text-[#D9822B]" />
-                      <span>Abrir en Google Maps</span>
+                      <span>ABRIR EN GOOGLE MAPS</span>
                     </a>
                     <a
                       href={selectedSede.wazeUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 bg-white/10 hover:bg-white/20 text-white border border-white/15 font-mono text-xs font-bold uppercase px-4 py-2.5 rounded-xl transition"
+                      className="inline-flex items-center justify-center gap-2.5 bg-white/[0.08] hover:bg-white/15 text-white border border-white/15 font-mono text-[11px] sm:text-xs font-bold uppercase tracking-wider px-4 sm:px-5 py-3 rounded-xl transition w-full sm:w-auto"
                     >
                       <Navigation className="w-4 h-4 text-[#D9822B]" />
-                      <span>Navegar con Waze</span>
+                      <span>NAVEGAR CON WAZE</span>
                     </a>
                     <a
                       href={selectedSede.whatsapp}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 bg-[#C83E2B] hover:bg-[#A93322] text-white font-mono text-xs font-bold uppercase px-4 py-2.5 rounded-xl transition"
+                      className="inline-flex items-center justify-center gap-2.5 bg-[#C83E2B] hover:bg-[#A93322] text-white font-mono text-[11px] sm:text-xs font-bold uppercase tracking-wider px-5 py-3 rounded-xl transition shadow-md w-full sm:w-auto"
                     >
                       <MessageSquare className="w-4 h-4 text-[#D9822B]" />
-                      <span>WhatsApp Coordinador</span>
+                      <span>WHATSAPP COORDINADOR</span>
                     </a>
                   </div>
                 </div>
@@ -944,10 +944,17 @@ export default function AfiliatePage() {
       </section>
 
       {/* CANAL DE CONTACTO DIRECTO */}
-      <section className="pb-24 px-4 sm:px-6 lg:px-8">
+      <section id="contacto" className="pb-24 px-4 sm:px-6 lg:px-8">
         <GetInTouchContact
-          title="¿Dudas sobre afiliación?"
-          subtitle="Si tienes preguntas sobre los requisitos del TSE, la sede de tu municipio o deseas organizar una asamblea comunitaria, contáctanos."
+          sedeTitle={selectedSede?.nombre}
+          sedeAddress={`${selectedSede?.direccion} (${selectedSede?.referencia})`}
+          sedeDepartment={selectedSede?.departamento}
+          sedeRegion={selectedSede?.region}
+          sedeCoordinator={selectedSede?.coordinador}
+          sedeSchedule={selectedSede?.horario}
+          googleMapsUrl={selectedSede?.googleMapsUrl}
+          wazeUrl={selectedSede?.wazeUrl}
+          whatsappUrl={selectedSede?.whatsapp}
         />
       </section>
     </div>

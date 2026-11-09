@@ -78,7 +78,7 @@ export function Footer() {
             </li>
             <li>
               <Link className="m-link-2" href="/afiliate">
-                Centro de Afiliación
+                Sedes y Contacto
               </Link>
             </li>
           </ul>

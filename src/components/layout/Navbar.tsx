@@ -10,8 +10,7 @@ const NAV_LINKS = [
   { href: "/nosotros", label: "Nosotros" },
   { href: "/ejes", label: "6 Ejes" },
   { href: "/multimedia", label: "Multimedia" },
-  { href: "/afiliate", label: "Sedes TSE" },
-  { href: "/#contact", label: "Contacto" },
+  { href: "/afiliate", label: "Sedes y Contacto" },
 ];
 
 export function Navbar() {
@@ -156,10 +155,7 @@ export function Navbar() {
             Archivo Multimedia
           </Link>
           <Link href="/afiliate" onClick={() => setMenuOpen(false)}>
-            Sedes TSE y Afiliación
-          </Link>
-          <Link href="/#contact" onClick={() => setMenuOpen(false)}>
-            Contacto Directo
+            Sedes y Contacto Directo
           </Link>
         </nav>
 

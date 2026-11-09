@@ -319,15 +319,16 @@ body {
 }
 .m-mark {
   --mark-color: var(--color-4);
-  color: var(--color-2);
+  color: var(--color-2) !important;
   background: linear-gradient(var(--mark-color), var(--mark-color)) no-repeat 0 0 / 100% 100%;
   -webkit-box-decoration-break: clone;
   box-decoration-break: clone;
   padding: 0 0.08em;
+  font-weight: inherit;
 }
 .m-mark.is-red {
-  --mark-color: var(--color-3);
-  color: var(--color-1);
+  --mark-color: var(--color-3) !important;
+  color: #ffffff !important;
 }
 .m-rule {
   display: block;
@@ -488,14 +489,20 @@ body {
 }
 #nav .menu__links a {
   display: block;
-  padding: 10px 0;
-  border-bottom: 1px solid var(--color-7);
+  padding: 14px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
   color: var(--color-1);
   text-decoration: none;
-  font-size: 38px;
+  font-size: clamp(22px, 5.5vw, 34px);
   font-weight: 600;
-  letter-spacing: -0.045em;
-  line-height: 1.05;
+  letter-spacing: -0.035em;
+  line-height: 1.15;
+  transition: color 0.2s, padding-left 0.2s;
+}
+#nav .menu__links a:active,
+#nav .menu__links a:hover {
+  color: var(--color-4);
+  padding-left: 6px;
 }
 #nav .menu__cta {
   margin: 0 var(--space-1);
@@ -665,15 +672,20 @@ body {
   align-content: start;
 }
 #opening .op-ledger .m-rule {
-  color: var(--color-7);
+  color: rgba(255, 255, 255, 0.25);
   opacity: 1;
 }
 #opening .op-ledger p {
   max-width: 24em;
-  color: var(--color-7);
+  color: rgba(255, 255, 255, 0.88);
+}
+#opening .op-ledger .m-text-4,
+#opening .op-ledger p.m-text-4,
+#opening .op-ledger h3 {
+  color: #ffffff !important;
 }
 #opening .op-ledger .m-text-5 {
-  color: var(--color-4);
+  color: var(--color-4) !important;
 }
 #opening .op-more {
   grid-column: 1 / -1;
@@ -924,6 +936,21 @@ body {
   #month .mo-sheet { position: relative; top: 0; padding: 18px 16px; }
   #month .mo-note { min-height: 0; padding-bottom: 28px; }
 }
+@media (max-width: 540px) {
+  #month .mo-cash {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  #month .mo-bars {
+    overflow-x: auto;
+    padding-bottom: 4px;
+    gap: 4px;
+    -webkit-overflow-scrolling: touch;
+  }
+  #month .mo-bar {
+    min-width: 20px;
+  }
+}
 
 /* ==========================================================================
    SECTION: #services (Color-Blocked Slabs for Ejes Programáticos)
@@ -1122,7 +1149,7 @@ body {
 }
 #year .yr-intro {
   grid-column: 8 / span 5;
-  color: var(--color-7);
+  color: rgba(255, 255, 255, 0.88);
   max-width: 30em;
 }
 #year .yr-key {
@@ -1136,6 +1163,7 @@ body {
   display: flex;
   align-items: center;
   gap: 8px;
+  color: rgba(255, 255, 255, 0.9);
 }
 #year .yr-swatch {
   width: 14px;
@@ -1146,6 +1174,8 @@ body {
   position: relative;
   overflow-x: auto;
   overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+  scroll-snap-type: x mandatory;
 }
 #year .yr-track {
   display: flex;
@@ -1159,7 +1189,8 @@ body {
   width: 268px;
   margin-right: 16px;
   padding-top: 14px;
-  border-top: 1px solid var(--color-7);
+  border-top: 1px solid rgba(255, 255, 255, 0.22);
+  scroll-snap-align: start;
 }
 #year .yr-name {
   font-size: 42px;
@@ -1171,7 +1202,7 @@ body {
   margin-left: 8px;
   font-size: 14px;
   letter-spacing: 0;
-  color: var(--color-7);
+  color: rgba(255, 255, 255, 0.75);
   font-weight: 500;
 }
 #year .yr-chips {
@@ -1289,7 +1320,7 @@ body {
   letter-spacing: -0.03em;
 }
 #cases .cs-who span {
-  color: var(--color-7);
+  color: rgba(255, 255, 255, 0.84);
 }
 #cases .cs-quote {
   display: grid;
