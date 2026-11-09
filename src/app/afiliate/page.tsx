@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import React, { useState, useMemo } from "react";
 import dynamic from "next/dynamic";
@@ -28,7 +28,7 @@ import {
 const DepartmentMap = dynamic(() => import("@/components/map/DepartmentMap"), {
   ssr: false,
   loading: () => (
-    <div className="w-full h-[420px] sm:h-[520px] rounded-3xl bg-[#F3EDE4]/65 border border-[#181313]/8 animate-pulse flex items-center justify-center text-sm font-mono-code font-bold text-[#231012]/70">
+    <div className="w-full h-[420px] sm:h-[520px] rounded-3xl bg-[#D1DDD3]/40 border border-[#181313]/8 animate-pulse flex items-center justify-center text-sm font-mono-code font-bold text-[#231012]/70">
       Cargando mapa territorial de los 22 departamentos...
     </div>
   ),
@@ -957,3 +957,4 @@ export default function AfiliatePage() {
     </div>
   );
 }
+

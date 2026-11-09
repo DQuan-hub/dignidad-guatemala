@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import React, { useState, useMemo } from "react";
 import {
@@ -67,7 +67,7 @@ export default function MultimediaPage() {
   }, [posts, activeTab, query]);
 
   return (
-    <div className="flex flex-col gap-16 sm:gap-24 pb-16 pt-8 sm:pt-14">
+    <div className="flex flex-col gap-16 sm:gap-24 pb-16 pt-20 sm:pt-24">
       
       {/* 1. CABECERA MULTIMEDIA Y REPRODUCTOR VERTICAL 9:16 KELVORA */}
       <section className="w-full">
@@ -364,3 +364,4 @@ export default function MultimediaPage() {
     </div>
   );
 }
+

@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import React from "react";
 import Link from "next/link";
@@ -39,7 +39,7 @@ export default function NosotrosPage() {
   ];
 
   return (
-    <div className="flex flex-col gap-20 sm:gap-28 pb-16 pt-8 sm:pt-14">
+    <div className="flex flex-col gap-20 sm:gap-28 pb-16 pt-20 sm:pt-24">
       
       {/* 1. CABECERA EDITORIAL Y ENSAYO VISUAL A DOS COLUMNAS ESTILO KELVORA */}
       <section className="w-full">
@@ -294,3 +294,4 @@ export default function NosotrosPage() {
     </div>
   );
 }
+
