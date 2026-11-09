@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import React, { useState, useMemo } from "react";
 import dynamic from "next/dynamic";
@@ -199,89 +199,81 @@ export default function AfiliatePage() {
   }, [values]);
 
   return (
-    <div className="bg-white flex flex-col gap-16 sm:gap-24 pb-16 pt-6 sm:pt-10">
-      {/* 1. CABECERA CENTRO DE AFILIACIÓN Y GUÍA TSE EN 3 PASOS */}
-      <section className="w-full">
-        <div className="mx-auto w-full max-w-[1180px] px-6 lg:px-8 space-y-10">
-          <div className="max-w-3xl space-y-5">
-            <div className="inline-flex items-center gap-2 font-mono text-xs uppercase tracking-widest text-[#C83E2B] font-bold">
-              <span>[01 / AFILIACIÓN TSE · PARTIDO #28]</span>
-            </div>
-            <h1 className="font-display text-4xl sm:text-5xl lg:text-[3.5rem] font-bold tracking-tight text-[#111C16] leading-[1.04]">
+    <div className="bg-white flex flex-col gap-16 sm:gap-24 pb-16">
+      {/* 1. OPENING STATEMENT TALLYHOUSE: Centro de Afiliación TSE #28 */}
+      <section id="opening" className="opening">
+        <div className="op-second" style={{ minHeight: "auto", paddingTop: "104px" }}>
+          <div style={{ gridColumn: "1 / -1" }}>
+            <p className="m-text-5 text-[#FFD600] mb-4">
+              01 · Afiliación Oficial TSE · Partido Político #28
+            </p>
+            <h1 className="m-text-2 op-statement">
               Afíliate a{" "}
-              <span className="font-serif italic font-normal text-[#C83E2B]">
-                dignidad
-              </span>{" "}
-              en tu departamento y municipio.
+              <mark
+                className="m-mark is-red"
+                style={{ "--mark-color": "var(--color-3)" } as React.CSSProperties}
+              >
+                Dignidad #28
+              </mark>{" "}
+              en tu{" "}
+              <mark
+                className="m-mark"
+                style={{ "--mark-color": "var(--color-4)" } as React.CSSProperties}
+              >
+                departamento
+              </mark>{" "}
+              y municipio.
             </h1>
-            <p className="text-base sm:text-lg text-[#526058] leading-relaxed">
+            <p className="m-text-4 text-white/85 max-w-3xl mt-6">
               Afiliarte a Dignidad Guatemala es ejercer tu derecho constitucional a construir un instrumento político de los pueblos, sin caciques ni financistas corporativos rumbo a 2027.
             </p>
           </div>
 
-          {/* GUÍA PASO A PASO PARA AFILIARSE ANTE EL TSE */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div className="rounded-3xl bg-[#F3F6F4] border border-[#111C16]/10 p-7 flex flex-col justify-between shadow-xs">
-              <div>
-                <span className="inline-block px-3 py-1 rounded-full text-xs font-mono font-bold bg-[#C83E2B] text-white mb-4">
-                  Paso 1 · RENAP
-                </span>
-                <h2 className="text-xl font-bold font-display text-[#111C16] mb-2">
-                  DPI vigente emitido por el RENAP
-                </h2>
-                <p className="text-sm text-[#526058] leading-relaxed">
-                  Tu Documento Personal de Identificación (CUI de 13 dígitos numéricos) debe encontrarse vigente y en buen estado para el cotejo oficial del TSE.
-                </p>
-              </div>
-              <p className="mt-4 pt-3 border-t border-[#111C16]/10 text-xs font-mono text-[#C83E2B] font-bold">
-                Requisito indispensable según la LEPP
+          <ul className="op-ledger">
+            <li>
+              <span className="m-rule" aria-hidden="true" />
+              <span className="m-text-5">Paso 1 · RENAP</span>
+              <p className="m-text-4 text-white">DPI vigente emitido por el RENAP</p>
+              <p className="m-text">
+                Tu Documento Personal de Identificación (CUI de 13 dígitos) debe encontrarse vigente para el cotejo oficial del TSE.
               </p>
-            </div>
-
-            <div className="rounded-3xl bg-[#F3F6F4] border border-[#111C16]/10 p-7 flex flex-col justify-between shadow-xs">
-              <div>
-                <span className="inline-block px-3 py-1 rounded-full text-xs font-mono font-bold bg-[#C83E2B] text-white mb-4">
-                  Paso 2 · Empadronamiento
-                </span>
-                <h2 className="text-xl font-bold font-display text-[#111C16] mb-2">
-                  Estar empadronado ante el TSE
-                </h2>
-                <p className="text-sm text-[#526058] leading-relaxed">
-                  Verifica que tu DPI esté empadronado y con residencia electoral actualizada en tu municipio para poder votar en las asambleas partidarias.
-                </p>
-              </div>
-              <div className="mt-4 pt-3 border-t border-[#111C16]/10">
+            </li>
+            <li>
+              <span className="m-rule" aria-hidden="true" />
+              <span className="m-text-5">Paso 2 · Empadronamiento</span>
+              <p className="m-text-4 text-white">Estar empadronado ante el TSE</p>
+              <p className="m-text">
+                Verifica que tu DPI esté empadronado en tu municipio para votar en las asambleas partidarias.{" "}
                 <a
                   href="https://dondevotas.tse.org.gt/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1.5 text-xs font-mono font-bold text-[#111C16] hover:text-[#C83E2B] transition"
+                  className="m-link-2"
                 >
-                  <span>Consultar Empadronamiento en el TSE</span>
-                  <ExternalLink className="w-3.5 h-3.5 text-[#C83E2B]" />
+                  Consultar en TSE ↗
                 </a>
-              </div>
-            </div>
+              </p>
+            </li>
+            <li>
+              <span className="m-rule" aria-hidden="true" />
+              <span className="m-text-5">Paso 3 · Tu Sede</span>
+              <p className="m-text-4 text-white">Firma en tu sede o brigada móvil</p>
+              <p className="m-text">
+                Acude a cualquiera de nuestras 22 sedes departamentales o llena el formulario de pre-afiliación abajo.
+              </p>
+            </li>
+          </ul>
 
-            <div className="rounded-3xl bg-[#111C16] text-white border border-white/10 p-7 flex flex-col justify-between shadow-md">
-              <div>
-                <span className="inline-block px-3 py-1 rounded-full text-xs font-mono font-bold bg-[#C83E2B] text-white mb-4">
-                  Paso 3 · Tu Sede
-                </span>
-                <h2 className="text-xl font-bold font-display text-white mb-2">
-                  Firmar en tu sede o brigada móvil
-                </h2>
-                <p className="text-sm text-white/75 leading-relaxed">
-                  Acude a cualquiera de nuestros puntos de atención en los 22 departamentos o llena el formulario de abajo para coordinar la visita de una brigada a tu comunidad.
-                </p>
-              </div>
-              <a
-                href="#formulario-afiliacion"
-                className="mt-4 pt-3 border-t border-white/10 inline-flex items-center gap-1.5 text-xs font-mono font-bold text-[#D9822B] hover:text-white transition"
-              >
-                <span>Ir al Formulario de Pre-Afiliación →</span>
-              </a>
-            </div>
+          <div className="op-more flex flex-wrap gap-6 items-center">
+            <a className="m-btn-2" href="#formulario-afiliacion">
+              <span className="m-btn-2__label">Ir al Formulario de Pre-Afiliación</span>
+              <span className="m-btn-2__icon" aria-hidden="true">
+                +
+              </span>
+            </a>
+            <a className="m-link-2" href="#mapa-sedes">
+              Buscar mi sede en el mapa interactivo ↓
+            </a>
           </div>
         </div>
       </section>
@@ -289,18 +281,22 @@ export default function AfiliatePage() {
       {/* 2. BUSCADOR Y MAPA INTERACTIVO DE SEDES DEPARTAMENTALES */}
       <section id="mapa-sedes" className="w-full">
         <div className="mx-auto w-full max-w-[1180px] px-6 lg:px-8 space-y-8">
-          <div className="max-w-3xl space-y-3 pb-4 border-b border-[#111C16]/10">
-            <div className="inline-flex items-center gap-2 font-mono text-xs uppercase tracking-widest text-[#C83E2B] font-bold">
-              <span>[02 / 22 DEPARTAMENTOS · OPENSTREETMAP]</span>
-            </div>
-            <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-[#111C16]">
+          <div className="max-w-3xl space-y-3 pb-4 border-b border-[#111C16]">
+            <span className="m-rule" aria-hidden="true" />
+            <p className="m-text-5 text-[#C83E2B]">
+              02 · 22 Departamentos · Mapa Territorial OpenStreetMap
+            </p>
+            <h2 className="m-text-3">
               Encuentra tu sede de{" "}
-              <span className="font-serif italic font-normal text-[#C83E2B]">
-                dignidad
-              </span>{" "}
+              <mark
+                className="m-mark is-red"
+                style={{ "--mark-color": "var(--color-3)" } as React.CSSProperties}
+              >
+                Dignidad #28
+              </mark>{" "}
               en todo el país.
             </h2>
-            <p className="text-[#526058] text-sm sm:text-base leading-relaxed">
+            <p className="m-text text-[#526058]">
               Filtra por cualquiera de los 22 departamentos o haz clic en un marcador del mapa para consultar la dirección, horario de atención, coordinador responsable y enlaces directos a Google Maps, Waze y WhatsApp.
             </p>
           </div>
