@@ -289,18 +289,18 @@ export default function AfiliatePage() {
       {/* 2. BUSCADOR Y MAPA INTERACTIVO DE SEDES DEPARTAMENTALES */}
       <section id="mapa-sedes" className="w-full">
         <div className="mx-auto w-full max-w-[1180px] px-6 lg:px-8 space-y-8">
-          <div className="max-w-3xl space-y-3 pb-4 border-b border-[#141413]/10">
+          <div className="max-w-3xl space-y-3 pb-4 border-b border-[#111C16]/10">
             <div className="inline-flex items-center gap-2 font-mono text-xs uppercase tracking-widest text-[#C83E2B] font-bold">
               <span>[02 / 22 DEPARTAMENTOS · OPENSTREETMAP]</span>
             </div>
-            <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-[#141413]">
+            <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-[#111C16]">
               Encuentra tu sede de{" "}
               <span className="font-serif italic font-normal text-[#C83E2B]">
                 dignidad
               </span>{" "}
               en todo el país.
             </h2>
-            <p className="text-[#57534E] text-sm sm:text-base leading-relaxed">
+            <p className="text-[#526058] text-sm sm:text-base leading-relaxed">
               Filtra por cualquiera de los 22 departamentos o haz clic en un marcador del mapa para consultar la dirección, horario de atención, coordinador responsable y enlaces directos a Google Maps, Waze y WhatsApp.
             </p>
           </div>
@@ -328,7 +328,7 @@ export default function AfiliatePage() {
                   );
                   setSelectedSede(firstMatch || null);
                 }}
-                className="w-full h-12 px-4 rounded-xl bg-white border border-[#141413]/15 text-sm font-semibold text-[#141413]"
+                className="w-full h-12 px-4 rounded-xl bg-white border border-[#111C16]/15 text-sm font-semibold text-[#111C16]"
               >
                 {DEPARTAMENTOS_GUATEMALA.map((dept) => (
                   <option key={dept} value={dept}>
@@ -341,13 +341,13 @@ export default function AfiliatePage() {
             <div className="md:col-span-6 space-y-2">
               <label
                 htmlFor="busqueda-municipio"
-                className="block font-mono text-xs font-bold uppercase tracking-wider text-[#141413]"
+                className="block font-mono text-xs font-bold uppercase tracking-wider text-[#111C16]"
               >
                 Buscar por Municipio o Coordinador
               </label>
               <div className="relative">
                 <Search
-                  className="w-4 h-4 text-[#57534E] absolute left-3.5 top-1/2 -translate-y-1/2 pointer-events-none"
+                  className="w-4 h-4 text-[#526058] absolute left-3.5 top-1/2 -translate-y-1/2 pointer-events-none"
                   aria-hidden="true"
                 />
                 <input
@@ -358,7 +358,7 @@ export default function AfiliatePage() {
                   placeholder="Ej. San Lucas Tolimán, Cobán, La Máquina, Xela..."
                   autoCorrect="off"
                   autoCapitalize="off"
-                  className="w-full h-12 pl-10 pr-4 rounded-xl bg-white border border-[#141413]/15 text-sm text-[#141413] placeholder-[#57534E] focus:outline-none focus:border-[#C83E2B]"
+                  className="w-full h-12 pl-10 pr-4 rounded-xl bg-white border border-[#111C16]/15 text-sm text-[#111C16] placeholder-[#526058] focus:outline-none focus:border-[#C83E2B]"
                 />
               </div>
             </div>
@@ -376,7 +376,7 @@ export default function AfiliatePage() {
 
               {/* Detalle de la Sede Seleccionada estilo Kelvora */}
               {selectedSede && (
-                <div className="rounded-3xl bg-[#111C16] text-[#F5F2EB] p-6 sm:p-8 border border-white/10 shadow-lg space-y-4">
+                <div className="rounded-3xl bg-[#111C16] text-white p-6 sm:p-8 border border-white/10 shadow-lg space-y-4">
                   <div className="flex flex-wrap items-center justify-between gap-2">
                     <span className="px-3 py-1 rounded-full text-xs font-mono font-bold uppercase tracking-wider bg-[#C83E2B] text-white">
                       Sede Activa · {selectedSede.departamento.toUpperCase()}

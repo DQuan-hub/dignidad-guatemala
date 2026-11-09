@@ -13,7 +13,7 @@ export default function EjesIndexPage() {
       {/* 1. CABECERA EDITORIAL KELVORA */}
       <section className="w-full">
         <div className="mx-auto w-full max-w-[1180px] px-6 lg:px-8">
-          <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-8 pb-10 border-b border-[#141413]/12">
+          <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-8 pb-10 border-b border-[#111C16]/10">
             <div className="max-w-3xl space-y-5">
               <div className="inline-flex items-center gap-2 font-mono text-xs uppercase tracking-widest text-[#C83E2B] font-bold">
                 <span>[PROYECTO DE PAÍS · 2027-2031]</span>

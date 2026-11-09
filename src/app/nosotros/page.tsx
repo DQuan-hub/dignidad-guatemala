@@ -53,7 +53,7 @@ export default function NosotrosPage() {
                 <span>[01 / RAÍCES Y ORIGEN]</span>
               </div>
 
-              <h1 className="font-display text-4xl sm:text-5xl lg:text-[3.25rem] font-bold tracking-tight text-[#141413] leading-[1.05]">
+              <h1 className="font-display text-4xl sm:text-5xl lg:text-[3.25rem] font-bold tracking-tight text-[#111C16] leading-[1.05]">
                 Una fuerza política nacida del{" "}
                 <span className="font-serif italic font-normal text-[#C83E2B]">
                   caminar campesino
@@ -61,7 +61,7 @@ export default function NosotrosPage() {
                 y comunitario.
               </h1>
 
-              <p className="text-base text-[#57534E] leading-relaxed">
+              <p className="text-base text-[#526058] leading-relaxed">
                 <strong>Dignidad Guatemala (#28 TSE)</strong> representa el encuentro entre las luchas históricas agrarias del Comité Campesino del Altiplano (CCDA), la resistencia de las autoridades indígenas ancestrales y la juventud urbana que exige un país sin corrupción.
               </p>
 
@@ -95,7 +95,7 @@ export default function NosotrosPage() {
             {/* Columna Derecha (7 cols): Ensayo Narrativo + Fotografías Documentales */}
             <div className="lg:col-span-7 space-y-10">
               
-              <div className="rounded-3xl overflow-hidden border border-[#141413]/12 bg-[#111C16] aspect-[16/10] relative shadow-sm">
+              <div className="rounded-3xl overflow-hidden border border-[#111C16]/10 bg-[#111C16] aspect-[16/10] relative shadow-sm">
                 <img
                   src="/media/social/photos/asamblea-liderazgos-agua.jpg"
                   alt="Asamblea comunitaria de liderazgos de Dignidad"
@@ -107,7 +107,7 @@ export default function NosotrosPage() {
                 </p>
               </div>
 
-              <div className="space-y-6 text-[#141413] text-base sm:text-lg leading-relaxed">
+              <div className="space-y-6 text-[#111C16] text-base sm:text-lg leading-relaxed">
                 <p>
                   Durante más de cuatro décadas, las comunidades rurales y los sectores populares de Guatemala vieron cómo los partidos tradicionales se convertían en empresas electorales de cartón. Las casillas a diputados se vendían al mejor postor y los gobiernos electos gobernaban de espaldas a los pueblos.
                 </p>
@@ -135,11 +135,11 @@ export default function NosotrosPage() {
       <section className="w-full">
         <div className="mx-auto w-full max-w-[1180px] px-6 lg:px-8 space-y-12">
           
-          <div className="max-w-2xl space-y-3 pb-6 border-b border-[#141413]/12">
+          <div className="max-w-2xl space-y-3 pb-6 border-b border-[#111C16]/10">
             <span className="font-mono text-xs uppercase tracking-widest text-[#C83E2B] font-bold">
               [02 / HITOS DE LA MEMORIA HISTÓRICA]
             </span>
-            <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-[#141413]">
+            <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-[#111C16]">
               El camino hacia el{" "}
               <span className="font-serif italic font-normal text-[#C83E2B]">
                 partido #28.
@@ -182,17 +182,17 @@ export default function NosotrosPage() {
       <section id="liderazgos" className="w-full">
         <div className="mx-auto w-full max-w-[1180px] px-6 lg:px-8 space-y-12">
           
-          <div className="max-w-2xl space-y-3 pb-6 border-b border-[#141413]/12">
+          <div className="max-w-2xl space-y-3 pb-6 border-b border-[#111C16]/10">
             <span className="font-mono text-xs uppercase tracking-widest text-[#C83E2B] font-bold">
               [03 / LIDERAZGOS Y VOCERÍA POLÍTICA]
             </span>
-            <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-[#141413]">
+            <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-[#111C16]">
               Liderazgos de base con{" "}
               <span className="font-serif italic font-normal text-[#C83E2B]">
                 mandato colectivo.
               </span>
             </h2>
-            <p className="text-sm sm:text-base text-[#57534E]">
+            <p className="text-sm sm:text-base text-[#526058]">
               Nuestras vocerías no responden a financistas ocultos; responden a las decisiones emanadas de las asambleas territoriales.
             </p>
           </div>

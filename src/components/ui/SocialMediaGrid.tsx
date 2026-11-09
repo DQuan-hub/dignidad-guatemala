@@ -32,9 +32,9 @@ export function SocialMediaGrid({
   return (
     <div className="w-full space-y-8">
       {showFilters && (
-        <div className="flex flex-wrap items-center justify-between gap-4 pb-4 border-b border-[#141413]/10">
+        <div className="flex flex-wrap items-center justify-between gap-4 pb-4 border-b border-[#111C16]/10">
           <div className="flex items-center gap-2">
-            <span className="font-mono text-xs uppercase tracking-widest text-[#57534E]">
+            <span className="font-mono text-xs uppercase tracking-widest text-[#526058]">
               FILTRAR REDES:
             </span>
           </div>
@@ -105,7 +105,7 @@ export function SocialMediaGrid({
                   <button
                     type="button"
                     aria-label="Reproducir video"
-                    className="absolute inset-0 m-auto w-12 h-12 rounded-full bg-white/90 text-[#141413] flex items-center justify-center shadow-lg group-hover:scale-110 group-hover:bg-[#C83E2B] group-hover:text-white transition-all duration-300"
+                    className="absolute inset-0 m-auto w-12 h-12 rounded-full bg-white/90 text-[#111C16] flex items-center justify-center shadow-lg group-hover:scale-110 group-hover:bg-[#C83E2B] group-hover:text-white transition-all duration-300"
                   >
                     <Play className="w-5 h-5 fill-current ml-0.5" />
                   </button>
@@ -151,7 +151,7 @@ export function SocialMediaGrid({
                     href={post.url || post.permalink}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1 font-mono text-[11px] font-bold text-[#141413] hover:text-[#C83E2B] transition-colors"
+                    className="inline-flex items-center gap-1 font-mono text-[11px] font-bold text-[#111C16] hover:text-[#C83E2B] transition-colors"
                   >
                     <span>Ver en {post.platform}</span>
                     <ExternalLink className="w-3 h-3" />

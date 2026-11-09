@@ -49,10 +49,10 @@ export function KelvoraAxisRow({ eje, index }: KelvoraAxisRowProps) {
           </p>
         </div>
 
-        {/* Lado Derecho: Miniatura flotante on hover + Flecha Kelvora */}
+        {/* Lado Derecho: Miniatura flotante on hover + Flecha */}
         <div className="flex items-center gap-4 shrink-0 self-end sm:self-auto">
-          {/* Miniatura que se revela con suavidad estilo Kelvora */}
-          <div className="relative w-28 h-16 sm:w-36 sm:h-20 rounded-xl overflow-hidden hidden sm:block border border-[#141413]/10 bg-[#111C16]">
+          {/* Miniatura que se revela con suavidad */}
+          <div className="relative w-28 h-16 sm:w-36 sm:h-20 rounded-xl overflow-hidden hidden sm:block border border-[#111C16]/10 bg-[#111C16]">
             <img
               src={eje.imagenHero}
               alt={eje.pieFotoHero || eje.titulo}
@@ -64,8 +64,8 @@ export function KelvoraAxisRow({ eje, index }: KelvoraAxisRowProps) {
           </div>
 
           {/* Botón circular con flecha diagonal */}
-          <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full border border-[#141413]/15 flex items-center justify-center bg-white group-hover:bg-[#C83E2B] group-hover:border-[#C83E2B] group-hover:text-white transition-all duration-300 shadow-2xs">
-            <ArrowUpRight className="w-4 h-4 sm:w-5 sm:h-5 text-[#141413] group-hover:text-white transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+          <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full border border-[#111C16]/15 flex items-center justify-center bg-white group-hover:bg-[#C83E2B] group-hover:border-[#C83E2B] group-hover:text-white transition-all duration-300 shadow-2xs">
+            <ArrowUpRight className="w-4 h-4 sm:w-5 sm:h-5 text-[#111C16] group-hover:text-white transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
           </div>
         </div>
       </div>
@@ -75,7 +75,7 @@ export function KelvoraAxisRow({ eje, index }: KelvoraAxisRowProps) {
 
 export function KelvoraAxisList({ ejes }: { ejes: EjeProgramatico[] }) {
   return (
-    <div className="w-full border-b border-[#141413]/12">
+    <div className="w-full border-b border-[#111C16]/10">
       {ejes.map((eje, idx) => (
         <KelvoraAxisRow key={eje.slug} eje={eje} index={idx} />
       ))}

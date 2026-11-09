@@ -52,7 +52,7 @@ export function GetInTouchContact({
   return (
     <div className={`relative w-full max-w-[1100px] mx-auto ${className}`}>
       {/* Contenedor idéntico al diseño de la tarjeta de Sede Activa: bg-[#111C16], borde sutil, rounded-3xl */}
-      <div className="relative rounded-3xl bg-[#111C16] text-[#F5F2EB] p-7 sm:p-10 lg:p-12 border border-white/10 shadow-2xl overflow-hidden space-y-8">
+      <div className="relative rounded-3xl bg-[#111C16] text-white p-7 sm:p-10 lg:p-12 border border-white/10 shadow-2xl overflow-hidden space-y-8">
         {/* Esquinas cruzadas (+) sutiles de precisión */}
         <span className="absolute top-3 left-3 font-mono text-white/20 text-xs select-none pointer-events-none">+</span>
         <span className="absolute top-3 right-3 font-mono text-white/20 text-xs select-none pointer-events-none">+</span>

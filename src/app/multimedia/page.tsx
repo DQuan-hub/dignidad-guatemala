@@ -80,14 +80,14 @@ export default function MultimediaPage() {
                 <span>[SALA DE PRENSA & ARCHIVO VIVO]</span>
               </div>
 
-              <h1 className="font-display text-4xl sm:text-5xl lg:text-[3.5rem] font-bold tracking-tight text-[#141413] leading-[1.04]">
+              <h1 className="font-display text-4xl sm:text-5xl lg:text-[3.5rem] font-bold tracking-tight text-[#111C16] leading-[1.04]">
                 Archivo documental de nuestras{" "}
                 <span className="font-serif italic font-normal text-[#C83E2B]">
                   asambleas y redes.
                 </span>
               </h1>
 
-              <p className="text-base sm:text-lg text-[#57534E] leading-relaxed">
+              <p className="text-base sm:text-lg text-[#526058] leading-relaxed">
                 Explora las crónicas visuales de los 22 departamentos: videos de TikTok en formato vertical, galerías de Instagram y pronunciamientos de Facebook Oficial.
               </p>
 
@@ -154,7 +154,7 @@ export default function MultimediaPage() {
 
             {/* Reproductor Vertical 9:16 Integrado en Página */}
             <div className="lg:col-span-5 flex justify-center">
-              <div className="w-full max-w-[340px] rounded-3xl bg-[#111C16] text-[#F5F2EB] p-4 border border-white/10 shadow-2xl">
+              <div className="w-full max-w-[340px] rounded-3xl bg-[#111C16] text-white p-4 border border-white/10 shadow-2xl">
                 <div className="flex items-center justify-between font-mono text-[11px] text-[#D9822B] mb-3">
                   <span>TikTok Oficial · @dignidad100</span>
                   <span>{featuredVideo.date}</span>
@@ -304,7 +304,7 @@ export default function MultimediaPage() {
                     </div>
 
                     {post.type === "video" && (
-                      <div className="absolute inset-0 m-auto w-12 h-12 rounded-full bg-white/90 text-[#141413] flex items-center justify-center group-hover:scale-110 group-hover:bg-[#C83E2B] group-hover:text-white transition">
+                      <div className="absolute inset-0 m-auto w-12 h-12 rounded-full bg-white/90 text-[#111C16] flex items-center justify-center group-hover:scale-110 group-hover:bg-[#C83E2B] group-hover:text-white transition">
                         <Play className="w-5 h-5 fill-current ml-0.5" />
                       </div>
                     )}
@@ -312,15 +312,15 @@ export default function MultimediaPage() {
 
                   <div className="p-6 flex-1 flex flex-col justify-between space-y-4">
                     <div className="space-y-2">
-                      <h3 className="font-display font-bold text-lg text-[#141413]">
+                      <h3 className="font-display font-bold text-lg text-[#111C16]">
                         {post.title || post.location}
                       </h3>
-                      <p className="text-xs sm:text-sm text-[#57534E] line-clamp-3 leading-relaxed">
+                      <p className="text-xs sm:text-sm text-[#526058] line-clamp-3 leading-relaxed">
                         {post.caption}
                       </p>
                     </div>
 
-                    <div className="pt-3 border-t border-[#141413]/10 flex items-center justify-between text-xs text-[#57534E]">
+                    <div className="pt-3 border-t border-[#111C16]/10 flex items-center justify-between text-xs text-[#526058]">
                       <div className="flex items-center gap-3">
                         {post.likes && (
                           <span className="flex items-center gap-1 font-mono text-[11px]">
@@ -340,7 +340,7 @@ export default function MultimediaPage() {
                         href={post.url || post.permalink}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex items-center gap-1 font-mono text-[11px] font-bold text-[#141413] hover:text-[#C83E2B] transition"
+                        className="inline-flex items-center gap-1 font-mono text-[11px] font-bold text-[#111C16] hover:text-[#C83E2B] transition"
                       >
                         <span>Ver en {post.platform}</span>
                         <ExternalLink className="w-3 h-3" />
