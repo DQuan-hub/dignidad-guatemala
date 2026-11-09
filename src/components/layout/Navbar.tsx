@@ -10,8 +10,8 @@ import socialFeedData from "@/data/social-feed.json";
 const NAV_LINKS = [
   { href: "/", label: "Inicio" },
   { href: "/nosotros", label: "Nosotros" },
-  { href: "/ejes", label: "Propuestas" },
-  { href: "/voces-y-redes", label: "Voces" },
+  { href: "/ejes", label: "Ejes Programáticos" },
+  { href: "/multimedia", label: "Multimedia" },
   { href: "/afiliate", label: "Sedes y Afiliación" },
 ];
 
@@ -24,37 +24,99 @@ export function Navbar() {
     "/brand/logo-dignidad.jpg";
 
   return (
-    <header className="sticky top-4 z-50 px-4 sm:px-6 pt-2">
-      <div className="mx-auto max-w-[1100px] flex items-center justify-between gap-3">
-        {/* Marca rápida izquierda (visible en desktop) */}
+    <header className="sticky top-4 z-50 px-4 sm:px-6 pt-1">
+      <div className="mx-auto max-w-[1180px] flex items-center justify-between gap-4">
+        
+        {/* Marca izquierda: Logo oficial + Partido #28 */}
         <Link
           href="/"
           aria-label="Dignidad Guatemala — Ir al inicio"
-          className="inline-flex items-center gap-2.5 rounded-full bg-white/95 backdrop-blur-md px-3 py-1.5 shadow-xs border border-[#181313]/8 hover:border-[#B81D13]/30 transition"
+          className="inline-flex items-center gap-3 rounded-full bg-[#F5F2EB]/90 backdrop-blur-md px-3.5 py-2 shadow-xs border border-[#141413]/12 hover:border-[#C83E2B]/40 transition group"
         >
-          <span className="h-7 w-7 rounded-full overflow-hidden bg-[#B81D13] border border-[#181313]/10 shrink-0 flex items-center justify-center">
+          <span className="h-8 w-8 rounded-full overflow-hidden bg-[#111C16] border border-[#141413]/15 shrink-0 flex items-center justify-center">
             <img
               src={logoSrc}
-              alt="Logo Dignidad Guatemala"
-              width={28}
-              height={28}
-              className="h-full w-full object-cover"
+              alt="Logo Oficial Dignidad Guatemala"
+              width={32}
+              height={32}
+              className="h-full w-full object-cover group-hover:scale-105 transition-transform"
             />
           </span>
-          <span className="text-sm font-semibold tracking-tight text-[#181313]">
-            Dignidad
-          </span>
-          <span className="rounded-full bg-[#B81D13]/10 px-2 py-0.5 text-[11px] font-semibold text-[#B81D13]">
-            #28
-          </span>
+          <div className="flex flex-col leading-none">
+            <span className="font-display text-sm font-bold tracking-tight text-[#141413]">
+              Dignidad
+            </span>
+            <span className="font-mono text-[9px] uppercase tracking-wider text-[#57534E]">
+              Guatemala #28
+            </span>
+          </div>
         </Link>
 
-        {/* Píldora central flotante estilo rbp-portfolio.vercel.app */}
+        {/* Barra Central Flotante Minimalista estilo Kelvora */}
         <nav
           aria-label="Navegación principal"
-          className="hidden md:flex items-center gap-1 rounded-full bg-white/95 backdrop-blur-md p-1.5 shadow-xs border border-[#181313]/8"
+          className="hidden md:flex items-center gap-1.5 rounded-full bg-[#F5F2EB]/90 backdrop-blur-md p-1.5 shadow-xs border border-[#141413]/12"
         >
           <ul className="flex items-center gap-1">
+            {NAV_LINKS.map((link) => {
+              const isActive =
+                link.href === "/"
+                  ? pathname === "/"
+                  : pathname.startsWith(link.href) ||
+                    (link.href === "/multimedia" && pathname.startsWith("/voces-y-redes"));
+
+              return (
+                <li key={link.href}>
+                  <Link
+                    href={link.href}
+                    aria-current={isActive ? "page" : undefined}
+                    className={cn(
+                      "relative inline-flex items-center gap-2 rounded-full px-4 py-2 text-xs lg:text-sm font-semibold transition-all duration-300",
+                      isActive
+                        ? "bg-[#111C16] text-[#F5F2EB] shadow-xs"
+                        : "text-[#57534E] hover:text-[#141413] hover:bg-[#141413]/5"
+                    )}
+                  >
+                    {isActive && (
+                      <span className="w-1.5 h-1.5 rounded-full bg-[#C83E2B] animate-pulse" />
+                    )}
+                    <span>{link.label}</span>
+                  </Link>
+                </li>
+              );
+            })}
+          </ul>
+        </nav>
+
+        {/* Botón Píldora Kelvora "Afíliate ↗" con micro-interacción */}
+        <div className="flex items-center gap-2">
+          <Link
+            href="/afiliate"
+            className="group relative inline-flex items-center gap-2 rounded-full bg-[#C83E2B] hover:bg-[#A93322] text-[#F5F2EB] px-5 py-2.5 text-xs sm:text-sm font-bold shadow-xs transition-all duration-300 overflow-hidden"
+          >
+            <span className="relative z-10 transition-transform duration-300 group-hover:-translate-y-0.5">
+              Afíliate
+            </span>
+            <ArrowUpRight className="w-4 h-4 text-[#D9822B] relative z-10 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+          </Link>
+
+          {/* Botón móvil hamburguesa */}
+          <button
+            type="button"
+            onClick={() => setMobileOpen((v) => !v)}
+            aria-expanded={mobileOpen}
+            aria-label={mobileOpen ? "Cerrar menú" : "Abrir menú"}
+            className="md:hidden inline-flex h-10 w-10 items-center justify-center rounded-full bg-[#F5F2EB] border border-[#141413]/12 text-[#141413] cursor-pointer"
+          >
+            {mobileOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+          </button>
+        </div>
+      </div>
+
+      {/* Menú desplegable móvil */}
+      {mobileOpen && (
+        <div className="md:hidden mt-2 mx-auto max-w-[1180px] rounded-2xl bg-[#F5F2EB] border border-[#141413]/12 p-4 shadow-xl space-y-2">
+          <ul className="space-y-1">
             {NAV_LINKS.map((link) => {
               const isActive =
                 link.href === "/"
@@ -65,80 +127,36 @@ export function Navbar() {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    aria-current={isActive ? "page" : undefined}
+                    onClick={() => setMobileOpen(false)}
                     className={cn(
-                      "relative inline-flex items-center justify-center rounded-full px-4 py-1.5 text-sm font-medium transition-colors duration-200",
+                      "flex items-center justify-between px-4 py-2.5 rounded-xl font-display font-semibold text-sm transition-colors",
                       isActive
-                        ? "bg-[#181313] text-[#FAF8F5]"
-                        : "text-[#181313]/65 hover:text-[#181313] hover:bg-[#181313]/4"
+                        ? "bg-[#111C16] text-[#F5F2EB]"
+                        : "text-[#57534E] hover:bg-[#141413]/5 hover:text-[#141413]"
                     )}
                   >
-                    {link.label}
+                    <span>{link.label}</span>
+                    {isActive && <span className="w-1.5 h-1.5 rounded-full bg-[#C83E2B]" />}
                   </Link>
                 </li>
               );
             })}
           </ul>
-        </nav>
 
-        {/* Acción directa derecha */}
-        <div className="flex items-center gap-2">
-          <Link
-            href="/afiliate"
-            className="inline-flex items-center gap-1.5 rounded-full bg-[#B81D13] hover:bg-[#991B1B] text-white px-4 py-2 text-xs sm:text-sm font-medium shadow-xs transition"
-          >
-            <span>Afíliate</span>
-            <ArrowUpRight className="w-3.5 h-3.5 text-[#FFD600]" aria-hidden="true" />
-          </Link>
-
-          <button
-            type="button"
-            onClick={() => setMobileOpen((v) => !v)}
-            aria-expanded={mobileOpen}
-            aria-controls="mobile-nav-menu"
-            aria-label={mobileOpen ? "Cerrar menú" : "Abrir menú"}
-            className="md:hidden inline-flex h-9 w-9 items-center justify-center rounded-full bg-white border border-[#181313]/10 text-[#181313] cursor-pointer"
-          >
-            {mobileOpen ? (
-              <X className="w-4 h-4" aria-hidden="true" />
-            ) : (
-              <Menu className="w-4 h-4" aria-hidden="true" />
-            )}
-          </button>
-        </div>
-      </div>
-
-      {/* Menú móvil limpio y directo */}
-      {mobileOpen && (
-        <div
-          id="mobile-nav-menu"
-          className="md:hidden mx-auto max-w-[1100px] mt-2 rounded-3xl bg-white border border-[#181313]/10 p-3 shadow-lg space-y-1"
-        >
-          {NAV_LINKS.map((link) => {
-            const isActive =
-              link.href === "/"
-                ? pathname === "/"
-                : pathname.startsWith(link.href);
-
-            return (
-              <Link
-                key={link.href}
-                href={link.href}
-                onClick={() => setMobileOpen(false)}
-                className={cn(
-                  "flex items-center justify-between px-4 py-3 rounded-2xl text-sm font-medium transition",
-                  isActive
-                    ? "bg-[#181313] text-white"
-                    : "text-[#181313]/80 hover:bg-[#FAF8F5]"
-                )}
-              >
-                <span>{link.label}</span>
-                <ArrowUpRight className="w-4 h-4 opacity-60" aria-hidden="true" />
-              </Link>
-            );
-          })}
+          <div className="pt-2 border-t border-[#141413]/10">
+            <Link
+              href="/afiliate"
+              onClick={() => setMobileOpen(false)}
+              className="w-full flex items-center justify-center gap-2 py-3 rounded-xl bg-[#C83E2B] text-[#F5F2EB] text-sm font-bold shadow-xs"
+            >
+              <span>Afíliate en tu departamento</span>
+              <ArrowUpRight className="w-4 h-4 text-[#D9822B]" />
+            </Link>
+          </div>
         </div>
       )}
     </header>
   );
 }
+
+export default Navbar;

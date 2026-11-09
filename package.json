@@ -8,7 +8,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "sync:social": "node scripts/extract-brand-and-media.mjs"
+    "sync:social": "node scripts/extract-social-assets.mjs"
   },
   "dependencies": {
     "clsx": "^2.1.1",

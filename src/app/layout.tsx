@@ -1,39 +1,29 @@
 import type { Metadata } from "next";
 import {
-  Bricolage_Grotesque,
-  Fraunces,
-  Roboto_Flex,
-  JetBrains_Mono,
+  Plus_Jakarta_Sans,
+  Playfair_Display,
+  Space_Mono,
 } from "next/font/google";
 import "./globals.css";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 
-const bricolage = Bricolage_Grotesque({
+const plusJakarta = Plus_Jakarta_Sans({
   subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700", "800"],
-  variable: "--font-bricolage",
+  variable: "--font-jakarta",
   display: "swap",
 });
 
-const fraunces = Fraunces({
+const playfairDisplay = Playfair_Display({
   subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700"],
-  style: ["normal", "italic"],
-  variable: "--font-fraunces",
+  variable: "--font-instrument",
   display: "swap",
 });
 
-const robotoFlex = Roboto_Flex({
+const spaceMono = Space_Mono({
   subsets: ["latin"],
-  variable: "--font-roboto-flex",
-  display: "swap",
-});
-
-const jetbrainsMono = JetBrains_Mono({
-  subsets: ["latin"],
-  weight: ["400", "500", "700"],
-  variable: "--font-jetbrains-mono",
+  weight: ["400", "700"],
+  variable: "--font-space-mono",
   display: "swap",
 });
 
@@ -58,9 +48,14 @@ export default function RootLayout({
   return (
     <html
       lang="es-GT"
-      className={`${bricolage.variable} ${fraunces.variable} ${robotoFlex.variable} ${jetbrainsMono.variable}`}
+      className={`${plusJakarta.variable} ${playfairDisplay.variable} ${spaceMono.variable}`}
     >
-      <body className="min-h-screen flex flex-col bg-[#FAF8F5] text-[#181313] antialiased selection:bg-[#B81D13] selection:text-white relative">
+      <body className="min-h-screen flex flex-col bg-[#F5F2EB] text-[#141413] antialiased selection:bg-[#C83E2B] selection:text-white relative">
+        {/* Grano analógico documental estilo Kelvora */}
+        <div
+          className="fixed inset-0 pointer-events-none z-50 opacity-[0.035] bg-[radial-gradient(#141413_1px,transparent_1px)] [background-size:16px_16px]"
+          aria-hidden="true"
+        />
         {/* Marco orgánico de ventana inspirado en rbp-portfolio.vercel.app */}
         <div className="site-frame site-frame--top" aria-hidden="true" />
         <div className="site-frame site-frame--left" aria-hidden="true" />

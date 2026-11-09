@@ -2,40 +2,45 @@
 @import "leaflet/dist/leaflet.css";
 
 @theme {
-  --font-display: var(--font-bricolage), ui-sans-serif, system-ui, sans-serif;
-  --font-serif: var(--font-fraunces), Georgia, serif;
-  --font-variable: var(--font-roboto-flex), var(--font-bricolage), sans-serif;
-  --font-mono: var(--font-jetbrains-mono), ui-monospace, SFMono-Regular, monospace;
-  --font-sans: var(--font-bricolage), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-jakarta), ui-sans-serif, system-ui, sans-serif;
+  --font-serif: var(--font-instrument), Georgia, serif;
+  --font-mono: var(--font-space-mono), ui-monospace, SFMono-Regular, monospace;
+  --font-sans: var(--font-jakarta), ui-sans-serif, system-ui, sans-serif;
 
-  --color-background: #FAF8F5;
-  --color-foreground: #181313;
-  --color-dignidad-paper: #FAF8F5;
-  --color-dignidad-clay: #F3EDE4;
-  --color-dignidad-crimson-dark: #7F1116;
-  --color-dignidad-red: #B81D13;
-  --color-dignidad-gold: #FFD600;
-  --color-muted-foreground: #665A5A;
+  --color-bg-primary: #F5F2EB;
+  --color-bg-secondary: #EBE5D8;
+  --color-bg-dark: #111C16;
+  --color-text-primary: #141413;
+  --color-text-muted: #57534E;
+  --color-accent-primary: #C83E2B;
+  --color-accent-secondary: #D9822B;
+  --color-border-subtle: rgba(20, 20, 19, 0.12);
+
+  --color-background: #F5F2EB;
+  --color-foreground: #141413;
 }
 
 :root {
-  --bg-paper: #FAF8F5;
-  --bg-clay: #F3EDE4;
-  --bg-crimson-dark: #7F1116;
-  --accent-red: #B81D13;
-  --accent-gold: #FFD600;
+  --bg-primary: #F5F2EB;
+  --bg-secondary: #EBE5D8;
+  --bg-dark: #111C16;
+  --text-primary: #141413;
+  --text-muted: #57534E;
+  --accent-primary: #C83E2B;
+  --accent-secondary: #D9822B;
+  --border-subtle: rgba(20, 20, 19, 0.12);
 }
 
 html {
   scroll-behavior: smooth;
-  background-color: #FAF8F5;
-  color: #181313;
+  background-color: #F5F2EB;
+  color: #141413;
 }
 
 body {
   font-family: var(--font-sans);
-  background-color: #FAF8F5;
-  color: #181313;
+  background-color: #F5F2EB;
+  color: #141413;
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
 }

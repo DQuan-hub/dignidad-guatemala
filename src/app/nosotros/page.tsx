@@ -2,15 +2,7 @@
 
 import React from "react";
 import Link from "next/link";
-import { motion } from "framer-motion";
-import {
-  ArrowUpRight,
-  Download,
-  FileText,
-  Quote,
-} from "lucide-react";
-import { SectionBadge } from "@/components/ui/SectionBadge";
-import { VariableFontHover } from "@/components/ui/variable-font-hover";
+import { ArrowUpRight, Download, FileText, CheckCircle2, ShieldCheck } from "lucide-react";
 import {
   LIDERAZGOS_DIGNIDAD,
   LINEA_TIEMPO_DIGNIDAD,
@@ -19,336 +11,286 @@ import {
 } from "@/data/liderazgos-historia";
 
 export default function NosotrosPage() {
-  return (
-    <div className="bg-[#FAF8F5]">
-      {/* 1. CABECERA EDITORIAL / CRÓNICA VISUAL */}
-      <section className="py-16 lg:py-24 border-b border-[#181313]/8">
-        <div className="max-w-[1100px] mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-            <div className="lg:col-span-7 space-y-6">
-              <SectionBadge code="[01 / CRÓNICA DE ORIGEN]">
-                Historia, Raíces Comunitarias y Liderazgos
-              </SectionBadge>
+  const lideres = [
+    {
+      nombre: "Gabriel Romero Pérez",
+      cargo: "Secretario General Provisional",
+      origen: "Guatemala",
+      cita: "Dignidad no es una franquicia electoral de ocasión; es el instrumento político que los pueblos de Guatemala levantaron con sus propias manos para rescatar las instituciones.",
+      fotografia: "/media/social/photos/dialogo-territorial-bases.jpg",
+      bio: "Militante histórico por los derechos humanos, la fiscalización comunitaria y la articulación plurinacional frente a la vieja política corporativa."
+    },
+    {
+      nombre: "Neydi Juracán",
+      cargo: "Coordinadora CCDA & Vocera Campesina",
+      origen: "San José La Máquina & Altiplano",
+      cita: "Quienes cultivan la milpa y defienden los ríos con sus vidas tienen derecho a gobernar y decidir el destino del presupuesto nacional.",
+      fotografia: "/media/social/photos/milpa-san-jose-la-maquina.jpg",
+      bio: "Defensora de la soberanía alimentaria, lideresa del Comité Campesino del Altiplano (CCDA) y promotora del Buen Vivir campesino."
+    },
+    {
+      nombre: "Sandra Xinico",
+      cargo: "Dirigente Departamental & Articuladora de Bases",
+      origen: "Pueblo Maya · Altiplano",
+      cita: "La descolonización de la política en Guatemala pasa por la paridad real, el pluralismo jurídico y la alternancia de los cuatro pueblos en el poder.",
+      fotografia: "/media/social/photos/voceria-asamblea-afiliacion.jpg",
+      bio: "Antropóloga, columnista y dirigente comunitaria comprometida con la participación política protagónica de las mujeres indígenas."
+    }
+  ];
 
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold font-display tracking-tight text-[#231012] leading-[1.03]">
-                <VariableFontHover
-                  className="justify-start text-left text-[#231012]"
-                  fromFontVariationSettings="'wght' 300, 'slnt' 0"
-                  toFontVariationSettings="'wght' 900, 'slnt' -10"
-                  label="Nacidos de la resistencia campesina"
-                  staggerDuration={0.015}
-                  staggerFrom="first"
-                />{" "}
-                y de la{" "}
-                <span className="font-editorial-italic font-semibold text-[#C81E1E]">
-                  dignidad de los pueblos.
-                </span>
+  return (
+    <div className="flex flex-col gap-20 sm:gap-28 pb-16 pt-8 sm:pt-14">
+      
+      {/* 1. CABECERA EDITORIAL Y ENSAYO VISUAL A DOS COLUMNAS ESTILO KELVORA */}
+      <section className="w-full">
+        <div className="mx-auto w-full max-w-[1180px] px-6 lg:px-8">
+          
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+            
+            {/* Columna Izquierda Sticky (5 cols): Declaración de Identidad */}
+            <div className="lg:col-span-5 lg:sticky lg:top-28 space-y-6">
+              <div className="inline-flex items-center gap-2 font-mono text-xs uppercase tracking-widest text-[#C83E2B] font-bold">
+                <span>[01 / RAÍCES Y ORIGEN]</span>
+              </div>
+
+              <h1 className="font-display text-4xl sm:text-5xl lg:text-[3.25rem] font-bold tracking-tight text-[#141413] leading-[1.05]">
+                Una fuerza política nacida del{" "}
+                <span className="font-serif italic font-normal text-[#C83E2B]">
+                  caminar campesino
+                </span>{" "}
+                y comunitario.
               </h1>
 
-              <p className="text-base sm:text-lg text-[#231012]/80 leading-relaxed">
-                <strong>Dignidad Guatemala (#28 TSE)</strong> no surgió en un despacho empresarial. Nació del caminar histórico del{" "}
-                <strong>Comité Campesino del Altiplano (CCDA)</strong>, de las autoridades ancestrales de los pueblos Maya, Xinka y Garífuna, y de las familias trabajadoras mestizas del campo y la ciudad que decidieron construir su propio instrumento político.
+              <p className="text-base text-[#57534E] leading-relaxed">
+                <strong>Dignidad Guatemala (#28 TSE)</strong> representa el encuentro entre las luchas históricas agrarias del Comité Campesino del Altiplano (CCDA), la resistencia de las autoridades indígenas ancestrales y la juventud urbana que exige un país sin corrupción.
               </p>
+
+              <div className="p-5 rounded-2xl bg-[#EBE5D8] border border-[#141413]/10 space-y-2">
+                <span className="font-mono text-[11px] uppercase tracking-wider text-[#141413] font-bold block">
+                  REGISTRO ANTE EL TSE
+                </span>
+                <p className="text-xs text-[#57534E]">
+                  Inscripción definitiva como Partido Político Número 28 de Guatemala con asambleas departamentales constituidas en los 22 departamentos.
+                </p>
+              </div>
 
               <div className="flex flex-wrap gap-3 pt-2">
                 <a
                   href="#liderazgos"
-                  className="inline-flex items-center gap-2 bg-[#7F1116] text-[#FAF6F0] font-bold text-sm px-6 py-3.5 rounded-full"
+                  className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#111C16] text-[#F5F2EB] font-mono text-xs font-bold uppercase tracking-wider hover:bg-[#C83E2B] transition"
                 >
-                  <span>Conocer Dirigencia Nacional</span>
-                  <ArrowUpRight className="w-4 h-4 text-[#FFD600]" aria-hidden="true" />
+                  <span>Conocer Dirigencia</span>
+                  <ArrowUpRight className="w-4 h-4 text-[#D9822B]" />
                 </a>
                 <a
                   href="#documentos"
-                  className="inline-flex items-center gap-2 bg-[#F3EDE4]/65 border border-[#181313]/10 text-[#231012] font-bold text-sm px-6 py-3.5 rounded-full"
+                  className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white border border-[#141413]/15 text-[#141413] font-mono text-xs font-bold uppercase tracking-wider hover:border-[#C83E2B] transition"
                 >
-                  <FileText className="w-4 h-4 text-[#C81E1E]" aria-hidden="true" />
-                  <span>Estatutos y Principios PDF</span>
+                  <FileText className="w-3.5 h-3.5 text-[#C83E2B]" />
+                  <span>Estatutos TSE</span>
                 </a>
               </div>
             </div>
 
-            {/* Marco Fotográfico Documental Principal */}
-            <figure className="lg:col-span-5 rounded-2xl bg-[#F3EDE4]/65 border border-[#181313]/8 p-3.5 shadow-sm">
-              <div className="rounded-xl overflow-hidden aspect-[4/3] bg-[#7F1116]">
+            {/* Columna Derecha (7 cols): Ensayo Narrativo + Fotografías Documentales */}
+            <div className="lg:col-span-7 space-y-10">
+              
+              <div className="rounded-3xl overflow-hidden border border-[#141413]/12 bg-[#111C16] aspect-[16/10] relative shadow-sm">
                 <img
                   src="/media/social/photos/asamblea-liderazgos-agua.jpg"
-                  alt="Delegación nacional y comunitaria de Dignidad Guatemala"
-                  width={680}
-                  height={510}
-                  fetchPriority="high"
+                  alt="Asamblea comunitaria de liderazgos de Dignidad"
                   className="w-full h-full object-cover"
                 />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
+                <p className="absolute bottom-4 left-5 right-5 font-mono text-xs text-white/90">
+                  Encuentro Plurinacional en defensa de la Madre Agua y los bienes comunes · Archivo @dignidad100
+                </p>
               </div>
-              <figcaption className="mt-3 px-1 font-mono-code text-[11px] text-[#231012]/80 flex items-center justify-between gap-2">
-                <span>
-                  Lideresas y autoridades portando la proclama por la Madre Agua · Archivo Dignidad
-                </span>
-                <span className="font-bold text-[#C81E1E] shrink-0">[TSE #28]</span>
-              </figcaption>
-            </figure>
+
+              <div className="space-y-6 text-[#141413] text-base sm:text-lg leading-relaxed">
+                <p>
+                  Durante más de cuatro décadas, las comunidades rurales y los sectores populares de Guatemala vieron cómo los partidos tradicionales se convertían en empresas electorales de cartón. Las casillas a diputados se vendían al mejor postor y los gobiernos electos gobernaban de espaldas a los pueblos.
+                </p>
+
+                <p>
+                  Frente a ese despojo sistemático, las bases del <strong>Comité Campesino del Altiplano (CCDA)</strong>, junto a comunidades q'eqchi'es, poqomchies, k'iches, kaqchikeles, mames, xinkas y garífunas, decidieron dar un paso histórico: no delegar más su representación y construir un partido político propio con asambleas soberanas.
+                </p>
+
+                <blockquote className="p-6 rounded-2xl bg-[#EBE5D8] border-l-4 border-[#C83E2B] font-serif text-xl sm:text-2xl italic text-[#141413] leading-snug">
+                  “No nos organizamos para negociar privilegios; nos organizamos para devolver la soberanía y la tierra a quienes la trabajan todos los días.”
+                </blockquote>
+
+                <p>
+                  El proyecto legal culminó con la inscripción formal de <strong>Dignidad Guatemala ante el Tribunal Supremo Electoral con el número 28</strong>, habilitado plenamente para competir con candidaturas legítimas en las elecciones generales de 2027.
+                </p>
+              </div>
+
+            </div>
           </div>
+
         </div>
       </section>
 
-      {/* 2. LÍNEA DE TIEMPO VERTICAL CON FOTOGRAFÍAS REALES DE LAS REDES */}
-      <section className="py-20 lg:py-28 border-b border-[#181313]/8 bg-[#F3EDE4]/65/45">
-        <div className="max-w-[1100px] mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl space-y-4 mb-16">
-            <SectionBadge code="[02 / MEMORIA HISTÓRICA]">
-              Línea de Tiempo Documental
-            </SectionBadge>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold font-display tracking-tight text-[#231012]">
-              De las parcelas y caminos a la{" "}
-              <span className="font-editorial-italic font-normal text-[#C81E1E]">
-                inscripción oficial ante el TSE.
+      {/* 2. LÍNEA DE TIEMPO INTERACTIVA KELVORA */}
+      <section className="w-full">
+        <div className="mx-auto w-full max-w-[1180px] px-6 lg:px-8 space-y-12">
+          
+          <div className="max-w-2xl space-y-3 pb-6 border-b border-[#141413]/12">
+            <span className="font-mono text-xs uppercase tracking-widest text-[#C83E2B] font-bold">
+              [02 / HITOS DE LA MEMORIA HISTÓRICA]
+            </span>
+            <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-[#141413]">
+              El camino hacia el{" "}
+              <span className="font-serif italic font-normal text-[#C83E2B]">
+                partido #28.
               </span>
             </h2>
           </div>
 
-          <div className="relative border-l-2 border-[#7F1116]/25 ml-3 sm:ml-6 pl-6 sm:pl-10 space-y-12">
+          <div className="relative border-l-2 border-[#141413]/15 ml-4 sm:ml-8 pl-6 sm:pl-10 space-y-12">
             {LINEA_TIEMPO_DIGNIDAD.map((hito, idx) => (
-              <motion.article
-                key={hito.codigo}
-                initial={{ opacity: 0, y: 18 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.4, delay: idx * 0.05 }}
-                className="relative grid grid-cols-1 lg:grid-cols-12 gap-8 items-center rounded-2xl bg-[#FAF8F5] border border-[#181313]/8 p-6 sm:p-8"
-              >
-                {/* Nodo en la línea vertical */}
-                <span
-                  aria-hidden="true"
-                  className="absolute -left-[33px] sm:-left-[49px] top-8 h-4 w-4 rounded-full bg-[#C81E1E] border-4 border-[#FAF6F0]"
-                />
+              <div key={hito.codigo || hito.anio} className="relative group">
+                {/* Punto indicador */}
+                <span className="absolute -left-[31px] sm:-left-[47px] top-1.5 w-4 h-4 rounded-full bg-[#111C16] border-2 border-[#F5F2EB] group-hover:bg-[#C83E2B] transition-colors" />
 
-                <div className="lg:col-span-7 space-y-3">
-                  <div className="flex flex-wrap items-center gap-3 font-mono-code text-xs">
-                    <span className="font-bold text-[#C81E1E]">{hito.codigo}</span>
-                    <span className="px-2.5 py-0.5 rounded bg-[#F3EDE4]/65 text-[#231012] font-bold">
+                <div className="space-y-3 max-w-2xl rounded-2xl bg-[#EBE5D8]/60 p-6 border border-[#141413]/10">
+                  <div className="flex items-center gap-3">
+                    <span className="font-mono text-xs font-bold px-2.5 py-1 rounded bg-[#111C16] text-[#F5F2EB]">
                       {hito.anio}
                     </span>
-                    <span className="text-[#231012]/65 uppercase">
-                      / {hito.categoria}
+                    <span className="font-mono text-xs text-[#57534E] uppercase">
+                      Hito 0{idx + 1}
                     </span>
                   </div>
 
-                  <h3 className="text-2xl sm:text-3xl font-extrabold font-display text-[#231012]">
+                  <h3 className="font-display text-xl sm:text-2xl font-bold text-[#141413]">
                     {hito.titulo}
                   </h3>
 
-                  <p className="text-base text-[#231012]/80 leading-relaxed">
+                  <p className="text-sm text-[#57534E] leading-relaxed">
                     {hito.descripcion}
                   </p>
                 </div>
-
-                <figure className="lg:col-span-5 rounded-xl bg-[#F3EDE4]/65 border border-[#181313]/8 p-2.5">
-                  <div className="rounded-lg overflow-hidden aspect-[16/10] bg-[#7F1116]">
-                    <img
-                      src={hito.fotografia}
-                      alt={hito.pieFoto}
-                      width={520}
-                      height={325}
-                      loading="lazy"
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
-                  <figcaption className="mt-2 font-mono-code text-[10px] text-[#231012]/75 px-1">
-                    {hito.pieFoto}
-                  </figcaption>
-                </figure>
-              </motion.article>
+              </div>
             ))}
           </div>
+
         </div>
       </section>
 
-      {/* 3. DIRECTORIO DE LIDERAZGOS VISIBLES */}
-      <section id="liderazgos" className="py-20 lg:py-28 border-b border-[#181313]/8">
-        <div className="max-w-[1100px] mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl space-y-4 mb-14">
-            <SectionBadge code="[03 / CONDUCCIÓN COLECTIVA]">
-              Directorio de Liderazgos Visibles
-            </SectionBadge>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold font-display tracking-tight text-[#231012]">
-              Mujeres y hombres con mandato de las{" "}
-              <span className="font-editorial-italic font-normal text-[#C81E1E]">
-                asambleas comunitarias.
+      {/* 3. LIDERAZGOS VISIBLES CON CITAS DIRECTAS */}
+      <section id="liderazgos" className="w-full">
+        <div className="mx-auto w-full max-w-[1180px] px-6 lg:px-8 space-y-12">
+          
+          <div className="max-w-2xl space-y-3 pb-6 border-b border-[#141413]/12">
+            <span className="font-mono text-xs uppercase tracking-widest text-[#C83E2B] font-bold">
+              [03 / LIDERAZGOS Y VOCERÍA POLÍTICA]
+            </span>
+            <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-[#141413]">
+              Liderazgos de base con{" "}
+              <span className="font-serif italic font-normal text-[#C83E2B]">
+                mandato colectivo.
               </span>
             </h2>
+            <p className="text-sm sm:text-base text-[#57534E]">
+              Nuestras vocerías no responden a financistas ocultos; responden a las decisiones emanadas de las asambleas territoriales.
+            </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7">
-            {LIDERAZGOS_DIGNIDAD.map((lider, idx) => (
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {lideres.map((lider) => (
               <article
-                key={lider.id}
-                className="rounded-2xl bg-white border border-[#181313]/8 overflow-hidden flex flex-col justify-between"
+                key={lider.nombre}
+                className="rounded-3xl border border-[#141413]/12 bg-[#EBE5D8] overflow-hidden flex flex-col justify-between p-7 shadow-2xs hover:border-[#C83E2B]/50 transition duration-300"
               >
-                <div>
-                  <div className="relative aspect-[16/10] bg-[#7F1116] border-b border-[#181313]/8">
+                <div className="space-y-6">
+                  {/* Foto de Retrato */}
+                  <div className="aspect-[4/3] rounded-2xl overflow-hidden bg-[#111C16] relative border border-[#141413]/10">
                     <img
                       src={lider.fotografia}
-                      alt={lider.pieFoto}
-                      width={520}
-                      height={325}
-                      loading="lazy"
+                      alt={lider.nombre}
                       className="w-full h-full object-cover"
                     />
-                    <span className="absolute top-3 left-3 font-mono-code text-[10px] font-bold bg-[#7F1116]/85 text-[#FFD600] px-2.5 py-1 rounded">
-                      [0{idx + 1} / DIRIGENCIA]
-                    </span>
                   </div>
 
-                  <div className="p-6 space-y-3">
-                    <div>
-                      <h3 className="text-2xl font-extrabold font-display text-[#231012]">
-                        {lider.nombre}
-                      </h3>
-                      <p className="font-mono-code text-xs font-bold text-[#C81E1E] uppercase tracking-wider mt-0.5">
-                        {lider.cargo}
-                      </p>
-                      <p className="text-xs text-[#231012]/65 mt-1">
-                        {lider.origen}
-                      </p>
-                    </div>
-
-                    <p className="text-sm text-[#231012]/80 leading-relaxed">
-                      {lider.trayectoria}
+                  <div>
+                    <h3 className="font-display text-2xl font-bold text-[#141413]">
+                      {lider.nombre}
+                    </h3>
+                    <p className="font-mono text-xs uppercase tracking-wider text-[#C83E2B] font-bold mt-1">
+                      {lider.cargo}
+                    </p>
+                    <p className="font-mono text-[11px] text-[#57534E]">
+                      📍 {lider.origen}
                     </p>
                   </div>
+
+                  <blockquote className="text-xs sm:text-sm text-[#141413]/85 italic leading-relaxed pt-2 border-t border-[#141413]/10">
+                    “{lider.cita}”
+                  </blockquote>
                 </div>
 
-                <div className="p-6 pt-0 space-y-4">
-                  <figure className="p-4 rounded-xl bg-[#FAF8F5] border border-[#7F1116]/10">
-                    <Quote
-                      className="w-4 h-4 text-[#C81E1E] mb-1.5"
-                      aria-hidden="true"
-                    />
-                    <blockquote className="text-xs italic text-[#231012]/90 leading-relaxed">
-                      “{lider.cita}”
-                    </blockquote>
-                    <figcaption className="sr-only">
-                      {lider.nombre} en <cite>Dignidad Guatemala</cite>
-                    </figcaption>
-                  </figure>
-
-                  <div className="flex flex-wrap gap-1.5">
-                    {lider.etiquetas.map((tag) => (
-                      <span
-                        key={tag}
-                        className="font-mono-code text-[10px] font-bold uppercase px-2.5 py-1 rounded bg-[#7F1116]/10 text-[#231012]"
-                      >
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
+                <div className="pt-6 mt-6 border-t border-[#141413]/10 text-xs text-[#57534E] leading-relaxed">
+                  {lider.bio}
                 </div>
               </article>
             ))}
           </div>
+
         </div>
       </section>
 
-      {/* 4. PRINCIPIOS IDEOLÓGICOS (RETÍCULA CON BORDES VISIBLES CARGOFLOW) */}
-      <section className="py-20 lg:py-28 border-b border-[#181313]/8 bg-[#F3EDE4]/65/40">
-        <div className="max-w-[1100px] mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl space-y-4 mb-12">
-            <SectionBadge code="[04 / PRINCIPIOS]">
-              Horizonte Ideológico y Ético
-            </SectionBadge>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold font-display tracking-tight text-[#231012]">
-              Seis compromisos por el{" "}
-              <span className="font-editorial-italic font-normal text-[#C81E1E]">
-                Buen Vivir (Utz K&apos;aslemal).
+      {/* 4. TRANSPARENCIA, PRINCIPIOS Y DESCARGA DE ESTATUTOS */}
+      <section id="documentos" className="w-full">
+        <div className="mx-auto w-full max-w-[1180px] px-6 lg:px-8">
+          <div className="rounded-3xl bg-[#111C16] text-[#F5F2EB] p-8 sm:p-14 space-y-10">
+            
+            <div className="max-w-2xl space-y-3">
+              <span className="font-mono text-xs uppercase tracking-widest text-[#D9822B] font-bold">
+                [04 / TRANSPARENCIA Y DOCUMENTOS OFICIALES]
               </span>
-            </h2>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 border-t border-l border-[#181313]/8">
-            {PRINCIPIOS_IDEOLOGICOS.map((principio) => (
-              <div
-                key={principio.numero}
-                className="p-7 sm:p-8 bg-[#FAF8F5] border-r border-b border-[#181313]/8 flex flex-col justify-between"
-              >
-                <div>
-                  <span className="font-mono-code text-xs font-bold text-[#C81E1E] block mb-3">
-                    [PRINCIPIO {principio.numero}]
-                  </span>
-                  <h3 className="text-xl font-extrabold font-display text-[#231012] mb-2.5">
-                    {principio.titulo}
-                  </h3>
-                  <p className="text-sm text-[#231012]/80 leading-relaxed">
-                    {principio.descripcion}
-                  </p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* 5. DESCARGA DE ESTATUTOS Y DOCUMENTOS PÚBLICOS */}
-      <section id="documentos" className="py-20 lg:py-28">
-        <div className="max-w-[1100px] mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-12">
-            <div className="max-w-2xl space-y-4">
-              <SectionBadge code="[05 / ARCHIVO PÚBLICO]">
-                Estatutos y Documentos Oficiales TSE
-              </SectionBadge>
-              <h2 className="text-3xl sm:text-4xl font-extrabold font-display tracking-tight text-[#231012]">
-                Documentación pública para estudio en las comunidades.
+              <h2 className="font-display text-3xl sm:text-4xl font-bold tracking-tight text-white">
+                Nuestros principios y estatutos son públicos.
               </h2>
+              <p className="text-sm sm:text-base text-white/75">
+                Creemos en la transparencia radical. Descarga los documentos legales presentados y aprobados ante el Registro de Ciudadanos del TSE.
+              </p>
             </div>
 
-            <Link
-              href="/afiliate"
-              className="inline-flex items-center gap-2 bg-[#C81E1E] text-[#FAF6F0] font-bold text-sm px-6 py-3.5 rounded-full self-start lg:self-auto"
-            >
-              <span>Afíliate en tu Municipio ↗</span>
-            </Link>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {DOCUMENTOS_OFICIALES.map((doc) => (
-              <div
-                key={doc.id}
-                className="rounded-2xl bg-[#F3EDE4]/65/60 border border-[#181313]/8 p-7 flex flex-col justify-between"
-              >
-                <div>
-                  <div className="flex items-center justify-between gap-2 font-mono-code text-xs mb-3">
-                    <span className="font-bold text-[#C81E1E]">
-                      [{doc.categoria.toUpperCase()}]
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {DOCUMENTOS_OFICIALES.map((doc) => (
+                <div
+                  key={doc.titulo}
+                  className="rounded-2xl border border-white/15 bg-white/5 p-6 flex flex-col justify-between gap-4"
+                >
+                  <div className="space-y-2">
+                    <span className="font-mono text-[10px] uppercase font-bold text-[#D9822B]">
+                      {doc.categoria} · {doc.peso}
                     </span>
-                    <span className="text-[#231012]/70">
-                      {doc.fecha} · {doc.paginas}
-                    </span>
+                    <h3 className="font-display text-lg font-bold text-white">
+                      {doc.titulo}
+                    </h3>
+                    <p className="text-xs text-white/70 leading-relaxed">
+                      {doc.descripcion}
+                    </p>
                   </div>
-                  <h3 className="text-xl font-extrabold font-display text-[#231012] mb-2">
-                    {doc.titulo}
-                  </h3>
-                  <p className="text-sm text-[#231012]/80 leading-relaxed mb-6">
-                    {doc.descripcion}
-                  </p>
-                </div>
 
-                <div className="pt-4 border-t border-[#181313]/8 flex items-center justify-between">
-                  <span className="font-mono-code text-xs font-bold text-[#231012]/75">
-                    {doc.peso}
-                  </span>
                   <a
                     href={doc.urlDescarga}
                     download
-                    className="inline-flex items-center gap-2 bg-[#7F1116] hover:bg-[#C81E1E] text-[#FAF6F0] font-bold text-xs px-4 py-2.5 rounded-full transition"
+                    className="inline-flex items-center justify-between w-full py-3 px-4 rounded-xl bg-white text-[#111C16] hover:bg-[#C83E2B] hover:text-white font-mono text-xs font-bold uppercase transition"
                   >
-                    <Download className="w-3.5 h-3.5" aria-hidden="true" />
                     <span>Descargar PDF</span>
+                    <Download className="w-4 h-4" />
                   </a>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
+
           </div>
         </div>
       </section>
+
     </div>
   );
 }

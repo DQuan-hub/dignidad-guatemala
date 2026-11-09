@@ -51,8 +51,8 @@ export const EJES_PROGRAMATICOS: EjeProgramatico[] = [
   {
     numero: "01",
     etiquetaSeccion: "[01 / TERRITORIO Y AGUA]",
-    slug: "defensa-del-territorio-y-agua",
-    aliases: ["defensa-territorio-bienes-naturales"],
+    slug: "defensa-del-territorio-y-bienes-naturales",
+    aliases: ["defensa-del-territorio-y-agua", "defensa-territorio-bienes-naturales"],
     titulo: "Defensa del Territorio y Bienes Naturales",
     palabraClaveCursiva: "Madre Agua y bosques comunales",
     subtitulo: "Defensa de tierras comunales, bosques y bienes hídricos frente al despojo extractivista.",
@@ -225,8 +225,8 @@ export const EJES_PROGRAMATICOS: EjeProgramatico[] = [
   {
     numero: "03",
     etiquetaSeccion: "[03 / ESTADO PLURINACIONAL]",
-    slug: "estado-plurinacional-y-pueblos-indigenas",
-    aliases: ["estado-plurinacional-justicia-social"],
+    slug: "estado-plurinacional-y-derechos-indigenas",
+    aliases: ["estado-plurinacional-y-pueblos-indigenas", "estado-plurinacional-justicia-social"],
     titulo: "Estado Plurinacional y Pueblos Indígenas",
     palabraClaveCursiva: "cuatro pueblos en igualdad",
     subtitulo: "Reconocimiento de derechos colectivos y fin del racismo estructural contra los pueblos Maya, Xinka y Garífuna.",
@@ -399,8 +399,8 @@ export const EJES_PROGRAMATICOS: EjeProgramatico[] = [
   {
     numero: "05",
     etiquetaSeccion: "[05 / JUSTICIA Y TRANSPARENCIA]",
-    slug: "justicia-y-lucha-anticorrupcion",
-    aliases: ["lucha-contra-corrupcion-cooptacion"],
+    slug: "justicia-transparencia-y-fin-de-la-cooptacion",
+    aliases: ["justicia-y-lucha-anticorrupcion", "lucha-contra-corrupcion-cooptacion"],
     titulo: "Justicia y Lucha Anticorrupción",
     palabraClaveCursiva: "auditoría comunitaria y cero impunidad",
     subtitulo: "Recuperación de las instituciones públicas, auditoría comunitaria y fin de la impunidad.",

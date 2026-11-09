@@ -30,3 +30,9 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
+# Binaries & Logs
+scripts/bin/
+*.exe
+*.log
+
+.vercel

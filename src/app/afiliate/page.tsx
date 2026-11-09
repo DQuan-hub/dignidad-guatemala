@@ -199,98 +199,87 @@ export default function AfiliatePage() {
   }, [values]);
 
   return (
-    <div className="bg-[#FAF8F5]">
-      {/* 1. CABECERA CENTRO DE AFILIACIÓN Y TERRITORIO */}
-      <section className="bg-[#7F1116] text-[#FAF6F0] py-20 lg:py-24 border-b border-[#FAF6F0]/10">
-        <div className="max-w-[1100px] mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="bg-[#F5F2EB] flex flex-col gap-16 sm:gap-24 pb-16 pt-6 sm:pt-10">
+      {/* 1. CABECERA CENTRO DE AFILIACIÓN Y GUÍA TSE EN 3 PASOS */}
+      <section className="w-full">
+        <div className="mx-auto w-full max-w-[1180px] px-6 lg:px-8 space-y-10">
           <div className="max-w-3xl space-y-5">
-            <SectionBadge code="01 / AFILIACIÓN TSE" variant="dark">
-              Centro de Afiliación y Organización Territorial · Partido #28 TSE
-            </SectionBadge>
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold font-display tracking-tight text-[#FAF6F0]">
-              <VariableFontHover
-                className="justify-start text-left text-[#FAF6F0]"
-                fromFontVariationSettings="'wght' 300, 'slnt' 0"
-                toFontVariationSettings="'wght' 900, 'slnt' -10"
-                label="Súmate a"
-                staggerDuration={0.02}
-                staggerFrom="first"
-              />{" "}
-              <span className="font-editorial-italic font-semibold text-[#FFD600]">
+            <div className="inline-flex items-center gap-2 font-mono text-xs uppercase tracking-widest text-[#C83E2B] font-bold">
+              <span>[01 / AFILIACIÓN TSE · PARTIDO #28]</span>
+            </div>
+            <h1 className="font-display text-4xl sm:text-5xl lg:text-[3.5rem] font-bold tracking-tight text-[#141413] leading-[1.04]">
+              Afíliate a{" "}
+              <span className="font-serif italic font-normal text-[#C83E2B]">
                 dignidad
               </span>{" "}
               en tu departamento y municipio.
             </h1>
-            <p className="text-lg text-[#FAF6F0]/80 leading-relaxed">
-              Afiliarte a Dignidad Guatemala es ejercer tu derecho constitucional a construir un instrumento político de los{" "}
-              <span className="font-editorial-italic text-xl text-[#FFD600]">
-                pueblos
-              </span>
-              , sin clientelismo y con democracia comunitaria rumbo a 2027.
+            <p className="text-base sm:text-lg text-[#57534E] leading-relaxed">
+              Afiliarte a Dignidad Guatemala es ejercer tu derecho constitucional a construir un instrumento político de los pueblos, sin caciques ni financistas corporativos rumbo a 2027.
             </p>
           </div>
 
           {/* GUÍA PASO A PASO PARA AFILIARSE ANTE EL TSE */}
-          <div className="mt-14 grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div className="rounded-3xl bg-white/5 border border-white/15 p-7 flex flex-col justify-between">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="rounded-3xl bg-[#EBE5D8] border border-[#141413]/12 p-7 flex flex-col justify-between shadow-2xs">
               <div>
-                <span className="inline-block px-3 py-1 rounded-full text-xs font-mono-code font-bold bg-[#C81E1E] text-white mb-4">
+                <span className="inline-block px-3 py-1 rounded-full text-xs font-mono font-bold bg-[#C83E2B] text-white mb-4">
                   Paso 1 · RENAP
                 </span>
-                <h2 className="text-xl font-extrabold font-display text-[#FAF6F0] mb-2">
-                  Contar con DPI vigente emitido por el RENAP
+                <h2 className="text-xl font-bold font-display text-[#141413] mb-2">
+                  DPI vigente emitido por el RENAP
                 </h2>
-                <p className="text-sm text-[#FAF6F0]/75 leading-relaxed">
-                  Tu Documento Personal de Identificación (CUI de 13 dígitos) debe encontrarse vigente y en buen estado para validar tu firma o huella ante el Registro de Ciudadanos.
+                <p className="text-sm text-[#57534E] leading-relaxed">
+                  Tu Documento Personal de Identificación (CUI de 13 dígitos numéricos) debe encontrarse vigente y en buen estado para el cotejo oficial del TSE.
                 </p>
               </div>
-              <p className="mt-4 pt-3 border-t border-white/10 text-xs font-mono-code text-[#FFD600] font-bold">
+              <p className="mt-4 pt-3 border-t border-[#141413]/10 text-xs font-mono text-[#C83E2B] font-bold">
                 Requisito indispensable según la LEPP
               </p>
             </div>
 
-            <div className="rounded-3xl bg-white/5 border border-white/15 p-7 flex flex-col justify-between">
+            <div className="rounded-3xl bg-[#EBE5D8] border border-[#141413]/12 p-7 flex flex-col justify-between shadow-2xs">
               <div>
-                <span className="inline-block px-3 py-1 rounded-full text-xs font-mono-code font-bold bg-[#C81E1E] text-white mb-4">
+                <span className="inline-block px-3 py-1 rounded-full text-xs font-mono font-bold bg-[#C83E2B] text-white mb-4">
                   Paso 2 · Empadronamiento
                 </span>
-                <h2 className="text-xl font-extrabold font-display text-[#FAF6F0] mb-2">
+                <h2 className="text-xl font-bold font-display text-[#141413] mb-2">
                   Estar empadronado ante el TSE
                 </h2>
-                <p className="text-sm text-[#FAF6F0]/75 leading-relaxed">
-                  Verifica que tu DPI esté empadronado y con residencia electoral actualizada en tu municipio para poder elegir y ser electo en asambleas.
+                <p className="text-sm text-[#57534E] leading-relaxed">
+                  Verifica que tu DPI esté empadronado y con residencia electoral actualizada en tu municipio para poder votar en las asambleas partidarias.
                 </p>
               </div>
-              <div className="mt-4 pt-3 border-t border-white/10">
+              <div className="mt-4 pt-3 border-t border-[#141413]/10">
                 <a
                   href="https://dondevotas.tse.org.gt/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1.5 text-xs font-mono-code font-bold text-[#FFD600] hover:text-amber-300 underline"
+                  className="inline-flex items-center gap-1.5 text-xs font-mono font-bold text-[#141413] hover:text-[#C83E2B] transition"
                 >
-                  <span>Consultar Empadronamiento en el Portal del TSE</span>
-                  <ExternalLink className="w-3.5 h-3.5" aria-hidden="true" />
+                  <span>Consultar Empadronamiento en el TSE</span>
+                  <ExternalLink className="w-3.5 h-3.5 text-[#C83E2B]" />
                 </a>
               </div>
             </div>
 
-            <div className="rounded-3xl bg-white/5 border border-white/15 p-7 flex flex-col justify-between">
+            <div className="rounded-3xl bg-[#111C16] text-[#F5F2EB] border border-white/10 p-7 flex flex-col justify-between shadow-sm">
               <div>
-                <span className="inline-block px-3 py-1 rounded-full text-xs font-mono-code font-bold bg-[#C81E1E] text-white mb-4">
-                  Paso 3 · Tu Municipio
+                <span className="inline-block px-3 py-1 rounded-full text-xs font-mono font-bold bg-[#C83E2B] text-white mb-4">
+                  Paso 3 · Tu Sede
                 </span>
-                <h2 className="text-xl font-extrabold font-display text-[#FAF6F0] mb-2">
-                  Acudir a tu sede departamental o jornada comunitaria
+                <h2 className="text-xl font-bold font-display text-white mb-2">
+                  Firmar en tu sede o brigada móvil
                 </h2>
-                <p className="text-sm text-[#FAF6F0]/75 leading-relaxed">
-                  Acércate a cualquiera de nuestras sedes en los 22 departamentos o regístrate en el formulario inferior para que el coordinador municipal te contacte en tu comunidad.
+                <p className="text-sm text-white/75 leading-relaxed">
+                  Acude a cualquiera de nuestros puntos de atención en los 22 departamentos o llena el formulario de abajo para coordinar la visita de una brigada a tu comunidad.
                 </p>
               </div>
               <a
                 href="#formulario-afiliacion"
-                className="mt-4 pt-3 border-t border-white/10 inline-flex items-center gap-1.5 text-xs font-mono-code font-bold text-[#FFD600] hover:text-amber-300"
+                className="mt-4 pt-3 border-t border-white/10 inline-flex items-center gap-1.5 text-xs font-mono font-bold text-[#D9822B] hover:text-white transition"
               >
-                <span>Ir al formulario de Pre-Afiliación Digital →</span>
+                <span>Ir al Formulario de Pre-Afiliación →</span>
               </a>
             </div>
           </div>
@@ -298,33 +287,33 @@ export default function AfiliatePage() {
       </section>
 
       {/* 2. BUSCADOR Y MAPA INTERACTIVO DE SEDES DEPARTAMENTALES */}
-      <section id="mapa-sedes" className="py-16 lg:py-24 border-b border-[#181313]/8">
-        <div className="max-w-[1100px] mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl space-y-4 mb-10">
-            <SectionBadge code="02 / 22 DEPARTAMENTOS">
-              Directorio Territorial · OpenStreetMap
-            </SectionBadge>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold font-display tracking-tight text-[#231012]">
+      <section id="mapa-sedes" className="w-full">
+        <div className="mx-auto w-full max-w-[1180px] px-6 lg:px-8 space-y-8">
+          <div className="max-w-3xl space-y-3 pb-4 border-b border-[#141413]/10">
+            <div className="inline-flex items-center gap-2 font-mono text-xs uppercase tracking-widest text-[#C83E2B] font-bold">
+              <span>[02 / 22 DEPARTAMENTOS · OPENSTREETMAP]</span>
+            </div>
+            <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-[#141413]">
               Encuentra tu sede de{" "}
-              <span className="font-editorial-italic font-normal text-[#C81E1E]">
+              <span className="font-serif italic font-normal text-[#C83E2B]">
                 dignidad
               </span>{" "}
-              por Departamento y Municipio.
+              en todo el país.
             </h2>
-            <p className="text-[#231012]/75 text-base">
-              Filtra por cualquiera de los 22 departamentos o haz clic en un marcador del mapa para ver dirección exacta, horario de atención, coordinador responsable y enlaces a Google Maps, Waze y WhatsApp.
+            <p className="text-[#57534E] text-sm sm:text-base leading-relaxed">
+              Filtra por cualquiera de los 22 departamentos o haz clic en un marcador del mapa para consultar la dirección, horario de atención, coordinador responsable y enlaces directos a Google Maps, Waze y WhatsApp.
             </p>
           </div>
 
-          {/* Barra de Búsqueda Semántica (<search>) */}
+          {/* Barra de Búsqueda Semántica */}
           <search
             aria-label="Buscador de sedes departamentales y municipales de Dignidad"
-            className="rounded-3xl bg-[#F3EDE4]/65 border border-[#181313]/8 p-5 shadow-sm mb-8 grid grid-cols-1 md:grid-cols-12 gap-4 items-end"
+            className="rounded-3xl bg-[#EBE5D8] border border-[#141413]/12 p-6 shadow-xs grid grid-cols-1 md:grid-cols-12 gap-5 items-end"
           >
-            <div className="md:col-span-5">
+            <div className="md:col-span-6 space-y-2">
               <label
                 htmlFor="filtro-departamento"
-                className="block text-xs font-mono-code font-bold uppercase tracking-wider text-[#231012]/80 mb-2"
+                className="block font-mono text-xs font-bold uppercase tracking-wider text-[#141413]"
               >
                 Filtrar por Departamento (22 Departamentos)
               </label>
@@ -339,7 +328,7 @@ export default function AfiliatePage() {
                   );
                   setSelectedSede(firstMatch || null);
                 }}
-                className="w-full min-h-[48px] px-4 py-2.5 rounded-2xl bg-[#FAF8F5] border border-[#181313]/10 text-base font-semibold text-[#231012]"
+                className="w-full h-12 px-4 rounded-xl bg-white border border-[#141413]/15 text-sm font-semibold text-[#141413]"
               >
                 {DEPARTAMENTOS_GUATEMALA.map((dept) => (
                   <option key={dept} value={dept}>
@@ -349,16 +338,16 @@ export default function AfiliatePage() {
               </select>
             </div>
 
-            <div className="md:col-span-5">
+            <div className="md:col-span-6 space-y-2">
               <label
                 htmlFor="busqueda-municipio"
-                className="block text-xs font-mono-code font-bold uppercase tracking-wider text-[#231012]/80 mb-2"
+                className="block font-mono text-xs font-bold uppercase tracking-wider text-[#141413]"
               >
-                Buscar por Municipio, Comunidad o Coordinador
+                Buscar por Municipio o Coordinador
               </label>
               <div className="relative">
                 <Search
-                  className="w-4 h-4 text-[#231012]/50 absolute left-3.5 top-1/2 -translate-y-1/2 pointer-events-none"
+                  className="w-4 h-4 text-[#57534E] absolute left-3.5 top-1/2 -translate-y-1/2 pointer-events-none"
                   aria-hidden="true"
                 />
                 <input
@@ -369,24 +358,9 @@ export default function AfiliatePage() {
                   placeholder="Ej. San Lucas Tolimán, Cobán, La Máquina, Xela..."
                   autoCorrect="off"
                   autoCapitalize="off"
-                  spellCheck={false}
-                  className="w-full min-h-[48px] pl-10 pr-4 py-2.5 rounded-2xl bg-[#FAF8F5] border border-[#181313]/10 text-base text-[#231012]"
+                  className="w-full h-12 pl-10 pr-4 rounded-xl bg-white border border-[#141413]/15 text-sm text-[#141413] placeholder-[#57534E] focus:outline-none focus:border-[#C83E2B]"
                 />
               </div>
-            </div>
-
-            <div className="md:col-span-2">
-              <button
-                type="button"
-                onClick={() => {
-                  setSelectedDepto("Todos");
-                  setSearchQuery("");
-                  setSelectedSede(null);
-                }}
-                className="w-full min-h-[48px] px-4 py-2.5 rounded-2xl bg-[#7F1116] hover:bg-[#C81E1E] text-[#FAF6F0] font-mono-code font-bold text-xs uppercase tracking-wider transition cursor-pointer"
-              >
-                Ver Todas ({SEDES_AFILIACION.length})
-              </button>
             </div>
           </search>
 
@@ -400,69 +374,69 @@ export default function AfiliatePage() {
                 onSelectSede={(sede) => setSelectedSede(sede)}
               />
 
-              {/* Detalle de la Sede Seleccionada */}
+              {/* Detalle de la Sede Seleccionada estilo Kelvora */}
               {selectedSede && (
-                <div className="rounded-3xl bg-[#7F1116] text-[#FAF6F0] p-6 sm:p-8 border border-[#7F1116] shadow-lg">
-                  <div className="flex flex-wrap items-center justify-between gap-2 mb-3">
-                    <span className="px-3 py-1 rounded-full text-xs font-mono-code font-bold uppercase tracking-wider bg-[#C81E1E] text-white">
-                      Sede Activa · {selectedSede.departamento.toUpperCase()}]
+                <div className="rounded-3xl bg-[#111C16] text-[#F5F2EB] p-6 sm:p-8 border border-white/10 shadow-lg space-y-4">
+                  <div className="flex flex-wrap items-center justify-between gap-2">
+                    <span className="px-3 py-1 rounded-full text-xs font-mono font-bold uppercase tracking-wider bg-[#C83E2B] text-white">
+                      Sede Activa · {selectedSede.departamento.toUpperCase()}
                     </span>
-                    <span className="text-xs font-mono-code font-semibold text-[#FFD600]">
+                    <span className="text-xs font-mono font-semibold text-[#D9822B]">
                       Región {selectedSede.region}
                     </span>
                   </div>
 
-                  <h3 className="text-2xl font-extrabold font-display text-[#FAF6F0] mb-2">
+                  <h3 className="text-2xl font-bold font-display text-white">
                     {selectedSede.nombre}
                   </h3>
-                  <p className="text-sm text-[#FAF6F0]/85 mb-4">
+                  <p className="text-sm text-white/80">
                     {selectedSede.direccion} ({selectedSede.referencia})
                   </p>
 
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs text-[#FAF6F0]/90 mb-6">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs text-white/90">
                     <div className="flex items-center gap-2 p-3 rounded-xl bg-white/5 border border-white/10">
-                      <UserCheck className="w-4 h-4 text-[#FFD600] shrink-0" aria-hidden="true" />
+                      <UserCheck className="w-4 h-4 text-[#D9822B] shrink-0" />
                       <div>
-                        <span className="block text-[#FAF6F0]/65">Coordinación:</span>
+                        <span className="block text-white/60">Coordinación:</span>
                         <strong className="text-white">{selectedSede.coordinador}</strong>
                       </div>
                     </div>
                     <div className="flex items-center gap-2 p-3 rounded-xl bg-white/5 border border-white/10">
-                      <Clock className="w-4 h-4 text-[#FFD600] shrink-0" aria-hidden="true" />
+                      <Clock className="w-4 h-4 text-[#D9822B] shrink-0" />
                       <div>
-                        <span className="block text-[#FAF6F0]/65">Horario de atención:</span>
+                        <span className="block text-white/60">Horario de atención:</span>
                         <strong className="text-white">{selectedSede.horario}</strong>
                       </div>
                     </div>
                   </div>
 
-                  <div className="flex flex-wrap gap-3">
+                  <div className="flex flex-wrap gap-3 pt-2">
                     <a
                       href={selectedSede.googleMapsUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 bg-white/10 hover:bg-white/20 text-white border border-white/15 font-bold text-xs px-4 py-3 rounded-xl transition"
+                      className="inline-flex items-center gap-2 bg-white/10 hover:bg-white/20 text-white border border-white/15 font-mono text-xs font-bold uppercase px-4 py-2.5 rounded-xl transition"
                     >
-                      <MapPin className="w-4 h-4 text-[#FFD600]" aria-hidden="true" />
+                      <MapPin className="w-4 h-4 text-[#D9822B]" />
                       <span>Abrir en Google Maps</span>
                     </a>
                     <a
                       href={selectedSede.wazeUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 bg-white/10 hover:bg-white/20 text-white border border-white/15 font-bold text-xs px-4 py-3 rounded-xl transition"
+                      className="inline-flex items-center gap-2 bg-white/10 hover:bg-white/20 text-white border border-white/15 font-mono text-xs font-bold uppercase px-4 py-2.5 rounded-xl transition"
                     >
-                      <Navigation className="w-4 h-4 text-[#FFD600]" aria-hidden="true" />
+                      <Navigation className="w-4 h-4 text-[#D9822B]" />
                       <span>Navegar con Waze</span>
                     </a>
                     <a
                       href={selectedSede.whatsapp}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 bg-[#FFD600] hover:bg-[#FACC15] text-[#231012] font-extrabold text-xs px-5 py-3 rounded-xl transition"
+                      className="inline-flex items-center gap-2 bg-[#C83E2B] hover:bg-[#A93322] text-white font-mono text-xs font-bold uppercase px-4 py-2.5 rounded-xl transition"
                     >
-                      <MessageSquare className="w-4 h-4" aria-hidden="true" />
-                      <span>Contactar por WhatsApp</span>
+                      <MessageSquare className="w-4 h-4 text-[#D9822B]" />
+                      <span>WhatsApp Coordinador</span>
                     </a>
                   </div>
                 </div>
