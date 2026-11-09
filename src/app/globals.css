@@ -1,0 +1,186 @@
+@import "tailwindcss";
+@import "leaflet/dist/leaflet.css";
+
+@theme {
+  --font-display: var(--font-bricolage), ui-sans-serif, system-ui, sans-serif;
+  --font-serif: var(--font-fraunces), Georgia, serif;
+  --font-variable: var(--font-roboto-flex), var(--font-bricolage), sans-serif;
+  --font-mono: var(--font-jetbrains-mono), ui-monospace, SFMono-Regular, monospace;
+  --font-sans: var(--font-bricolage), ui-sans-serif, system-ui, sans-serif;
+
+  --color-background: #FAF8F5;
+  --color-foreground: #181313;
+  --color-dignidad-paper: #FAF8F5;
+  --color-dignidad-clay: #F3EDE4;
+  --color-dignidad-crimson-dark: #7F1116;
+  --color-dignidad-red: #B81D13;
+  --color-dignidad-gold: #FFD600;
+  --color-muted-foreground: #665A5A;
+}
+
+:root {
+  --bg-paper: #FAF8F5;
+  --bg-clay: #F3EDE4;
+  --bg-crimson-dark: #7F1116;
+  --accent-red: #B81D13;
+  --accent-gold: #FFD600;
+}
+
+html {
+  scroll-behavior: smooth;
+  background-color: #FAF8F5;
+  color: #181313;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: #FAF8F5;
+  color: #181313;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, .font-display {
+  font-family: var(--font-display);
+  letter-spacing: -0.03em;
+  line-height: 1.06;
+}
+
+.font-serif-display {
+  font-family: var(--font-serif);
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  line-height: 1.06;
+}
+
+.font-editorial-italic {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: 500;
+  letter-spacing: -0.015em;
+}
+
+.font-variable {
+  font-family: var(--font-variable);
+}
+
+.font-mono-code {
+  font-family: var(--font-mono);
+}
+
+/* Marco sutil de ventana estilo rbp-portfolio.vercel.app */
+.site-frame {
+  position: fixed;
+  z-index: 40;
+  pointer-events: none;
+  background-color: #EFE8DD;
+}
+
+.site-frame--top {
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 10px;
+}
+
+.site-frame--left {
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 10px;
+}
+
+.site-frame--right {
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 10px;
+}
+
+.site-corner {
+  position: fixed;
+  z-index: 40;
+  pointer-events: none;
+  color: #EFE8DD;
+  width: 36px;
+  height: 36px;
+}
+
+.site-corner--top-left {
+  top: 10px;
+  left: 10px;
+}
+
+.site-corner--top-right {
+  top: 10px;
+  right: 10px;
+  transform: scaleX(-1);
+}
+
+@media (max-width: 640px) {
+  .site-frame,
+  .site-corner {
+    display: none;
+  }
+}
+
+/* Tarjetas estilo rbp-portfolio.vercel.app (.project-card) */
+.project-card {
+  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 0.25s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 18px 40px -15px rgba(127, 17, 22, 0.1);
+  border-color: rgba(184, 29, 19, 0.22);
+}
+
+.project-card__image-inner {
+  transition: transform 0.55s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.project-card:hover .project-card__image-inner {
+  transform: scale(1.03);
+}
+
+/* Textura sutil de papel cálido */
+.paper-grain-overlay {
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+}
+
+/* Modern Web Guidance: Native Modal Dialog & Backdrop Scroll Containment */
+dialog:modal {
+  overscroll-behavior: contain;
+}
+
+dialog::backdrop {
+  overflow: hidden;
+  overscroll-behavior: contain;
+  background-color: rgba(24, 19, 19, 0.72);
+  backdrop-filter: blur(8px);
+}
+
+/* Modern Web Guidance: Accessible Focus & Touch Target Sizing */
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+button:focus-visible,
+a:focus-visible {
+  outline: 2px solid #B81D13;
+  outline-offset: 2px;
+}
+
+@media (pointer: coarse) {
+  input,
+  select,
+  button.touch-target {
+    min-height: 48px;
+  }
+}
+
+.leaflet-container {
+  z-index: 10 !important;
+  font-family: var(--font-sans) !important;
+}

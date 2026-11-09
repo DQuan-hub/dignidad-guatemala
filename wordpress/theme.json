@@ -1,0 +1,58 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/theme.json",
+  "version": 3,
+  "settings": {
+    "appearanceTools": true,
+    "layout": {
+      "contentSize": "760px",
+      "wideSize": "1100px"
+    },
+    "color": {
+      "palette": [
+        { "slug": "base", "color": "#FAF8F5", "name": "Papel Crema (Base)" },
+        { "slug": "contrast", "color": "#181313", "name": "Tinta Cálida (Contrast)" },
+        { "slug": "primary", "color": "#B81D13", "name": "Rojo Dignidad (Primary)" },
+        { "slug": "secondary", "color": "#FFD600", "name": "Amarillo Maíz (Secondary)" },
+        { "slug": "tertiary", "color": "#F3EDE4", "name": "Piedra Suave (Tertiary)" }
+      ]
+    },
+    "typography": {
+      "fontFamilies": [
+        {
+          "slug": "heading",
+          "name": "Fraunces Editorial",
+          "fontFamily": "'Fraunces', Georgia, serif"
+        },
+        {
+          "slug": "body",
+          "name": "Bricolage Grotesque",
+          "fontFamily": "'Bricolage Grotesque', system-ui, sans-serif"
+        },
+        {
+          "slug": "monospace",
+          "name": "JetBrains Mono",
+          "fontFamily": "'JetBrains Mono', monospace"
+        }
+      ],
+      "fontSizes": [
+        { "slug": "small", "size": "0.875rem", "name": "Small" },
+        { "slug": "medium", "size": "1.0625rem", "name": "Medium" },
+        { "slug": "large", "size": "1.25rem", "name": "Large" },
+        { "slug": "x-large", "size": "2.25rem", "name": "Extra Large" },
+        { "slug": "xx-large", "size": "clamp(2.5rem, 4.5vw, 3.55rem)", "name": "2X Large Display" }
+      ]
+    },
+    "spacing": {
+      "spacingSizes": [
+        { "slug": "20", "size": "0.5rem", "name": "XS" },
+        { "slug": "30", "size": "1rem", "name": "Small" },
+        { "slug": "40", "size": "1.5rem", "name": "Medium" },
+        { "slug": "50", "size": "2.5rem", "name": "Large" },
+        { "slug": "60", "size": "4rem", "name": "XL" },
+        { "slug": "70", "size": "6rem", "name": "2XL" },
+        { "slug": "80", "size": "8rem", "name": "3XL" }
+      ]
+    }
+  }
+}
+

@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1080" width="1080" height="1080">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0B192C"/>
+      <stop offset="100%" stop-color="#0F291E"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="85%" cy="15%" r="55%">
+      <stop offset="0%" stop-color="#EAB308" stop-opacity="0.28"/>
+      <stop offset="100%" stop-color="#EAB308" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="grid" width="60" height="60" patternUnits="userSpaceOnUse">
+      <path d="M 60 0 L 0 0 0 60" fill="none" stroke="#ffffff" stroke-width="1" stroke-opacity="0.05"/>
+    </pattern>
+  </defs>
+  <rect width="1080" height="1080" fill="url(#bg)"/>
+  <rect width="1080" height="1080" fill="url(#glow)"/>
+  <rect width="1080" height="1080" fill="url(#grid)"/>
+  <!-- Franja textil maya estilizada superior -->
+  <g opacity="0.85">
+    <rect x="0" y="0" width="180" height="14" fill="#EAB308"/>
+    <rect x="180" y="0" width="180" height="14" fill="#15803D"/>
+    <rect x="360" y="0" width="180" height="14" fill="#DC2626"/>
+    <rect x="540" y="0" width="180" height="14" fill="#2563EB"/>
+    <rect x="720" y="0" width="180" height="14" fill="#EAB308"/>
+    <rect x="900" y="0" width="180" height="14" fill="#15803D"/>
+  </g>
+  <!-- Marco interior -->
+  <rect x="40" y="44" width="1000" height="992" rx="32" fill="none" stroke="#ffffff" stroke-opacity="0.12" stroke-width="2"/>
+  <!-- Badge -->
+  <rect x="64" y="84" width="440" height="48" rx="24" fill="#EAB308" fill-opacity="0.16" stroke="#EAB308" stroke-opacity="0.5"/>
+  <circle cx="94" cy="108" r="7" fill="#EAB308"/>
+  <text x="114" y="115" fill="#EAB308" font-family="system-ui, -apple-system, sans-serif" font-size="20" font-weight="800" letter-spacing="1.5">EJE 01 · DEFENSA DEL TERRITORIO</text>
+  <!-- Número #28 marca de agua -->
+  <text x="720" y="370" fill="#ffffff" fill-opacity="0.04" font-family="system-ui, -apple-system, sans-serif" font-size="240" font-weight="900">#28</text>
+  <!-- Ilustración simbólica: montañas, sol y maíz -->
+  <g transform="translate(64, 210)">
+    <path d="M0 190 L130 60 L240 160 L370 30 L520 190 Z" fill="#38BDF8" fill-opacity="0.18" stroke="#38BDF8" stroke-opacity="0.4" stroke-width="3"/>
+    <circle cx="370" cy="30" r="38" fill="#EAB308" fill-opacity="0.85"/>
+  </g>
+  <!-- Titular principal -->
+  <text x="64" y="510" fill="#F9FAFB" font-family="system-ui, -apple-system, sans-serif" font-size="46" font-weight="800"><tspan x="64" dy="0">El Agua es Vida y Derecho</tspan><tspan x="64" dy="54">de las Comunidades, No</tspan><tspan x="64" dy="54">Mercancía</tspan></text>
+  <!-- Línea divisoria -->
+  <rect x="64" y="750" width="140" height="6" rx="3" fill="#EAB308"/>
+  <!-- Subtítulo -->
+  <text x="64" y="810" fill="#D1FAE5" font-family="system-ui, -apple-system, sans-serif" font-size="26" font-weight="500">Ley General de Aguas Comunitaria y protección de bosques ancestrales</text>
+  <!-- Footer -->
+  <rect x="40" y="920" width="1000" height="116" rx="0" fill="#000000" fill-opacity="0.35"/>
+  <text x="64" y="986" fill="#F9FAFB" font-family="system-ui, -apple-system, sans-serif" font-size="24" font-weight="700">DIGNIDAD GUATEMALA · PARTIDO #28 TSE</text>
+  <text x="690" y="986" fill="#EAB308" font-family="system-ui, -apple-system, sans-serif" font-size="22" font-weight="700">@dignidad.guate</text>
+</svg>

@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400">
+  <defs>
+    <radialGradient id="dignidadRed" cx="35%" cy="30%" r="70%">
+      <stop offset="0%" stop-color="#D9231A"/>
+      <stop offset="100%" stop-color="#B81D13"/>
+    </radialGradient>
+  </defs>
+  <circle cx="200" cy="200" r="192" fill="url(#dignidadRed)" stroke="#FFFFFF" stroke-width="10"/>
+  <text x="200" y="222" text-anchor="middle" fill="#FFD600" font-family="Arial Black, Impact, system-ui, sans-serif" font-weight="900" font-style="italic" font-size="62" letter-spacing="-1">DIGNIDAD</text>
+</svg>
