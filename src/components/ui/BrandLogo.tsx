@@ -52,12 +52,12 @@ export function BrandLogo({
             className="w-full h-full"
             aria-label="Logotipo Dignidad Guatemala"
           >
-            <circle cx="50" cy="50" r="48" fill="#C81E1E" />
+            <circle cx="50" cy="50" r="48" fill="#C83226" />
             <text
               x="50"
               y="56"
               textAnchor="middle"
-              fill="#FFD600"
+              fill="#F5B800"
               fontWeight="900"
               fontStyle="italic"
               fontSize="16"
@@ -74,7 +74,7 @@ export function BrandLogo({
             <span
               className={cn(
                 "text-lg sm:text-xl font-extrabold font-display tracking-tight",
-                theme === "light" ? "text-[#231012]" : "text-[#FAF6F0]"
+                theme === "light" ? "text-[#141413]" : "text-[#FAF8F5]"
               )}
             >
               DIGNIDAD GUATEMALA
@@ -82,8 +82,8 @@ export function BrandLogo({
           </div>
           <span
             className={cn(
-              "block font-mono-code text-[10px] uppercase tracking-widest mt-1",
-              theme === "light" ? "text-[#C81E1E]" : "text-[#FFD600]"
+              "block font-mono text-[10px] uppercase tracking-widest mt-1 font-bold",
+              theme === "light" ? "text-[#C83226]" : "text-[#F5B800]"
             )}
           >
             [PARTIDO #28 · TSE GUATEMALA]

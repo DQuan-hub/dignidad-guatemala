@@ -15,12 +15,22 @@ import {
 } from "lucide-react";
 import { VideoModal } from "@/components/ui/VideoModal";
 import { GetInTouchContact } from "@/components/ui/GetInTouchContact";
+import { EditorialSocialStrip } from "@/components/ui/EditorialSocialStrip";
 import socialFeedData from "@/data/social-feed.json";
 import { DOCUMENTOS_OFICIALES } from "@/data/liderazgos-historia";
 import { getSocialFeedPosts, type SocialMediaPost } from "@/lib/utils";
 
+function XIcon({ className = "w-4 h-4" }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+      <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+    </svg>
+  );
+}
+
 type MediaFilter =
   | "todos"
+  | "twitter"
   | "tiktok"
   | "instagram"
   | "facebook"
@@ -32,6 +42,7 @@ const FILTER_TABS: {
   icon: React.ComponentType<{ className?: string }>;
 }[] = [
   { id: "todos", label: "Todo el Archivo", icon: Layers },
+  { id: "twitter", label: "X (@dignidadgt)", icon: XIcon },
   { id: "tiktok", label: "TikTok (@dignidad100)", icon: Video },
   { id: "instagram", label: "Instagram (@dignidad.guate)", icon: Camera },
   { id: "facebook", label: "Facebook Oficial", icon: MessageCircle },
@@ -55,6 +66,7 @@ export default function MultimediaPage() {
     return posts.filter((post) => {
       const matchPlatform =
         activeTab === "todos" ||
+        (activeTab === "twitter" && (post.platform === "twitter" || post.platform === "x")) ||
         (activeTab === "tiktok" && post.platform === "tiktok") ||
         (activeTab === "instagram" && post.platform === "instagram") ||
         (activeTab === "facebook" && post.platform === "facebook");
@@ -78,8 +90,8 @@ export default function MultimediaPage() {
       <section id="opening" className="opening">
         <div className="op-second" style={{ minHeight: "auto", paddingTop: "104px" }}>
           <div className="lg:col-span-7 space-y-6" style={{ gridColumn: "1 / span 7" }}>
-            <p className="m-text-5 text-[#FFD600]">
-              Sala de Prensa & Archivo Vivo · @dignidad100
+            <p className="m-text-5 text-[#F5B800]">
+              Sala de Prensa & Archivo Vivo · @dignidad100 · @dignidadgt
             </p>
             <h1 className="m-text-2">
               Crónicas documentales desde nuestras{" "}
@@ -99,11 +111,20 @@ export default function MultimediaPage() {
               .
             </h1>
             <p className="m-text-4 text-white/85 max-w-2xl">
-              Explora los videos verticales reales de TikTok, galerías fotográficas de Instagram y comunicados oficiales de Facebook en los 22 departamentos.
+              Explora los videos verticales reales de TikTok, pronunciamientos oficiales en X, galerías fotográficas de Instagram y comunicados de Facebook en los 22 departamentos.
             </p>
 
             {/* Enlaces directos a cuentas oficiales */}
             <div className="flex flex-wrap gap-3 pt-2">
+              <a
+                href="https://x.com/dignidadgt?s=11"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="m-btn-2"
+              >
+                <span className="m-btn-2__label">X @dignidadgt</span>
+                <ExternalLink className="w-4 h-4" />
+              </a>
               <a
                 href="https://www.tiktok.com/@dignidad100"
                 target="_blank"
@@ -134,7 +155,7 @@ export default function MultimediaPage() {
             {/* Selector Rápido de Video Vertical */}
             <div className="pt-4 space-y-3">
               <span className="m-rule" aria-hidden="true" />
-              <p className="m-text-5 text-[#FFD600]">
+              <p className="m-text-5 text-[#F5B800]">
                 Selecciona un video vertical para reproducir en vivo:
               </p>
               <div className="flex flex-wrap gap-2">
@@ -147,8 +168,8 @@ export default function MultimediaPage() {
                       onClick={() => setFeaturedVideo(vid)}
                       className={`px-3.5 py-2 font-semibold text-xs border transition cursor-pointer ${
                         active
-                          ? "bg-[#C83E2B] text-white border-[#C83E2B]"
-                          : "bg-transparent text-white border-white/30 hover:border-[#FFD600]"
+                          ? "bg-[#C83226] text-white border-[#C83226]"
+                          : "bg-transparent text-white border-white/30 hover:border-[#F5B800]"
                       }`}
                     >
                       ▶ Video 0{idx + 1}: {vid.location?.split(",")[0]}
@@ -164,8 +185,8 @@ export default function MultimediaPage() {
             className="flex justify-center lg:justify-end"
             style={{ gridColumn: "8 / span 5" }}
           >
-            <div className="w-full max-w-[340px] bg-[#111C16] text-white p-4 border border-white/30">
-              <div className="flex items-center justify-between m-text-5 text-[#FFD600] mb-3">
+            <div className="w-full max-w-[340px] bg-[#141413] text-white p-4 border border-white/30">
+              <div className="flex items-center justify-between m-text-5 text-[#F5B800] mb-3">
                 <span>TikTok · @dignidad100</span>
                 <span>{featuredVideo.date}</span>
               </div>
@@ -202,11 +223,14 @@ export default function MultimediaPage() {
         </div>
       </section>
 
+      {/* Tira Editorial de Redes Oficiales */}
+      <EditorialSocialStrip className="border-t border-b border-[#141413]" />
+
       {/* ====================================================================
           2. SWISS FILTER BAR & ARCHIVE GRID
          ==================================================================== */}
       <section className="py-20 wrap space-y-12">
-        <div className="border-y border-[#111C16] py-5 flex flex-col lg:flex-row items-stretch lg:items-center justify-between gap-4 bg-[#D1DDD3]/40 px-4">
+        <div className="border-y border-[#141413] py-5 flex flex-col lg:flex-row items-stretch lg:items-center justify-between gap-4 bg-[#EFECE6] px-4">
           <div className="flex flex-wrap items-center gap-2">
             {FILTER_TABS.map((tab) => {
               const active = activeTab === tab.id;
@@ -216,10 +240,10 @@ export default function MultimediaPage() {
                   key={tab.id}
                   type="button"
                   onClick={() => setActiveTab(tab.id)}
-                  className={`inline-flex items-center gap-2 px-4 py-2.5 text-xs font-bold uppercase tracking-wider border border-[#111C16] transition cursor-pointer ${
+                  className={`inline-flex items-center gap-2 px-4 py-2.5 text-xs font-bold uppercase tracking-wider border border-[#141413] transition cursor-pointer ${
                     active
-                      ? "bg-[#111C16] text-white"
-                      : "bg-white text-[#111C16] hover:bg-[#FFD600]"
+                      ? "bg-[#141413] text-white"
+                      : "bg-white text-[#141413] hover:bg-[#F5B800]"
                   }`}
                 >
                   <IconComponent className="w-3.5 h-3.5" />
@@ -231,13 +255,13 @@ export default function MultimediaPage() {
 
           {activeTab !== "documentos" && (
             <div className="relative min-w-[260px]">
-              <Search className="w-4 h-4 text-[#111C16] absolute left-3.5 top-1/2 -translate-y-1/2 pointer-events-none" />
+              <Search className="w-4 h-4 text-[#141413] absolute left-3.5 top-1/2 -translate-y-1/2 pointer-events-none" />
               <input
                 type="search"
                 value={query}
                 onChange={(e) => setQuery(e.target.value)}
                 placeholder="Buscar por municipio o tema..."
-                className="w-full pl-10 pr-4 py-2.5 bg-white border border-[#111C16] text-sm text-[#111C16] placeholder-[#526058] focus:outline-none focus:border-[#C83E2B]"
+                className="w-full pl-10 pr-4 py-2.5 bg-white border border-[#141413] text-sm text-[#141413] placeholder-[#57534E] focus:outline-none focus:border-[#C83226]"
               />
             </div>
           )}
@@ -248,17 +272,17 @@ export default function MultimediaPage() {
             {DOCUMENTOS_OFICIALES.map((doc) => (
               <article
                 key={doc.titulo}
-                className="border border-[#111C16] bg-white p-7 flex flex-col justify-between space-y-6"
+                className="border border-[#141413] bg-white p-7 flex flex-col justify-between space-y-6"
               >
                 <div className="space-y-2">
-                  <span className="m-text-5 text-[#C83E2B]">
+                  <span className="m-text-5 text-[#C83226]">
                     {doc.categoria} · {doc.fecha}
                   </span>
                   <h3 className="m-text-4">{doc.titulo}</h3>
                   <p className="m-text">{doc.descripcion}</p>
                 </div>
 
-                <div className="pt-4 border-t border-[#111C16] flex items-center justify-between">
+                <div className="pt-4 border-t border-[#141413] flex items-center justify-between">
                   <span className="m-text-5">{doc.peso}</span>
                   <a href={doc.urlDescarga} download className="m-btn-2">
                     <span className="m-btn-2__label">Descargar PDF</span>
@@ -279,10 +303,10 @@ export default function MultimediaPage() {
               return (
                 <article
                   key={post.id}
-                  className="border border-[#111C16] bg-white flex flex-col justify-between group"
+                  className="border border-[#141413] bg-white flex flex-col justify-between group"
                 >
                   <div
-                    className="relative aspect-[16/10] bg-[#111C16] overflow-hidden cursor-pointer border-b border-[#111C16]"
+                    className="relative aspect-[16/10] bg-[#141413] overflow-hidden cursor-pointer border-b border-[#141413]"
                     onClick={() => post.type === "video" && setModalPost(post)}
                   >
                     <img
@@ -300,7 +324,7 @@ export default function MultimediaPage() {
                         {
                           background: tints[idx % tints.length],
                           color:
-                            idx % tints.length === 0 ? "#ffffff" : "#111C16",
+                            idx % tints.length === 0 ? "#ffffff" : "#141413",
                         } as React.CSSProperties
                       }
                     >
@@ -308,7 +332,7 @@ export default function MultimediaPage() {
                     </span>
 
                     {post.type === "video" && (
-                      <div className="absolute inset-0 m-auto w-12 h-12 bg-[#C83E2B] text-white flex items-center justify-center group-hover:bg-[#FFD600] group-hover:text-[#111C16] transition">
+                      <div className="absolute inset-0 m-auto w-12 h-12 bg-[#C83226] text-white flex items-center justify-center group-hover:bg-[#F5B800] group-hover:text-[#141413] transition">
                         <Play className="w-5 h-5 fill-current ml-0.5" />
                       </div>
                     )}
@@ -316,20 +340,20 @@ export default function MultimediaPage() {
 
                   <div className="p-5 flex-1 flex flex-col justify-between space-y-4">
                     <div className="space-y-2">
-                      <p className="m-text-5 text-[#C83E2B]">{post.date}</p>
+                      <p className="m-text-5 text-[#C83226]">{post.date}</p>
                       <h3 className="m-text-4">
                         {post.title || post.location}
                       </h3>
-                      <p className="m-text-6 text-[#526058] line-clamp-3">
+                      <p className="m-text-6 text-[#57534E] line-clamp-3">
                         {post.caption}
                       </p>
                     </div>
 
-                    <div className="pt-3 border-t border-[#111C16] flex items-center justify-between text-xs">
+                    <div className="pt-3 border-t border-[#141413] flex items-center justify-between text-xs">
                       <div className="flex items-center gap-3">
                         {post.likes && (
                           <span className="flex items-center gap-1 font-bold">
-                            <Heart className="w-3.5 h-3.5 text-[#C83E2B]" />
+                            <Heart className="w-3.5 h-3.5 text-[#C83226]" />
                             {post.likes}
                           </span>
                         )}

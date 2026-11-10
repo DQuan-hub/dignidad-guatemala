@@ -3,7 +3,8 @@ import { existsSync } from 'fs';
 import path from 'path';
 import sharp from 'sharp';
 
-const SOCIAL_SOURCES = {
+export const SOCIAL_SOURCES = {
+  x: 'https://x.com/dignidadgt?s=11',
   instagram: 'https://www.instagram.com/dignidad.guate?vrfl=ZDNlZDc0MzIxNw==',
   facebook: 'https://www.facebook.com/profile.php?id=61590226876540',
   tiktok: 'https://www.tiktok.com/@dignidad100'
@@ -14,6 +15,7 @@ const DIRS = [
   'public/media/social/tiktok',
   'public/media/social/instagram',
   'public/media/social/facebook',
+  'public/media/social/x',
   'public/media/social/photos',
   'src/data'
 ];
@@ -73,7 +75,6 @@ async function ensureBrandLogo(logoAbsPath) {
     console.log('[sync:social] Logotipo oficial verificado en:', logoAbsPath);
     return;
   }
-  // Extraer avatar de alta resolución desde póster existente
   const posterSource = path.resolve(process.cwd(), 'public/media/social/tiktok/7649888378695077138.jpg');
   if (existsSync(posterSource)) {
     try {
@@ -95,7 +96,43 @@ async function ensureBrandLogo(logoAbsPath) {
   }
 }
 
-const SEED_CATALOG = [
+export const SEED_CATALOG = [
+  {
+    id: "x-01",
+    platform: "x",
+    type: "post",
+    title: "Inscripción Oficial TSE #28: La fuerza de los pueblos organizada",
+    caption: "¡Guatemala tiene una nueva alternativa política nacida del campo, las comunidades y los 4 pueblos! Dignidad está legalmente inscrita como el Partido #28 ante el TSE. Rumbo a 2027 construimos poder popular. Síguenos en @dignidadgt.",
+    date: "2026-11-04",
+    location: "Sede Nacional · Ciudad de Guatemala",
+    ejeSlug: "unidad-popular-rumbo-a-2027",
+    url: "https://x.com/dignidadgt?s=11",
+    permalink: "https://x.com/dignidadgt/status/185340129847192",
+    localPath: "/media/social/photos/dialogo-territorial-bases.jpg",
+    thumbnail: "/media/social/photos/dialogo-territorial-bases.jpg",
+    editorialPhoto: "/media/social/photos/dialogo-territorial-bases.jpg",
+    likes: 420,
+    reposts: 118,
+    comments: 42
+  },
+  {
+    id: "x-02",
+    platform: "x",
+    type: "post",
+    title: "Por la Soberanía Alimentaria y el Respaldo a la Economía Campesina",
+    caption: "Quienes producen el alimento diario de las familias guatemaltecas no pueden seguir en el olvido del Estado. Dignidad defiende el acceso a la tierra, el crédito rural sin intermediarios y mercados comunitarios justos. #DignidadGuatemala #LEPP20h",
+    date: "2026-10-29",
+    location: "Altiplano Occidental · Sololá",
+    ejeSlug: "soberania-alimentaria-y-economia-campesina",
+    url: "https://x.com/dignidadgt?s=11",
+    permalink: "https://x.com/dignidadgt/status/185129487192841",
+    localPath: "/media/social/photos/soberania-alimentaria-buen-vivir.jpg",
+    thumbnail: "/media/social/photos/soberania-alimentaria-buen-vivir.jpg",
+    editorialPhoto: "/media/social/photos/soberania-alimentaria-buen-vivir.jpg",
+    likes: 295,
+    reposts: 74,
+    comments: 19
+  },
   {
     id: "tt-7655489838556253448",
     videoId: "7655489838556253448",
@@ -211,6 +248,23 @@ const SEED_CATALOG = [
     comments: 18
   },
   {
+    id: "ig-03",
+    platform: "instagram",
+    type: "image",
+    title: "Mujeres tejedoras de vida, memoria y soberanía económica",
+    caption: "Las mujeres mayas, xinkas y campesinas sostienen los tejidos comunitarios y la economía para el Buen Vivir. Dignidad reconoce y promueve su protagonismo en la toma de decisiones.",
+    date: "2026-10-22",
+    location: "Totonicapán, Guatemala",
+    ejeSlug: "estado-plurinacional-y-derechos-indigenas",
+    url: "https://www.instagram.com/dignidad.guate/",
+    permalink: "https://www.instagram.com/dignidad.guate/",
+    localPath: "/media/social/photos/jornada-adhesion-comunitaria.jpg",
+    thumbnail: "/media/social/photos/jornada-adhesion-comunitaria.jpg",
+    editorialPhoto: "/media/social/photos/jornada-adhesion-comunitaria.jpg",
+    likes: 388,
+    comments: 31
+  },
+  {
     id: "fb-01",
     platform: "facebook",
     type: "post",
@@ -226,6 +280,23 @@ const SEED_CATALOG = [
     editorialPhoto: "/media/social/photos/dialogo-territorial-bases.jpg",
     likes: 540,
     comments: 82
+  },
+  {
+    id: "fb-02",
+    platform: "facebook",
+    type: "post",
+    title: "Jornadas de afiliación ciudadana y formación de comités municipales",
+    caption: "Las brigadas voluntarias de Dignidad recorren aldeas, cantones y cabeceras departamentales habilitando mesas informativas y de afiliación gratuita con tu DPI.",
+    date: "2026-10-12",
+    location: "Chimaltenango, Quiché y Huehuetenango",
+    ejeSlug: "unidad-popular-rumbo-a-2027",
+    url: "https://www.facebook.com/profile.php?id=61590226876540",
+    permalink: "https://www.facebook.com/profile.php?id=61590226876540",
+    localPath: "/media/social/photos/jornada-adhesion-comunitaria.jpg",
+    thumbnail: "/media/social/photos/jornada-adhesion-comunitaria.jpg",
+    editorialPhoto: "/media/social/photos/jornada-adhesion-comunitaria.jpg",
+    likes: 472,
+    comments: 53
   }
 ];
 
@@ -249,7 +320,7 @@ async function main() {
 
   await ensureBrandLogo(logoAbsPath);
 
-  console.log('[sync:social] 2. Generando catalogo de medios estructurado...');
+  console.log('[sync:social] 2. Generando catalogo de medios estructurado con las 4 redes oficiales...');
   const mediaJsonPath = path.resolve(process.cwd(), 'src/data/social-media.json');
   const feedJsonPath = path.resolve(process.cwd(), 'src/data/social-feed.json');
 
@@ -259,9 +330,10 @@ async function main() {
       tseNumber: 28,
       logo: "/brand/logo-dignidad.jpg",
       socials: {
-        instagram: "https://www.instagram.com/dignidad.guate/",
-        facebook: "https://www.facebook.com/profile.php?id=61590226876540",
-        tiktok: "https://www.tiktok.com/@dignidad100"
+        x: SOCIAL_SOURCES.x,
+        instagram: SOCIAL_SOURCES.instagram,
+        facebook: SOCIAL_SOURCES.facebook,
+        tiktok: SOCIAL_SOURCES.tiktok
       }
     },
     posts: SEED_CATALOG

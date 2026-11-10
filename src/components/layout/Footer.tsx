@@ -33,11 +33,11 @@ export function Footer() {
             <li>
               <a
                 className="m-link-2"
-                href="https://www.tiktok.com/@dignidad100"
+                href="https://x.com/dignidadgt?s=11"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                TikTok @dignidad100
+                X @dignidadgt
               </a>
             </li>
             <li>
@@ -48,6 +48,26 @@ export function Footer() {
                 rel="noopener noreferrer"
               >
                 Instagram @dignidad.guate
+              </a>
+            </li>
+            <li>
+              <a
+                className="m-link-2"
+                href="https://www.tiktok.com/@dignidad100"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                TikTok @dignidad100
+              </a>
+            </li>
+            <li>
+              <a
+                className="m-link-2"
+                href="https://www.facebook.com/profile.php?id=61590226876540"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Facebook Dignidad Guatemala
               </a>
             </li>
           </ul>

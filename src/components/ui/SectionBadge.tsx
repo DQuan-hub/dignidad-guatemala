@@ -16,17 +16,17 @@ export function SectionBadge({
   return (
     <div
       className={cn(
-        "inline-flex items-center gap-2 px-3.5 py-1 rounded-full text-xs font-medium tracking-tight border",
+        "inline-flex items-center gap-2 px-3 py-1 rounded-none text-xs font-mono font-bold uppercase tracking-wider border",
         variant === "light"
-          ? "bg-white text-[#7F1116] border-[#181313]/10 shadow-2xs"
-          : "bg-white/10 text-[#FFD600] border-white/15",
+          ? "bg-white text-[#141413] border-[#141413]/30 shadow-2xs"
+          : "bg-[#141413] text-[#F5B800] border-white/20",
         className
       )}
     >
       <span
         className={cn(
-          "h-1.5 w-1.5 rounded-full shrink-0",
-          variant === "light" ? "bg-[#B81D13]" : "bg-[#FFD600]"
+          "h-1.5 w-1.5 rounded-none shrink-0",
+          variant === "light" ? "bg-[#C83226]" : "bg-[#F5B800]"
         )}
         aria-hidden="true"
       />

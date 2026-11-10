@@ -5,6 +5,7 @@ import Link from "next/link";
 import { Play, MapPin, ArrowUpRight } from "lucide-react";
 import { VideoModal } from "@/components/ui/VideoModal";
 import { GetInTouchContact } from "@/components/ui/GetInTouchContact";
+import { EditorialSocialStrip } from "@/components/ui/EditorialSocialStrip";
 import { EJES_PROGRAMATICOS } from "@/data/ejes-programaticos";
 import { LIDERAZGOS_DIGNIDAD } from "@/data/liderazgos-historia";
 import { SEDES_AFILIACION, DEPARTAMENTOS_GUATEMALA } from "@/data/sedes-afiliacion";
@@ -333,7 +334,7 @@ export default function HomePage() {
 
           <div className="op-cover">
             <div className="op-head">
-              <p className="m-text-5 text-[#FFD600] mb-2">
+              <p className="m-text-5 text-[#F5B800] mb-2">
                 Partido Político #28 · TSE Guatemala
               </p>
               <h1 className="m-text-2 op-title">Dignidad, desde los pueblos.</h1>
@@ -423,6 +424,9 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* Tira Oficial de Redes Sociales: X, Instagram, TikTok, Facebook */}
+      <EditorialSocialStrip className="border-t border-b border-[#141413]" />
+
       {/* ====================================================================
           2. MONTHLY-REPORT: Radiografía Nacional en Una Hoja (Maize Gold)
          ==================================================================== */}
@@ -483,7 +487,7 @@ export default function HomePage() {
             data-cash="true"
           >
             <header className="mo-sheet__head">
-              <p className="m-text-5 text-[#C83E2B]">
+              <p className="m-text-5 text-[#C83226]">
                 Radiografía Nacional · Horizonte 2026/2027
               </p>
               <p className="mo-client">
@@ -496,7 +500,7 @@ export default function HomePage() {
 
             <div
               className={`mo-part p-2 transition-colors ${
-                activeMonthNote === 0 ? "bg-[#D1DDD3]/60" : ""
+                activeMonthNote === 0 ? "bg-[#EFECE6]" : ""
               }`}
               role="group"
               aria-label="1. Prioridades de Inversión"
@@ -527,7 +531,7 @@ export default function HomePage() {
 
             <div
               className={`mo-part p-2 transition-colors ${
-                activeMonthNote === 1 ? "bg-[#D1DDD3]/60" : ""
+                activeMonthNote === 1 ? "bg-[#EFECE6]" : ""
               }`}
               role="group"
               aria-label="2. Despliegue Departamental"
@@ -566,7 +570,7 @@ export default function HomePage() {
 
             <div
               className={`mo-part p-2 transition-colors ${
-                activeMonthNote === 2 ? "bg-[#D1DDD3]/60" : ""
+                activeMonthNote === 2 ? "bg-[#EFECE6]" : ""
               }`}
               role="group"
               aria-label="3. Blindaje Anticorrupción"
@@ -582,14 +586,14 @@ export default function HomePage() {
                   <dd>Iniciativa #01</dd>
                 </div>
               </dl>
-              <p className="mo-pot text-[#C83E2B]">
+              <p className="mo-pot text-[#C83226]">
                 Cero pactos de impunidad en la elección de Cortes y Contraloría.
               </p>
             </div>
 
             <div
               className={`mo-part p-2 transition-colors ${
-                activeMonthNote === 3 ? "bg-[#D1DDD3]/60" : ""
+                activeMonthNote === 3 ? "bg-[#EFECE6]" : ""
               }`}
               role="group"
               aria-label="4. Próximos Hitos"
@@ -780,10 +784,10 @@ export default function HomePage() {
             </ol>
 
             {/* Selector rápido de sede departamental */}
-            <div className="p-5 border border-[#111C16] bg-[#D1DDD3]/40 space-y-3">
+            <div className="p-5 border border-[#141413] bg-[#EFECE6] space-y-3">
               <label
                 htmlFor="switch-depto-select"
-                className="m-text-5 block text-[#111C16]"
+                className="m-text-5 block text-[#141413]"
               >
                 Consulta rápida de sede en tu departamento:
               </label>
@@ -792,7 +796,7 @@ export default function HomePage() {
                   id="switch-depto-select"
                   value={selectedQuickDepto}
                   onChange={(e) => setSelectedQuickDepto(e.target.value)}
-                  className="flex-1 min-h-[48px] px-3 bg-white border border-[#111C16] font-semibold text-sm text-[#111C16]"
+                  className="flex-1 min-h-[48px] px-3 bg-white border border-[#141413] font-semibold text-sm text-[#141413]"
                 >
                   {DEPARTAMENTOS_GUATEMALA.filter((d) => d !== "Todos").map(
                     (dept) => (
@@ -810,13 +814,13 @@ export default function HomePage() {
                   <span>Abrir Mapa TSE</span>
                 </Link>
               </div>
-              <div className="text-xs text-[#111C16] space-y-0.5 pt-1">
+              <div className="text-xs text-[#141413] space-y-0.5 pt-1">
                 <p className="font-bold">
                   {quickSede.nombre} — {quickSede.municipio},{" "}
                   {quickSede.departamento}
                 </p>
                 <p>{quickSede.direccion}</p>
-                <p className="font-semibold text-[#C83E2B]">
+                <p className="font-semibold text-[#C83226]">
                   Coordinación: {quickSede.coordinador} · {quickSede.telefono}
                 </p>
               </div>

@@ -15,7 +15,7 @@ export default function EjesIndexPage() {
       <section id="opening" className="opening">
         <div className="op-second" style={{ minHeight: "auto", paddingTop: "104px" }}>
           <div style={{ gridColumn: "1 / -1" }}>
-            <p className="m-text-5 text-[#FFD600] mb-4">
+            <p className="m-text-5 text-[#F5B800] mb-4">
               Programa Político Plurinacional · Horizonte 2027–2031
             </p>
             <h1 className="m-text-2 op-statement">
@@ -189,7 +189,7 @@ export default function EjesIndexPage() {
         <div className="mo-grid wrap grid-12">
           <div className="mo-intro">
             <span className="m-rule" aria-hidden="true" />
-            <p className="m-text-5 text-[#C83E2B]">Contraste de Modelo 2027</p>
+            <p className="m-text-5 text-[#C83226]">Contraste de Modelo 2027</p>
             <h2 className="m-text-3">
               Dos visiones opuestas para el futuro de Guatemala.
             </h2>
@@ -230,7 +230,7 @@ export default function EjesIndexPage() {
 
           <article className="mo-sheet" aria-label="Tabla Comparativa de Modelos">
             <header className="mo-sheet__head">
-              <p className="m-text-5 text-[#C83E2B]">
+              <p className="m-text-5 text-[#C83226]">
                 Comparativa Programática · Elecciones 2027
               </p>
               <p className="mo-client">
@@ -245,13 +245,13 @@ export default function EjesIndexPage() {
                 </h3>
                 <dl className="mo-rows">
                   <div>
-                    <dt className="text-[#C83E2B] font-semibold">Vieja Política:</dt>
+                    <dt className="text-[#C83226] font-semibold">Vieja Política:</dt>
                     <dd className="text-right text-xs max-w-[260px]">
                       {eje.comparativaModelo[0]?.tradicional}
                     </dd>
                   </div>
                   <div className="is-total">
-                    <dt className="text-[#111C16]">Dignidad #28:</dt>
+                    <dt className="text-[#141413]">Dignidad #28:</dt>
                     <dd className="text-right text-xs max-w-[260px]">
                       {eje.comparativaModelo[0]?.dignidad}
                     </dd>

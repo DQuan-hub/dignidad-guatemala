@@ -62,29 +62,29 @@ export function GetInTouchContact({
   return (
     <div className={`relative w-full max-w-[1140px] mx-auto space-y-8 ${className}`}>
       {/* ===================================================================
-          1. CARD DE SEDE ACTIVA (IDÉNTICO A LA IMAGEN 1)
+          1. CARD DE SEDE ACTIVA (ESTILO EDITORIAL RECTANGULAR)
          =================================================================== */}
       {showSedeCard && (
-        <article className="relative rounded-3xl bg-[#0E1612] text-white p-6 sm:p-8 lg:p-10 border border-white/10 shadow-2xl overflow-hidden space-y-6">
+        <article className="relative rounded-none bg-[#141413] text-white p-6 sm:p-8 lg:p-10 border border-white/20 shadow-2xl space-y-6">
           {/* Esquinas decorativas de precisión (+) */}
-          <span className="absolute top-3 left-3 font-mono text-white/20 text-xs select-none pointer-events-none">+</span>
-          <span className="absolute top-3 right-3 font-mono text-white/20 text-xs select-none pointer-events-none">+</span>
-          <span className="absolute bottom-3 left-3 font-mono text-white/20 text-xs select-none pointer-events-none">+</span>
-          <span className="absolute bottom-3 right-3 font-mono text-white/20 text-xs select-none pointer-events-none">+</span>
+          <span className="absolute top-2 left-2 font-mono text-white/30 text-xs select-none pointer-events-none">+</span>
+          <span className="absolute top-2 right-2 font-mono text-white/30 text-xs select-none pointer-events-none">+</span>
+          <span className="absolute bottom-2 left-2 font-mono text-white/30 text-xs select-none pointer-events-none">+</span>
+          <span className="absolute bottom-2 right-2 font-mono text-white/30 text-xs select-none pointer-events-none">+</span>
 
-          {/* Encabezado: Píldora Roja + Región Naranja */}
-          <div className="flex flex-wrap items-center justify-between gap-3">
-            <span className="px-4 py-1.5 rounded-full text-xs font-mono font-bold uppercase tracking-wider bg-[#C83E2B] text-white shadow-xs">
+          {/* Encabezado: Etiqueta Rectangular Roja + Región Oro */}
+          <div className="flex flex-wrap items-center justify-between gap-3 border-b border-white/15 pb-4">
+            <span className="px-3.5 py-1 rounded-none text-xs font-mono font-bold uppercase tracking-wider bg-[#C83226] text-white">
               SEDE ACTIVA · {sedeDepartment.toUpperCase()}
             </span>
-            <span className="text-xs sm:text-sm font-mono font-semibold text-[#D9822B] tracking-wide">
+            <span className="text-xs sm:text-sm font-mono font-bold text-[#F5B800] tracking-wider uppercase">
               Región {sedeRegion}
             </span>
           </div>
 
           {/* Título de la Sede y Dirección */}
           <div className="space-y-2.5 max-w-3xl">
-            <h3 className="text-2xl sm:text-3xl lg:text-[34px] font-extrabold font-display text-white tracking-tight leading-snug">
+            <h3 className="text-2xl sm:text-3xl lg:text-[32px] font-bold font-display text-white tracking-tight leading-snug">
               {sedeTitle}
             </h3>
             <p className="text-sm sm:text-base text-white/85 leading-relaxed font-sans">
@@ -92,13 +92,13 @@ export function GetInTouchContact({
             </p>
           </div>
 
-          {/* Fichas Informativas en 2 columnas: Coordinación y Horario de Atención */}
+          {/* Fichas Informativas en 2 celdas con borde recto */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5 text-xs sm:text-sm text-white">
-            <div className="flex items-center gap-3.5 p-4 rounded-2xl bg-white/[0.04] border border-white/10">
-              <UserCheck className="w-5 h-5 text-[#D9822B] shrink-0" aria-hidden="true" />
+            <div className="flex items-center gap-3.5 p-4 rounded-none bg-white/[0.03] border border-white/15">
+              <UserCheck className="w-5 h-5 text-[#F5B800] shrink-0" aria-hidden="true" />
               <div className="min-w-0">
-                <span className="block text-white/65 font-mono text-[11px] uppercase tracking-wider">
-                  Coordinación:
+                <span className="block text-white/60 font-mono text-[11px] uppercase tracking-wider">
+                  Coordinación responsable:
                 </span>
                 <strong className="text-white text-xs sm:text-sm font-bold truncate block mt-0.5">
                   {sedeCoordinator}
@@ -106,10 +106,10 @@ export function GetInTouchContact({
               </div>
             </div>
 
-            <div className="flex items-center gap-3.5 p-4 rounded-2xl bg-white/[0.04] border border-white/10">
-              <Clock className="w-5 h-5 text-[#D9822B] shrink-0" aria-hidden="true" />
+            <div className="flex items-center gap-3.5 p-4 rounded-none bg-white/[0.03] border border-white/15">
+              <Clock className="w-5 h-5 text-[#F5B800] shrink-0" aria-hidden="true" />
               <div className="min-w-0">
-                <span className="block text-white/65 font-mono text-[11px] uppercase tracking-wider">
+                <span className="block text-white/60 font-mono text-[11px] uppercase tracking-wider">
                   Horario de atención:
                 </span>
                 <strong className="text-white text-xs sm:text-sm font-bold block mt-0.5">
@@ -119,15 +119,15 @@ export function GetInTouchContact({
             </div>
           </div>
 
-          {/* Botones de Acción: Abrir en Google Maps, Navegar con Waze, WhatsApp Coordinador */}
-          <div className="flex flex-wrap items-center gap-2.5 sm:gap-3 pt-2">
+          {/* Botones de Acción Rectangulares */}
+          <div className="flex flex-wrap items-center gap-3 pt-2">
             <a
               href={googleMapsUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2.5 bg-white/[0.07] hover:bg-white/15 text-white border border-white/15 font-mono text-xs font-bold uppercase tracking-wider px-4 sm:px-5 py-3 rounded-xl transition w-full sm:w-auto"
+              className="inline-flex items-center justify-center gap-2.5 bg-white/[0.06] hover:bg-white/15 text-white border border-white/20 font-mono text-xs font-bold uppercase tracking-wider px-5 py-3.5 rounded-none transition w-full sm:w-auto"
             >
-              <MapPin className="w-4 h-4 text-[#D9822B] shrink-0" />
+              <MapPin className="w-4 h-4 text-[#F5B800] shrink-0" />
               <span>ABRIR EN GOOGLE MAPS</span>
             </a>
 
@@ -135,9 +135,9 @@ export function GetInTouchContact({
               href={wazeUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2.5 bg-white/[0.07] hover:bg-white/15 text-white border border-white/15 font-mono text-xs font-bold uppercase tracking-wider px-4 sm:px-5 py-3 rounded-xl transition w-full sm:w-auto"
+              className="inline-flex items-center justify-center gap-2.5 bg-white/[0.06] hover:bg-white/15 text-white border border-white/20 font-mono text-xs font-bold uppercase tracking-wider px-5 py-3.5 rounded-none transition w-full sm:w-auto"
             >
-              <Navigation className="w-4 h-4 text-[#D9822B] shrink-0" />
+              <Navigation className="w-4 h-4 text-[#F5B800] shrink-0" />
               <span>NAVEGAR CON WAZE</span>
             </a>
 
@@ -145,9 +145,9 @@ export function GetInTouchContact({
               href={whatsappUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2.5 bg-[#C83E2B] hover:bg-[#A93322] text-white font-mono text-xs font-bold uppercase tracking-wider px-5 py-3 rounded-xl transition shadow-md w-full sm:w-auto"
+              className="inline-flex items-center justify-center gap-2.5 bg-[#C83226] hover:bg-[#A82419] text-white border border-[#C83226] font-mono text-xs font-bold uppercase tracking-wider px-5 py-3.5 rounded-none transition shadow-sm w-full sm:w-auto"
             >
-              <MessageSquare className="w-4 h-4 text-[#D9822B] shrink-0" />
+              <MessageSquare className="w-4 h-4 text-[#F5B800] shrink-0" />
               <span>WHATSAPP COORDINADOR</span>
             </a>
           </div>
@@ -155,86 +155,89 @@ export function GetInTouchContact({
       )}
 
       {/* ===================================================================
-          2. BLOQUE GET IN TOUCH (IDÉNTICO A LA IMAGEN 2)
+          2. BLOQUE CONTACTO DIRECTO Y ARTICULACIÓN (100% EN ESPAÑOL, ROUNDED-NONE)
          =================================================================== */}
-      <section className="relative rounded-3xl bg-[#0E1612] text-white p-6 sm:p-8 lg:p-12 border border-white/10 shadow-2xl overflow-hidden">
+      <section className="relative rounded-none bg-[#141413] text-white p-6 sm:p-8 lg:p-12 border border-white/20 shadow-2xl">
         {/* Esquinas decorativas de precisión (+) */}
-        <span className="absolute top-3 left-3 font-mono text-white/20 text-xs select-none pointer-events-none">+</span>
-        <span className="absolute top-3 right-3 font-mono text-white/20 text-xs select-none pointer-events-none">+</span>
-        <span className="absolute bottom-3 left-3 font-mono text-white/20 text-xs select-none pointer-events-none">+</span>
-        <span className="absolute bottom-3 right-3 font-mono text-white/20 text-xs select-none pointer-events-none">+</span>
+        <span className="absolute top-2 left-2 font-mono text-white/30 text-xs select-none pointer-events-none">+</span>
+        <span className="absolute top-2 right-2 font-mono text-white/30 text-xs select-none pointer-events-none">+</span>
+        <span className="absolute bottom-2 left-2 font-mono text-white/30 text-xs select-none pointer-events-none">+</span>
+        <span className="absolute bottom-2 right-2 font-mono text-white/30 text-xs select-none pointer-events-none">+</span>
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-14 items-start">
-          {/* Columna Izquierda: Get in Touch y Tarjetas de Contacto Directo */}
+          {/* Columna Izquierda: Contacto Directo y Canales Oficiales */}
           <div className="lg:col-span-6 flex flex-col justify-between space-y-6 sm:space-y-8">
             <div className="space-y-3">
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black font-display text-white tracking-tight leading-none">
-                Get in touch
+              <span className="font-mono text-xs uppercase tracking-widest text-[#F5B800] font-bold block">
+                CANALES OFICIALES DIGNIDAD #28
+              </span>
+              <h2 className="text-3xl sm:text-4xl lg:text-[42px] font-black font-display text-white tracking-tight leading-none">
+                Contacto Directo y Articulación
               </h2>
-              <p className="text-sm sm:text-base text-white/75 leading-relaxed font-sans max-w-lg">
+              <p className="text-sm sm:text-base text-white/80 leading-relaxed font-sans max-w-lg">
                 Si tienes consultas sobre nuestras propuestas, afiliaciones en tu departamento o deseas coordinar con nuestro equipo, completa el formulario. Respondemos en menos de 24 horas.
               </p>
             </div>
 
-            {/* Las 3 Tarjetas de Contacto: Email, Phone, Address */}
+            {/* Las 3 Celdas de Contacto Rectangulares */}
             <div className="space-y-3">
-              {/* Tarjeta Email */}
+              {/* Celda Correo */}
               <a
                 href="mailto:contacto@dignidadguatemala.org"
-                className="flex items-center gap-4 p-4 rounded-2xl bg-white/[0.04] border border-white/10 hover:border-[#D9822B]/50 transition group"
+                className="flex items-center gap-4 p-4 rounded-none bg-white/[0.03] border border-white/15 hover:border-[#F5B800]/60 transition group"
               >
-                <div className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center shrink-0 text-white/80 group-hover:text-[#D9822B] transition">
+                <div className="w-10 h-10 rounded-none bg-white/5 border border-white/15 flex items-center justify-center shrink-0 text-white/80 group-hover:text-[#F5B800] transition">
                   <Mail className="w-5 h-5" />
                 </div>
                 <div className="min-w-0">
-                  <span className="block text-white/60 font-sans text-xs">Email</span>
-                  <span className="text-xs sm:text-sm text-white font-bold truncate block group-hover:text-[#D9822B] transition">
+                  <span className="block text-white/60 font-mono text-xs uppercase tracking-wider">Correo electrónico</span>
+                  <span className="text-xs sm:text-sm text-white font-bold truncate block group-hover:text-[#F5B800] transition">
                     contacto@dignidadguatemala.org
                   </span>
                 </div>
               </a>
 
-              {/* Tarjeta Phone */}
+              {/* Celda Teléfono */}
               <a
                 href="tel:+50255282027"
-                className="flex items-center gap-4 p-4 rounded-2xl bg-white/[0.04] border border-white/10 hover:border-[#D9822B]/50 transition group"
+                className="flex items-center gap-4 p-4 rounded-none bg-white/[0.03] border border-white/15 hover:border-[#F5B800]/60 transition group"
               >
-                <div className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center shrink-0 text-white/80 group-hover:text-[#D9822B] transition">
+                <div className="w-10 h-10 rounded-none bg-white/5 border border-white/15 flex items-center justify-center shrink-0 text-white/80 group-hover:text-[#F5B800] transition">
                   <Phone className="w-5 h-5" />
                 </div>
                 <div className="min-w-0">
-                  <span className="block text-white/60 font-sans text-xs">Phone</span>
-                  <span className="text-xs sm:text-sm text-white font-bold block group-hover:text-[#D9822B] transition">
+                  <span className="block text-white/60 font-mono text-xs uppercase tracking-wider">Teléfono / WhatsApp</span>
+                  <span className="text-xs sm:text-sm text-white font-bold block group-hover:text-[#F5B800] transition">
                     +502 5528 2027
                   </span>
                 </div>
               </a>
 
-              {/* Tarjeta Address con pin amarillo */}
-              <div className="flex items-center gap-4 p-4 rounded-2xl bg-white/[0.04] border border-white/10">
-                <div className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center shrink-0 text-[#FFD600]">
+              {/* Celda Dirección */}
+              <div className="flex items-center gap-4 p-4 rounded-none bg-white/[0.03] border border-white/15">
+                <div className="w-10 h-10 rounded-none bg-white/5 border border-white/15 flex items-center justify-center shrink-0 text-[#F5B800]">
                   <MapPin className="w-5 h-5" />
                 </div>
                 <div className="min-w-0">
-                  <span className="block text-white/60 font-sans text-xs">Address</span>
+                  <span className="block text-white/60 font-mono text-xs uppercase tracking-wider">Sede Central Nacional</span>
                   <span className="text-xs sm:text-sm text-white font-bold block">
-                    Ciudad de Guatemala, Guatemala
+                    8a Avenida 14–32, Zona 1, Centro Histórico, Ciudad de Guatemala
                   </span>
                 </div>
               </div>
             </div>
           </div>
 
-          {/* Columna Derecha: Formulario con Estilo de la Imagen 2 */}
+          {/* Columna Derecha: Formulario 100% en Español con Bordes Rectos */}
           <div className="lg:col-span-6 w-full">
             {submitted ? (
-              <div className="p-8 text-center space-y-4 rounded-2xl bg-white/[0.03] border border-white/10">
-                <div className="w-14 h-14 rounded-full bg-[#C83E2B]/20 text-[#C83E2B] flex items-center justify-center mx-auto border border-[#C83E2B]/40">
+              <div className="p-8 text-center space-y-4 rounded-none bg-white/[0.03] border border-white/20">
+                <div className="w-14 h-14 rounded-none bg-[#C83226]/20 text-[#C83226] flex items-center justify-center mx-auto border border-[#C83226]">
                   <CheckCircle2 className="w-7 h-7" />
                 </div>
                 <h3 className="text-xl font-bold font-display text-white">¡Mensaje Enviado con Éxito!</h3>
-                <p className="text-white/75 text-xs sm:text-sm max-w-sm mx-auto">
-                  Hemos recibido tu comunicación. El equipo de coordinación nacional o departamental se pondrá en contacto contigo a la brevedad.
+                <p className="text-white/80 text-xs sm:text-sm max-w-sm mx-auto">
+                  Hemos recibido tu comunicación. El equipo de coordinación nacional o de tu departamento se pondrá en contacto contigo en menos de 24 horas.
                 </p>
                 <button
                   type="button"
@@ -242,17 +245,17 @@ export function GetInTouchContact({
                     setSubmitted(false);
                     setForm({ name: "", email: "", phone: "", message: "" });
                   }}
-                  className="mt-3 px-5 py-2.5 text-xs font-mono font-bold uppercase tracking-wider text-white bg-white/10 hover:bg-white/20 rounded-xl transition border border-white/15 cursor-pointer"
+                  className="mt-3 px-6 py-3 text-xs font-mono font-bold uppercase tracking-wider text-white bg-white/10 hover:bg-white/20 rounded-none transition border border-white/20 cursor-pointer"
                 >
                   Enviar otro mensaje
                 </button>
               </div>
             ) : (
               <form onSubmit={handleSubmit} className="space-y-4 w-full">
-                {/* Campo Name */}
+                {/* Campo Nombre completo */}
                 <div className="space-y-1.5">
-                  <label htmlFor="touch-name" className="block text-xs font-semibold text-white/90">
-                    Name
+                  <label htmlFor="touch-name" className="block text-xs font-mono font-bold uppercase tracking-wider text-white/90">
+                    Nombre completo *
                   </label>
                   <input
                     id="touch-name"
@@ -261,14 +264,14 @@ export function GetInTouchContact({
                     value={form.name}
                     onChange={(e) => setForm({ ...form, name: e.target.value })}
                     placeholder="Ej. Juan Carlos Morales"
-                    className="w-full rounded-xl bg-black/45 border border-white/15 px-4 py-3 text-base text-white placeholder-white/40 focus:outline-none focus:border-[#C83E2B] focus:ring-1 focus:ring-[#C83E2B] transition font-sans"
+                    className="w-full rounded-none bg-[#18181B] border border-white/20 px-4 py-3.5 text-base text-white placeholder-zinc-500 focus:outline-none focus:border-[#C83226] focus:ring-0 transition font-sans"
                   />
                 </div>
 
-                {/* Campo Email */}
+                {/* Campo Correo electrónico */}
                 <div className="space-y-1.5">
-                  <label htmlFor="touch-email" className="block text-xs font-semibold text-white/90">
-                    Email
+                  <label htmlFor="touch-email" className="block text-xs font-mono font-bold uppercase tracking-wider text-white/90">
+                    Correo electrónico *
                   </label>
                   <input
                     id="touch-email"
@@ -277,14 +280,14 @@ export function GetInTouchContact({
                     value={form.email}
                     onChange={(e) => setForm({ ...form, email: e.target.value })}
                     placeholder="ejemplo@correo.gt"
-                    className="w-full rounded-xl bg-black/45 border border-white/15 px-4 py-3 text-base text-white placeholder-white/40 focus:outline-none focus:border-[#C83E2B] focus:ring-1 focus:ring-[#C83E2B] transition font-sans"
+                    className="w-full rounded-none bg-[#18181B] border border-white/20 px-4 py-3.5 text-base text-white placeholder-zinc-500 focus:outline-none focus:border-[#C83226] focus:ring-0 transition font-sans"
                   />
                 </div>
 
-                {/* Campo Phone */}
+                {/* Campo Teléfono / WhatsApp */}
                 <div className="space-y-1.5">
-                  <label htmlFor="touch-phone" className="block text-xs font-semibold text-white/90">
-                    Phone
+                  <label htmlFor="touch-phone" className="block text-xs font-mono font-bold uppercase tracking-wider text-white/90">
+                    Teléfono / WhatsApp *
                   </label>
                   <input
                     id="touch-phone"
@@ -292,33 +295,35 @@ export function GetInTouchContact({
                     value={form.phone}
                     onChange={(e) => setForm({ ...form, phone: e.target.value })}
                     placeholder="+502 5528 2027"
-                    className="w-full rounded-xl bg-black/45 border border-white/15 px-4 py-3 text-base text-white placeholder-white/40 focus:outline-none focus:border-[#C83E2B] focus:ring-1 focus:ring-[#C83E2B] transition font-sans"
+                    className="w-full rounded-none bg-[#18181B] border border-white/20 px-4 py-3.5 text-base text-white placeholder-zinc-500 focus:outline-none focus:border-[#C83226] focus:ring-0 transition font-sans"
                   />
                 </div>
 
-                {/* Campo Message */}
+                {/* Campo Mensaje o consulta comunitaria */}
                 <div className="space-y-1.5">
-                  <label htmlFor="touch-message" className="block text-xs font-semibold text-white/90">
-                    Message
+                  <label htmlFor="touch-message" className="block text-xs font-mono font-bold uppercase tracking-wider text-white/90">
+                    Mensaje o consulta comunitaria *
                   </label>
                   <textarea
                     id="touch-message"
                     rows={4}
+                    required
                     value={form.message}
                     onChange={(e) => setForm({ ...form, message: e.target.value })}
-                    placeholder="Escribe tu mensaje o consulta..."
-                    className="w-full rounded-xl bg-black/45 border border-white/15 px-4 py-3 text-base text-white placeholder-white/40 focus:outline-none focus:border-[#C83E2B] focus:ring-1 focus:ring-[#C83E2B] transition resize-none font-sans"
+                    placeholder="Escribe tu consulta sobre asambleas, fiscalía electoral o afiliación en tu comunidad..."
+                    className="w-full rounded-none bg-[#18181B] border border-white/20 px-4 py-3.5 text-base text-white placeholder-zinc-500 focus:outline-none focus:border-[#C83226] focus:ring-0 transition resize-none font-sans"
                   />
                 </div>
 
-                {/* Botón Submit idéntico a la Imagen 2 */}
+                {/* Botón Enviar mensaje directo */}
                 <div className="pt-2">
                   <button
                     type="submit"
                     disabled={submitting}
-                    className="w-full inline-flex items-center justify-center gap-2 rounded-xl bg-white hover:bg-[#FFD600] text-[#111C16] font-display font-extrabold text-sm uppercase tracking-wider py-3.5 px-6 shadow-md transition disabled:opacity-50 cursor-pointer active:scale-[0.99]"
+                    className="w-full inline-flex items-center justify-center gap-2.5 rounded-none bg-[#C83226] hover:bg-[#A82419] text-white font-mono font-bold text-xs sm:text-sm uppercase tracking-wider py-4 px-6 shadow-md transition disabled:opacity-50 cursor-pointer active:scale-[0.99]"
                   >
-                    <span>{submitting ? "Sending..." : "Submit"}</span>
+                    <Send className="w-4 h-4 text-[#F5B800]" />
+                    <span>{submitting ? "Enviando mensaje..." : "Enviar mensaje directo"}</span>
                   </button>
                 </div>
               </form>

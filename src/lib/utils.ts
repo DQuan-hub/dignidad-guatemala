@@ -8,7 +8,7 @@ export function cn(...inputs: ClassValue[]) {
 export interface SocialMediaPost {
   id: string;
   videoId?: string;
-  platform: "tiktok" | "instagram" | "facebook";
+  platform: "tiktok" | "instagram" | "facebook" | "twitter" | "x";
   type: "video" | "image" | "post";
   handle?: string;
   title?: string;

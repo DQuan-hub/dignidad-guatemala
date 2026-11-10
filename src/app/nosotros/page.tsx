@@ -20,7 +20,7 @@ export default function NosotrosPage() {
       <section id="opening" className="opening">
         <div className="op-second" style={{ minHeight: "auto", paddingTop: "104px" }}>
           <div className="grid-column: 1 / -1" style={{ gridColumn: "1 / -1" }}>
-            <p className="m-text-5 text-[#FFD600] mb-4">
+            <p className="m-text-5 text-[#F5B800] mb-4">
               01 · Raíces, Historia y Conducción Política · Partido #28 TSE
             </p>
             <h1 className="m-text-2 op-statement">
@@ -114,7 +114,7 @@ export default function NosotrosPage() {
                   <span className="m-rule" aria-hidden="true" />
                   <span className="sw-num">{idx + 1}</span>
                   <div>
-                    <p className="m-text-5 text-[#C83E2B] mb-1">
+                    <p className="m-text-5 text-[#C83226] mb-1">
                       {hito.anio} · {hito.categoria}
                     </p>
                     <h3 className="m-text-4">{hito.titulo}</h3>
@@ -137,7 +137,7 @@ export default function NosotrosPage() {
       <section id="liderazgos" className="cases" style={{ paddingTop: "32px" }}>
         <div className="cs-head wrap">
           <span className="m-rule" aria-hidden="true" />
-          <p className="m-text-5 text-[#C83E2B]">
+          <p className="m-text-5 text-[#C83226]">
             03 · Liderazgos Visibles y Conducción Colectiva
           </p>
           <h2 className="m-text-3">
@@ -230,7 +230,7 @@ export default function NosotrosPage() {
         <div className="mo-grid wrap grid-12">
           <div className="mo-intro">
             <span className="m-rule" aria-hidden="true" />
-            <p className="m-text-5 text-[#C83E2B]">
+            <p className="m-text-5 text-[#C83226]">
               04 · Principios y Transparencia Legal
             </p>
             <h2 className="m-text-3">
@@ -255,7 +255,7 @@ export default function NosotrosPage() {
 
           <article className="mo-sheet" aria-label="Documentos Oficiales TSE #28">
             <header className="mo-sheet__head">
-              <p className="m-text-5 text-[#C83E2B]">
+              <p className="m-text-5 text-[#C83226]">
                 Archivo Legal · Registro de Ciudadanos TSE
               </p>
               <p className="mo-client">

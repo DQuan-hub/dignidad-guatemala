@@ -95,8 +95,12 @@ export function VideoModal({ post, onClose }: VideoModalProps) {
       ref={dialogRef}
       {...({ closedby: "any" } as React.DialogHTMLAttributes<HTMLDialogElement>)}
       aria-labelledby="video-modal-title"
-      className="m-auto w-[94vw] max-w-4xl rounded-3xl bg-[#7F1116] text-[#FAF6F0] border border-[#FAF6F0]/15 p-0 shadow-2xl overflow-hidden"
+      className="m-auto w-[94vw] max-w-4xl rounded-none bg-[#141413] text-[#FAF8F5] border border-white/20 p-0 shadow-2xl overflow-hidden relative"
     >
+      <span className="absolute top-2 left-2 font-mono text-white/30 text-xs select-none pointer-events-none">+</span>
+      <span className="absolute top-2 right-2 font-mono text-white/30 text-xs select-none pointer-events-none">+</span>
+      <span className="absolute bottom-2 left-2 font-mono text-white/30 text-xs select-none pointer-events-none">+</span>
+      <span className="absolute bottom-2 right-2 font-mono text-white/30 text-xs select-none pointer-events-none">+</span>
       {post && (
         <div className="grid grid-cols-1 md:grid-cols-12 min-h-[540px] max-h-[90vh]">
           {/* Columna 9:16 Reproductor Multimedia */}
@@ -147,7 +151,7 @@ export function VideoModal({ post, onClose }: VideoModalProps) {
           <div className="md:col-span-6 p-6 sm:p-8 flex flex-col justify-between overflow-y-auto">
             <div>
               <div className="flex items-center justify-between gap-4 mb-5">
-                <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-mono-code font-bold uppercase tracking-wider bg-[#C81E1E] text-white">
+                <span className="inline-flex items-center gap-2 px-3 py-1 rounded-none text-xs font-mono font-bold uppercase tracking-wider bg-[#C83226] text-white">
                   <Play className="w-3.5 h-3.5 fill-white" aria-hidden="true" />
                   {platformBadge}
                 </span>
@@ -157,7 +161,7 @@ export function VideoModal({ post, onClose }: VideoModalProps) {
                     type="submit"
                     autoFocus
                     aria-label="Cerrar ventana multimedia"
-                    className="h-10 w-10 rounded-full bg-white/10 hover:bg-white/20 text-white flex items-center justify-center transition cursor-pointer"
+                    className="h-10 w-10 rounded-none bg-white/10 hover:bg-white/20 text-white border border-white/20 flex items-center justify-center transition cursor-pointer"
                   >
                     <X className="w-5 h-5" aria-hidden="true" />
                   </button>
@@ -166,33 +170,33 @@ export function VideoModal({ post, onClose }: VideoModalProps) {
 
               <h2
                 id="video-modal-title"
-                className="text-xl sm:text-2xl font-extrabold font-display text-[#FAF6F0] mb-4 leading-snug"
+                className="text-xl sm:text-2xl font-extrabold font-display text-white mb-4 leading-snug"
               >
                 Dignidad Guatemala · Archivo Documental
               </h2>
 
-              <p className="text-[#FAF6F0]/90 text-base leading-relaxed mb-6">
+              <p className="text-white/90 text-base leading-relaxed mb-6 font-sans">
                 {post.caption}
               </p>
 
-              <div className="flex flex-wrap gap-3 text-xs font-mono-code text-[#FAF6F0]/80 mb-6">
+              <div className="flex flex-wrap gap-3 text-xs font-mono text-white/80 mb-6">
                 {post.location && (
-                  <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-white/5 border border-white/10">
-                    <MapPin className="w-3.5 h-3.5 text-[#FFD600]" aria-hidden="true" />
+                  <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-none bg-white/5 border border-white/15">
+                    <MapPin className="w-3.5 h-3.5 text-[#F5B800]" aria-hidden="true" />
                     {post.location}
                   </span>
                 )}
-                <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-white/5 border border-white/10">
-                  <Calendar className="w-3.5 h-3.5 text-[#FFD600]" aria-hidden="true" />
+                <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-none bg-white/5 border border-white/15">
+                  <Calendar className="w-3.5 h-3.5 text-[#F5B800]" aria-hidden="true" />
                   {post.date}
                 </span>
               </div>
 
               {/* Estadísticas de alcance */}
-              <div className="grid grid-cols-3 gap-3 p-4 rounded-2xl bg-white/5 border border-white/10 mb-6">
+              <div className="grid grid-cols-3 gap-3 p-4 rounded-none bg-white/5 border border-white/15 mb-6">
                 {post.views !== undefined && (
                   <div>
-                    <div className="flex items-center gap-1.5 text-[#FFD600] text-xs font-mono-code font-semibold mb-0.5">
+                    <div className="flex items-center gap-1.5 text-[#F5B800] text-xs font-mono font-bold mb-0.5 uppercase">
                       <Eye className="w-3.5 h-3.5" aria-hidden="true" />
                       Vistas
                     </div>
@@ -203,7 +207,7 @@ export function VideoModal({ post, onClose }: VideoModalProps) {
                 )}
                 {post.likes !== undefined && (
                   <div>
-                    <div className="flex items-center gap-1.5 text-[#FFD600] text-xs font-mono-code font-semibold mb-0.5">
+                    <div className="flex items-center gap-1.5 text-[#F5B800] text-xs font-mono font-bold mb-0.5 uppercase">
                       <Heart className="w-3.5 h-3.5" aria-hidden="true" />
                       Apoyos
                     </div>
@@ -214,7 +218,7 @@ export function VideoModal({ post, onClose }: VideoModalProps) {
                 )}
                 {post.comments !== undefined && (
                   <div>
-                    <div className="flex items-center gap-1.5 text-[#FFD600] text-xs font-mono-code font-semibold mb-0.5">
+                    <div className="flex items-center gap-1.5 text-[#F5B800] text-xs font-mono font-bold mb-0.5 uppercase">
                       <MessageCircle className="w-3.5 h-3.5" aria-hidden="true" />
                       Comentarios
                     </div>
@@ -226,12 +230,12 @@ export function VideoModal({ post, onClose }: VideoModalProps) {
               </div>
             </div>
 
-            <div className="space-y-3 pt-4 border-t border-white/10">
+            <div className="space-y-3 pt-4 border-t border-white/15">
               {post.type === "video" && post.videoId && post.localPath && (
                 <button
                   type="button"
                   onClick={() => setUseEmbed((v) => !v)}
-                  className="w-full py-2.5 px-4 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 text-xs font-mono-code font-bold text-[#FFD600] transition cursor-pointer"
+                  className="w-full py-2.5 px-4 rounded-none bg-white/5 hover:bg-white/10 border border-white/15 text-xs font-mono font-bold text-[#F5B800] uppercase tracking-wider transition cursor-pointer"
                 >
                   {useEmbed
                     ? "Usar Reproductor Nativo Rápido (MP4 Local)"
@@ -244,17 +248,17 @@ export function VideoModal({ post, onClose }: VideoModalProps) {
                   href={post.permalink}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex-1 inline-flex items-center justify-center gap-2 px-5 py-3.5 rounded-xl bg-[#FFD600] hover:bg-[#FACC15] text-[#231012] font-extrabold text-sm transition"
+                  className="flex-1 inline-flex items-center justify-center gap-2 px-5 py-3.5 rounded-none bg-[#C83226] hover:bg-[#A82419] text-white font-mono font-bold text-xs uppercase tracking-wider transition shadow-md"
                 >
-                  Abrir publicación original
-                  <ExternalLink className="w-4 h-4" aria-hidden="true" />
+                  <span>Abrir publicación original</span>
+                  <ExternalLink className="w-4 h-4 text-[#F5B800]" aria-hidden="true" />
                 </a>
                 <a
                   href="/afiliate"
-                  className="inline-flex items-center justify-center gap-2 px-5 py-3.5 rounded-xl bg-[#C81E1E] hover:bg-[#991B1B] text-white font-bold text-sm transition"
+                  className="inline-flex items-center justify-center gap-2 px-5 py-3.5 rounded-none bg-white/10 hover:bg-white/20 text-white border border-white/20 font-mono font-bold text-xs uppercase tracking-wider transition"
                 >
-                  <Share2 className="w-4 h-4" aria-hidden="true" />
-                  Afíliate
+                  <Share2 className="w-4 h-4 text-[#F5B800]" aria-hidden="true" />
+                  <span>Afíliate</span>
                 </a>
               </div>
             </div>

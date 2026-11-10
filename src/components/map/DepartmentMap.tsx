@@ -61,11 +61,11 @@ export default function DepartmentMap({
             justify-content:center;
             width:${isSelected ? "42px" : "34px"};
             height:${isSelected ? "42px" : "34px"};
-            border-radius:9999px;
-            background:${isSelected ? "#FFD600" : "#C81E1E"};
-            color:${isSelected ? "#7F1116" : "#FAF6F0"};
-            border:2.5px solid #FAF6F0;
-            box-shadow:0 8px 18px rgba(127,17,22,0.45);
+            border-radius:0px;
+            background:${isSelected ? "#F5B800" : "#C83226"};
+            color:${isSelected ? "#141413" : "#ffffff"};
+            border:2px solid #141413;
+            box-shadow:0 6px 14px rgba(20,20,19,0.35);
             font-family:monospace;
             font-weight:800;
             font-size:11px;
@@ -83,21 +83,21 @@ export default function DepartmentMap({
 
       marker.bindPopup(`
         <div style="min-width:220px;font-family:system-ui,sans-serif;">
-          <div style="font-size:10px;font-family:monospace;font-weight:700;color:#C81E1E;text-transform:uppercase;">
+          <div style="font-size:10px;font-family:monospace;font-weight:700;color:#C83226;text-transform:uppercase;">
             [${sede.departamento} · ${sede.municipio}]
           </div>
-          <div style="font-size:14px;font-weight:800;color:#7F1116;margin:4px 0;">
+          <div style="font-size:14px;font-weight:800;color:#141413;margin:4px 0;">
             ${sede.nombre}
           </div>
-          <div style="font-size:12px;color:#374151;margin-bottom:6px;">
+          <div style="font-size:12px;color:#57534E;margin-bottom:6px;">
             ${sede.direccion}
           </div>
-          <div style="font-size:11px;font-weight:600;color:#7F1116;margin-bottom:8px;">
+          <div style="font-size:11px;font-weight:600;color:#141413;margin-bottom:8px;">
             Coordina: ${sede.coordinador}
           </div>
           <div style="display:flex;gap:6px;">
-            <a href="${sede.googleMapsUrl}" target="_blank" rel="noopener noreferrer" style="background:#7F1116;color:#FAF6F0;padding:5px 9px;border-radius:8px;font-size:11px;font-weight:700;text-decoration:none;">Google Maps</a>
-            <a href="${sede.whatsapp}" target="_blank" rel="noopener noreferrer" style="background:#C81E1E;color:#ffffff;padding:5px 9px;border-radius:8px;font-size:11px;font-weight:700;text-decoration:none;">WhatsApp</a>
+            <a href="${sede.googleMapsUrl}" target="_blank" rel="noopener noreferrer" style="background:#141413;color:#FAF8F5;padding:6px 10px;border-radius:0px;font-size:11px;font-weight:700;text-decoration:none;font-family:monospace;text-transform:uppercase;">Google Maps</a>
+            <a href="${sede.whatsapp}" target="_blank" rel="noopener noreferrer" style="background:#C83226;color:#ffffff;padding:6px 10px;border-radius:0px;font-size:11px;font-weight:700;text-decoration:none;font-family:monospace;text-transform:uppercase;">WhatsApp</a>
           </div>
         </div>
       `);
@@ -134,7 +134,7 @@ export default function DepartmentMap({
     <div
       ref={containerRef}
       aria-label="Mapa territorial de sedes departamentales de Dignidad Guatemala"
-      className="w-full h-[420px] sm:h-[520px] rounded-2xl overflow-hidden border border-[#7F1116]/20 bg-[#F2EAE0]"
+      className="w-full h-[420px] sm:h-[520px] rounded-none overflow-hidden border border-[#141413] bg-[#FAF8F5]"
     />
   );
 }
