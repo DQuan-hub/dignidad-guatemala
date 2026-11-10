@@ -317,7 +317,22 @@ export default function HomePage() {
     }
 
     const motionNodes = document.querySelectorAll("[data-8b-motion]");
-    motionNodes.forEach((node) => node.classList.add("is-in"));
+    if (typeof window !== "undefined" && "IntersectionObserver" in window) {
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("is-in");
+            }
+          });
+        },
+        { threshold: 0.1 }
+      );
+      motionNodes.forEach((node) => observer.observe(node));
+      document.querySelectorAll(".sv-slab").forEach((slab) => observer.observe(slab));
+    } else {
+      motionNodes.forEach((node) => node.classList.add("is-in"));
+    }
   }, []);
 
   return (
@@ -682,7 +697,7 @@ export default function HomePage() {
                 }
               >
                 <div className="sv-slab__in wrap grid-12">
-                  <span className="m-rule" aria-hidden="true" />
+                  <span className="m-rule" data-8b-motion="rule" aria-hidden="true" />
                   <h3 className="m-text-2 sv-name">
                     {eje.numero} · {eje.palabraClaveCursiva}
                   </h3>
@@ -692,14 +707,16 @@ export default function HomePage() {
                     <p className="m-text">{eje.resumenCorto}</p>
                   </div>
 
-                  <div className="sv-photo m-photo">
+                  <div className="sv-photo m-photo" data-8b-motion="tint">
                     <img
                       className="m-photo__img"
                       src={eje.imagenHero}
                       alt={eje.pieFotoHero}
                       loading="lazy"
                     />
-                    <span className="sv-dots" aria-hidden="true" />
+                    <span className="absolute bottom-2 left-2 bg-[#141413]/90 text-white font-mono text-[10px] uppercase tracking-wider px-2 py-0.5 pointer-events-none z-10 border border-white/20">
+                      Eje {eje.numero}
+                    </span>
                   </div>
 
                   <div className="sv-list">

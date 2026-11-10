@@ -134,7 +134,7 @@ export default function NosotrosPage() {
       {/* ====================================================================
           3. CLIENT-STORIES STYLE: Liderazgos y Vocería Política (#cases)
          ==================================================================== */}
-      <section id="liderazgos" className="cases" style={{ paddingTop: "32px" }}>
+      <section id="liderazgos" className="cases" data-8b-section="client-stories" style={{ paddingTop: "32px" }}>
         <div className="cs-head wrap">
           <span className="m-rule" aria-hidden="true" />
           <p className="m-text-5 text-[#C83226]">

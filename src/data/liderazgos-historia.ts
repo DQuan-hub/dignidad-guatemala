@@ -38,7 +38,7 @@ export const LIDERAZGOS_DIGNIDAD: LiderPolitico[] = [
     nombre: "Gabriel Romero Pérez",
     cargo: "Secretario General Provisional",
     origen: "Articulación Nacional · Registro TSE #28",
-    fotografia: "/media/social/ig-orador-asamblea.jpg",
+    fotografia: "/media/social/photos/dirigencia-orador-asamblea.jpg",
     pieFoto: "Intervención ante el Tribunal Supremo Electoral · Archivo Dignidad Oficial",
     trayectoria:
       "Dirigente político y organizador social con amplia trayectoria en la construcción de instrumentos políticos del pueblo, el acompañamiento a comunidades agrarias y la defensa de los derechos democráticos ante el Tribunal Supremo Electoral.",
