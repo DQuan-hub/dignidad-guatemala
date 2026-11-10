@@ -232,9 +232,9 @@ export const EJES_PROGRAMATICOS: EjeProgramatico[] = [
     subtitulo: "Reconocimiento de derechos colectivos y fin del racismo estructural contra los pueblos Maya, Xinka y Garífuna.",
     resumenCorto:
       "Transformar el Estado excluyente en un Estado Plurinacional donde los pueblos Maya, Xinka, Garífuna y Mestizo decidan en paridad el presupuesto, la justicia y el futuro del país.",
-    imagenHero: "/media/social/photos/jornada-adhesion-comunitaria.jpg",
+    imagenHero: "/media/social/fb-marcha-revolucion-plurinacional.jpg",
     pieFotoHero:
-      "Jornada masiva de adhesión comunitaria con participación de mujeres indígenas y autoridades locales · Archivo @dignidad100",
+      "Marcha y movilización popular: Revolución Popular Plurinacional con banderas de Dignidad · Archivo Oficial Dignidad",
     galeriaDocumental: [
       {
         src: "/media/social/photos/jornada-adhesion-comunitaria.jpg",
@@ -319,9 +319,9 @@ export const EJES_PROGRAMATICOS: EjeProgramatico[] = [
     subtitulo: "Servicios públicos universales, infraestructura escolar rural y salarios justos.",
     resumenCorto:
       "Puestos de salud abastecidos las 24 horas con pertinencia cultural, escuelas rurales dignas con educación bilingüe intercultural y trabajo con seguridad social en el campo y la ciudad.",
-    imagenHero: "/media/social/photos/dialogo-territorial-bases.jpg",
+    imagenHero: "/media/social/x-banner-organizados-buen-vivir.jpg",
     pieFotoHero:
-      "Liderazgos comunitarios dialogando sobre los desafíos sociales y económicos de los municipios rurales · Archivo @dignidad100",
+      "Organizados avanzamos hacia el Buen Vivir: Dignidad en el campo y la ciudad · Archivo @dignidadgt",
     galeriaDocumental: [
       {
         src: "/media/social/photos/dialogo-territorial-bases.jpg",
@@ -406,9 +406,9 @@ export const EJES_PROGRAMATICOS: EjeProgramatico[] = [
     subtitulo: "Recuperación de las instituciones públicas, auditoría comunitaria y fin de la impunidad.",
     resumenCorto:
       "Muerte civil perpetua para funcionarios y contratistas corruptos, extinción de dominio a fortunas ilícitas y Comisiones Comunitarias de Auditoría Social con poder vinculante.",
-    imagenHero: "/media/social/photos/voceria-asamblea-afiliacion.jpg",
+    imagenHero: "/media/social/ig-juventudes-merecen-dignidad.jpg",
     pieFotoHero:
-      "Vocería ciudadana y juvenil desde las asambleas por la transparencia y la recuperación institucional · Archivo @dignidad100",
+      "Las juventudes de los pueblos organizadas por la Dignidad y la transparencia institucional · Archivo @dignidad.guate",
     galeriaDocumental: [
       {
         src: "/media/social/photos/dialogo-territorial-bases.jpg",
@@ -493,9 +493,9 @@ export const EJES_PROGRAMATICOS: EjeProgramatico[] = [
     subtitulo: "Política de alianzas con movimientos sociales, juventudes, mujeres y trabajadores.",
     resumenCorto:
       "Un instrumento político sin dueños ni caudillos, puesto al servicio de la unidad de los movimientos campesinos, indígenas, sindicales, estudiantiles, de mujeres y migrantes hacia 2027.",
-    imagenHero: "/media/social/photos/jornada-adhesion-comunitaria.jpg",
+    imagenHero: "/media/social/fb-multitud-banderas-dignidad.jpg",
     pieFotoHero:
-      "Asamblea abierta de articulación territorial y adhesión ciudadana al Partido Dignidad (#28 TSE) · Archivo @dignidad100",
+      "Multitud de militantes portando banderas oficiales de Dignidad #28 ante el Tribunal Supremo Electoral · Archivo Oficial Dignidad",
     galeriaDocumental: [
       {
         src: "/media/social/photos/jornada-adhesion-comunitaria.jpg",

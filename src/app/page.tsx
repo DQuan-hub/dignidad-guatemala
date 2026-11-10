@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import { Play, MapPin, ArrowUpRight } from "lucide-react";
 import { VideoModal } from "@/components/ui/VideoModal";
@@ -14,44 +14,34 @@ import { getSocialFeedPosts, type SocialMediaPost } from "@/lib/utils";
 
 const OPENING_TILES = [
   {
-    src: "/media/social/photos/milpa-san-jose-la-maquina.jpg",
-    alt: "Campesinos en parcela comunitaria de San José La Máquina",
-    badge: "Campesinos",
+    src: "/media/social/fb-marcha-revolucion-plurinacional.jpg",
+    alt: "Marcha Plurinacional y Popular con pancartas de Dignidad",
+    badge: "Plurinacional",
   },
   {
-    src: "/media/social/photos/asamblea-liderazgos-agua.jpg",
-    alt: "Autoridades comunitarias en defensa de Madre Agua",
+    src: "/media/social/fb-tse-discurso-porton.jpg",
+    alt: "Dirigencia popular y autoridades comunitarias ante el TSE",
     badge: "Autoridades",
   },
   {
-    src: "/media/social/photos/soberania-alimentaria-buen-vivir.jpg",
-    alt: "Mujeres mayas organizadas por la soberanía alimentaria",
-    badge: "Mujeres Mayas",
+    src: "/media/social/ig-juventudes-merecen-dignidad.jpg",
+    alt: "Juventudes de los pueblos organizadas por la Dignidad",
+    badge: "Juventudes",
   },
   {
-    src: "/media/social/photos/jornada-adhesion-comunitaria.jpg",
-    alt: "Juventud y bases firmando hojas de afiliación",
-    badge: "Juventud",
+    src: "/media/social/fb-multitud-banderas-dignidad.jpg",
+    alt: "Multitud de militantes con banderas oficiales de Dignidad #28",
+    badge: "Pueblos",
   },
   {
-    src: "/media/social/photos/dialogo-territorial-bases.jpg",
-    alt: "Diálogo territorial en el Altiplano Central",
-    badge: "Altiplano",
+    src: "/media/social/ig-orador-asamblea.jpg",
+    alt: "Intervención de la dirigencia con rosas rojas por los mártires",
+    badge: "Dirigencia",
   },
   {
-    src: "/media/social/photos/voceria-asamblea-afiliacion.jpg",
-    alt: "Vocería departamental en jornada de afiliación",
-    badge: "Costa Sur",
-  },
-  {
-    src: "/media/social/tiktok/7648750237963652359.jpg",
-    alt: "Delegadas comunitarias en asamblea nacional",
-    badge: "Tejedoras",
-  },
-  {
-    src: "/media/social/tiktok/7650191802229722375.jpg",
-    alt: "Asamblea plurinacional de Dignidad Guatemala",
-    badge: "Asambleas",
+    src: "/media/social/x-banner-organizados-buen-vivir.jpg",
+    alt: "Campesino sembrando la tierra para el Buen Vivir",
+    badge: "Buen Vivir",
   },
 ];
 
@@ -70,7 +60,21 @@ const MONTHLY_BARS = [
   { label: "S", value: 22, text: "Septiembre: 22 departamentos activos" },
 ];
 
-const ELECTORAL_CALENDAR = [
+interface CalendarChip {
+  date: string;
+  what: string;
+  color: string;
+  isRed?: boolean;
+}
+
+interface CalendarMonth {
+  month: string;
+  year: string;
+  isCurrentMonth?: boolean;
+  chips: CalendarChip[];
+}
+
+const ELECTORAL_CALENDAR: CalendarMonth[] = [
   {
     month: "Abril",
     year: "2026",
@@ -191,6 +195,7 @@ const ELECTORAL_CALENDAR = [
   {
     month: "Noviembre",
     year: "2026",
+    isCurrentMonth: true,
     chips: [
       {
         date: "8 Noviembre",
@@ -284,6 +289,18 @@ export default function HomePage() {
   );
   const [activeMonthNote, setActiveMonthNote] = useState<number>(0);
   const [selectedQuickDepto, setSelectedQuickDepto] = useState<string>("Sololá");
+  const currentMonthRef = useRef<HTMLLIElement | null>(null);
+  const yearViewRef = useRef<HTMLDivElement | null>(null);
+
+  useEffect(() => {
+    // Auto-scroll tax-year timeline to current month (Noviembre 2026)
+    if (currentMonthRef.current && yearViewRef.current) {
+      const el = currentMonthRef.current;
+      const container = yearViewRef.current;
+      const offset = el.offsetLeft - container.offsetWidth / 2 + el.offsetWidth / 2;
+      container.scrollTo({ left: Math.max(0, offset), behavior: "smooth" });
+    }
+  }, []);
 
   const quickSede =
     SEDES_AFILIACION.find((s) => s.departamento === selectedQuickDepto) ||
@@ -874,11 +891,25 @@ export default function HomePage() {
             </ul>
           </div>
 
-          <div className="yr-view">
-            <span className="yr-line" aria-hidden="true" />
+          <div ref={yearViewRef} className="yr-view">
             <ol className="yr-track">
               {ELECTORAL_CALENDAR.map((item) => (
-                <li key={`${item.month}-${item.year}`} className="yr-month">
+                <li
+                  key={`${item.month}-${item.year}`}
+                  ref={item.isCurrentMonth ? currentMonthRef : null}
+                  className={`yr-month relative ${item.isCurrentMonth ? "is-current-month border-t-2 border-t-[#C83226]" : ""}`}
+                >
+                  {item.isCurrentMonth && (
+                    <div
+                      className="absolute -top-6 bottom-0 -left-[1px] w-[3px] bg-[#C83226] z-30 pointer-events-none shadow-[0_0_12px_rgba(200,50,38,0.9)]"
+                      aria-label="Línea temporal actual: Noviembre 2026"
+                    >
+                      <div className="absolute -top-6 left-0 -translate-x-2 bg-[#C83226] text-white text-[10px] font-mono font-bold uppercase tracking-wider px-2 py-0.5 rounded-none whitespace-nowrap shadow-lg flex items-center gap-1.5">
+                        <span className="w-1.5 h-1.5 rounded-full bg-white animate-pulse" />
+                        <span>FECHA ACTUAL · NOVIEMBRE 2026</span>
+                      </div>
+                    </div>
+                  )}
                   <h3 className="yr-name">
                     {item.month}
                     <span>{item.year}</span>

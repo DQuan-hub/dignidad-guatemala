@@ -24,7 +24,7 @@ export function Footer() {
             </li>
             <li>
               <a
-                className="m-link-2"
+                className="m-link-2 break-all"
                 href="mailto:contacto@dignidadguatemala.org"
               >
                 contacto@dignidadguatemala.org
